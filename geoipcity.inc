@@ -1,6 +1,5 @@
 <?php
 
-/* -*- Mode: C; indent-tabs-mode: t; c-basic-offset: 2; tab-width: 2 -*- */
 /* geoipcity.inc
  *
  * Copyright (C) 2004 Maxmind LLC
@@ -20,9 +19,19 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
  */
 
+/*
+ * Changelog:
+ *
+ * 2005-01-13   Andrew Hill, Awarez Ltd. (http://www.awarez.net)
+ *              Formatted file according to PEAR library standards.
+ *              Changed inclusion of geoip.inc file to require_once, so that
+ *                  this library can be used in the same script as geoip.inc.
+ */
+
 define("FULL_RECORD_LENGTH",50);
-include("geoip.inc");
-include("geoipregionvars.php");
+
+require_once 'geoip.inc';
+require_once 'geoipregionvars.php';
 
 class geoiprecord {
   var $country_code;
@@ -108,19 +117,17 @@ function _get_record($gi,$ipnum){
     return NULL;
   }
   $record_pointer = $seek_country + (2 * $gi->record_length - 1) * $gi->databaseSegments;
-
   fseek($gi->filehandle, $record_pointer, SEEK_SET);
   $record_buf = fread($gi->filehandle,FULL_RECORD_LENGTH);
   $record = new geoiprecord;
   $record_buf_pos = 0;
   $char = ord(substr($record_buf,$record_buf_pos,1));
-  $record->country_code = $GLOBALS['GEOIP_COUNTRY_CODES'][$char];
-  $record->country_code3 = $GLOBALS['GEOIP_COUNTRY_CODES3'][$char];
-  $record->country_name = $GLOBALS['GEOIP_COUNTRY_NAMES'][$char];
+    $record->country_code = $gi->GEOIP_COUNTRY_CODES[$char];
+    $record->country_code3 = $gi->GEOIP_COUNTRY_CODES3[$char];
+    $record->country_name = $gi->GEOIP_COUNTRY_NAMES[$char];
   $record_buf_pos++;
   $str_length = 0;
-  
-  //get region
+    // Get region
   $char = ord(substr($record_buf,$record_buf_pos+$str_length,1));
   while ($char != 0){
     $str_length++;
@@ -131,8 +138,7 @@ function _get_record($gi,$ipnum){
   }
   $record_buf_pos += $str_length + 1;
   $str_length = 0;
-
-  //get city
+    // Get city
   $char = ord(substr($record_buf,$record_buf_pos+$str_length,1));
   while ($char != 0){
     $str_length++;
@@ -143,8 +149,7 @@ function _get_record($gi,$ipnum){
   }
   $record_buf_pos += $str_length + 1;
   $str_length = 0;
-
-  //get postal code
+    // Get postal code
   $char = ord(substr($record_buf,$record_buf_pos+$str_length,1));
   while ($char != 0){
     $str_length++;
@@ -155,6 +160,7 @@ function _get_record($gi,$ipnum){
   }
   $record_buf_pos += $str_length + 1;
   $str_length = 0;
+    // Get latitude and longitude
   $latitude = 0;
   $longitude = 0;
   for ($j = 0;$j < 3; ++$j){
@@ -162,13 +168,11 @@ function _get_record($gi,$ipnum){
     $latitude += ($char << ($j * 8));
   }
   $record->latitude = ($latitude/10000) - 180;
-
   for ($j = 0;$j < 3; ++$j){
     $char = ord(substr($record_buf,$record_buf_pos++,1));
     $longitude += ($char << ($j * 8));
   }
   $record->longitude = ($longitude/10000) - 180;
-
   if (GEOIP_CITY_EDITION_REV1 == $gi->databaseType){
     $dmaarea_combo = 0;
     if ($record->country_code == "US"){
@@ -190,4 +194,5 @@ function GeoIP_record_by_addr ($gi,$addr){
   $ipnum = ip2long($addr);
   return _get_record($gi, $ipnum);
 }
+
 ?>
