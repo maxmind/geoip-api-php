@@ -97,8 +97,6 @@ function getrecordwithdnsservice($str){
   }else{
     $record->regionname = $GLOBALS['FIPS'][$record->country_code][$record->region];
   }
-  #ereg("\"(.*)\"",$record->regionname,$regs);
-  #$record->regionname = $regs[1];
   return $record;
 }
 
