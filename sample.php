@@ -1,6 +1,8 @@
 #!/usr/bin/php -q
 <?php
 
+// This code demonstrates how to lookup the country by IP Address
+
 include("geoip.inc");
 
 $gi = geoip_open("/usr/local/share/GeoIP/GeoIP.dat",GEOIP_STANDARD);
