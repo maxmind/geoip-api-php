@@ -44,8 +44,8 @@ function _get_record($gi,$ipnum){
   fseek($gi->filehandle, $record_pointer, SEEK_SET);
   $record_buf = fread($gi->filehandle,FULL_RECORD_LENGTH);
   $record = new geoiprecord;
-  $char = ord(substr($record_buf,$record_buf_pos,1));
   $record_buf_pos = 0;
+  $char = ord(substr($record_buf,$record_buf_pos,1));
   $record->country_code = $GLOBALS['GEOIP_COUNTRY_CODES'][$char];
   $record->country_code3 = $GLOBALS['GEOIP_COUNTRY_CODES3'][$char];
   $record->country_name = $GLOBALS['GEOIP_COUNTRY_NAMES'][$char];
