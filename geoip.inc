@@ -4,7 +4,7 @@
    by jim winstead <jimw@apache.org> */
 
 /* -*- Mode: C; indent-tabs-mode: t; c-basic-offset: 2; tab-width: 2 -*- */
-/* GeoIP.c
+/* geoip.inc
  *
  * Copyright (C) 2002 MaxMind
  *
