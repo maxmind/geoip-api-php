@@ -171,6 +171,9 @@ define("GEOIP_SHARED_MEMORY", 2);
 define("STRUCTURE_INFO_MAX_SIZE",20);
 define("DATABASE_INFO_MAX_SIZE",100);
 define("GEOIP_COUNTRY_EDITION",106);
+define("GEOIP_PROXY_EDITION",8);
+define("GEOIP_ASNUM_EDITION",9);
+define("GEOIP_NETSPEED_EDITION",10);
 define("GEOIP_REGION_EDITION_REV0",112);
 define("GEOIP_REGION_EDITION_REV1",3);
 define("GEOIP_CITY_EDITION_REV0",111);
@@ -186,6 +189,10 @@ define("US_OFFSET",1);
 define("CANADA_OFFSET",677);
 define("WORLD_OFFSET",1353);
 define("FIPS_RANGE",360);
+define("GEOIP_UNKNOWN_SPEED",0);
+define("GEOIP_DIALUP_SPEED",1);
+define("GEOIP_CABLEDSL_SPEED",2);
+define("GEOIP_CORPORATE_SPEED",3);
 
 class GeoIP {
   var $flags;
@@ -237,13 +244,16 @@ function _setup_segments($gi){
 	    }
             else if (($gi->databaseType == GEOIP_CITY_EDITION_REV0)||
                      ($gi->databaseType == GEOIP_CITY_EDITION_REV1) 
-                    || ($gi->databaseType == GEOIP_ORG_EDITION)){
+                    || ($gi->databaseType == GEOIP_ORG_EDITION)
+		    || ($gi->databaseType == GEOIP_ISP_EDITION)
+		    || ($gi->databaseType == GEOIP_ASNUM_EDITION)){
                 $gi->databaseSegments = 0;
                 $buf = shmop_read ($gi->shmid, $offset, SEGMENT_RECORD_LENGTH);
                 for ($j = 0;$j < SEGMENT_RECORD_LENGTH;$j++){
                     $gi->databaseSegments += (ord($buf[$j]) << ($j * 8));
                 }
-	            if ($gi->databaseType == GEOIP_ORG_EDITION) {
+	            if (($gi->databaseType == GEOIP_ORG_EDITION)||
+			($gi->databaseType == GEOIP_ISP_EDITION)) {
 	                $gi->record_length = ORG_RECORD_LENGTH;
                 }
             }
@@ -253,7 +263,9 @@ function _setup_segments($gi){
             $offset -= 4;
         }
     }
-    if ($gi->databaseType == GEOIP_COUNTRY_EDITION){
+    if (($gi->databaseType == GEOIP_COUNTRY_EDITION)|
+        ($gi->databaseType == GEOIP_PROXY_EDITION)|
+        ($gi->databaseType == GEOIP_NETSPEED_EDITION)){
         $gi->databaseSegments = GEOIP_COUNTRY_BEGIN;
     }
   }
@@ -273,7 +285,9 @@ function _setup_segments($gi){
 	} 
         else if (($gi->databaseType == GEOIP_CITY_EDITION_REV0) || 
                  ($gi->databaseType == GEOIP_CITY_EDITION_REV1) || 
-                 ($gi->databaseType == GEOIP_ORG_EDITION)){
+                 ($gi->databaseType == GEOIP_ORG_EDITION) || 
+		 ($gi->databaseType == GEOIP_ISP_EDITION) || 
+                 ($gi->databaseType == GEOIP_ASNUM_EDITION)){
             $gi->databaseSegments = 0;
             $buf = fread($gi->filehandle,SEGMENT_RECORD_LENGTH);
             for ($j = 0;$j < SEGMENT_RECORD_LENGTH;$j++){
@@ -288,8 +302,10 @@ function _setup_segments($gi){
         fseek($gi->filehandle, -4, SEEK_CUR);
         }
     }
-    if ($gi->databaseType == GEOIP_COUNTRY_EDITION){
-        $gi->databaseSegments = GEOIP_COUNTRY_BEGIN;
+    if (($gi->databaseType == GEOIP_COUNTRY_EDITION)|
+        ($gi->databaseType == GEOIP_PROXY_EDITION)|
+        ($gi->databaseType == GEOIP_NETSPEED_EDITION)){
+         $gi->databaseSegments = GEOIP_COUNTRY_BEGIN;
     }
     fseek($gi->filehandle,$filepos,SEEK_SET);
   }
