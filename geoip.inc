@@ -127,7 +127,12 @@ define("DATABASE_INFO_MAX_SIZE",100);
 define("GEOIP_COUNTRY_EDITION",106);
 define("GEOIP_REGION_EDITION",112);
 define("GEOIP_CITY_EDITION",111);
-define("RECORD_LENGTH",3);
+define("GEOIP_ORG_EDITION",110);
+define("SEGMENT_RECORD_LENGTH",3);
+define("STANDARD_RECORD_LENGTH",3);
+define("ORG_RECORD_LENGTH",4);
+define("MAX_RECORD_LENGTH",4);
+define("MAX_ORG_RECORD_LENGTH",300);
 
 class GeoIP {
   var $flags;
@@ -135,11 +140,13 @@ class GeoIP {
   var $memory_buffer;
   var $databaseType;
   var $databaseSegments;
+  var $record_length;
 }
 
 function _setup_segments($gi){
   $filepos = ftell($gi->filehandle);
   $gi->databaseType = GEOIP_COUNTRY_EDITION;
+  $gi->record_length = STANDARD_RECORD_LENGTH;
   fseek($gi->filehandle, -3, SEEK_END);
   for ($i = 0; $i < STRUCTURE_INFO_MAX_SIZE; $i++) {
     $delim = fread($gi->filehandle,3);
@@ -147,11 +154,14 @@ function _setup_segments($gi){
       $gi->databaseType = ord(fread($gi->filehandle,1));
       if ($gi->databaseType == GEOIP_REGION_EDITION){
         $gi->databaseSegments = GEOIP_STATE_BEGIN;
-      } else if ($gi->databaseType == GEOIP_CITY_EDITION){
+      } else if ($gi->databaseType == GEOIP_CITY_EDITION || $gi->databaseType == GEOIP_ORG_EDITION){
         $gi->databaseSegments = 0;
-        $buf = fread($gi->filehandle,RECORD_LENGTH);
-        for ($j = 0;$j < RECORD_LENGTH;$j++){
+        $buf = fread($gi->filehandle,SEGMENT_RECORD_LENGTH);
+        for ($j = 0;$j < SEGMENT_RECORD_LENGTH;$j++){
           $gi->databaseSegments += (ord($buf[$j]) << ($j * 8));
+        }
+	if ($gi->databaseType == GEOIP_ORG_EDITION) {
+	  $gi->record_length = ORG_RECORD_LENGTH;
         }
       }
       break;
@@ -233,16 +243,16 @@ function _geoip_seek_country($gi, $ipnum) {
   $offset = 0;
   for ($depth = 31; $depth >= 0; --$depth) {
     if ($gi->flags & GEOIP_MEMORY_CACHE) {
-      $buf = substr($gi->memory_buffer,6 * $offset, 6);
+      $buf = substr($gi->memory_buffer,2 * $gi->record_length * $offset, 6);
     } else {
-      fseek($gi->filehandle, 6 * $offset, SEEK_SET) == 0
+      fseek($gi->filehandle, 2 * $gi->record_length * $offset, SEEK_SET) == 0
         or die("fseek failed");
-      $buf = fread($gi->filehandle,6);
+      $buf = fread($gi->filehandle, 2 * $gi->record_length);
     }
     $x = array(0,0);
     for ($i = 0; $i < 2; ++$i) {
-      for ($j = 0; $j < 3; ++$j) {
-        $x[$i] += ord($buf[($i*3)+$j]) << ($j * 8);
+      for ($j = 0; $j < $gi->record_length; ++$j) {
+        $x[$i] += ord($buf[$gi->record_length * $i + $j]) << ($j * 8);
       }
     }
     if ($ipnum & (1 << $depth)) {
@@ -261,6 +271,26 @@ function _geoip_seek_country($gi, $ipnum) {
 
   trigger_error("error traversing database - perhaps it is corrupt?", E_USER_ERROR);
   return false;
+}
+
+function _get_org($gi,$ipnum){
+  $seek_org = _geoip_seek_country($gi,$ipnum);
+  if ($seek_org == $gi->databaseSegments) {
+    return NULL;
+  }
+  $record_pointer = $seek_org + (2 * $gi->record_length - 1) * $gi->databaseSegments;
+  fseek($gi->filehandle, $record_pointer, SEEK_SET);
+  $org_buf = fread($gi->filehandle,MAX_ORG_RECORD_LENGTH);
+  $org_buf = substr($org_buf, 0, strpos($org_buf, 0));
+  return $org_buf;
+}
+
+function geoip_org_by_addr ($gi,$addr) {
+  if ($addr == NULL) {
+    return 0;
+  }
+  $ipnum = ip2long($addr);
+  return _get_org($gi, $ipnum);
 }
 
 function _get_region($gi,$ipnum){

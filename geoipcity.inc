@@ -21,7 +21,6 @@
  */
 
 define("FULL_RECORD_LENGTH",50);
-define("RECORD_LENGTH",3);
 include("geoip.inc");
 
 class geoiprecord {
@@ -40,7 +39,7 @@ function _get_record($gi,$ipnum){
   if ($seek_country == $gi->databaseSegments) {
     return NULL;
   }
-  $record_pointer = $seek_country + (2 * RECORD_LENGTH - 1) * $gi->databaseSegments;
+  $record_pointer = $seek_country + (2 * $gi->record_length - 1) * $gi->databaseSegments;
 
   fseek($gi->filehandle, $record_pointer, SEEK_SET);
   $record_buf = fread($gi->filehandle,FULL_RECORD_LENGTH);
