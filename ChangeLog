@@ -1,3 +1,4 @@
+	* Updated geoip_country_code_by_addr to work with PHP5 (Eric of Host Ultra)
 	* Replaced bit operators (| and &) with logical operators (|| and &&)
 	* Defined GEOIP_ISP_EDITION
 

@@ -367,9 +367,10 @@ function geoip_country_id_by_addr($gi, $addr) {
 }
 
 function geoip_country_code_by_addr($gi, $addr) {
+  global $GEOIP_COUNTRY_CODES;
   $country_id = geoip_country_id_by_addr($gi,$addr);
   if ($country_id !== false) {
-    return $GLOBALS['GEOIP_COUNTRY_CODES'][$country_id];
+    return $GEOIP_COUNTRY_CODES[$country_id];
   }
   return false;
 }

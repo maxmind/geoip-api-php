@@ -24,4 +24,9 @@ echo geoip_country_code_by_addr($gi, "80.24.24.24") . "\t" .
 
 geoip_close($gi);
 
+Working with PHP5.
+geoip_country_code_by_addr should work
+with PHP.  For help with the other
+routines, please contact support@maxmind.com
+
 Thanks to Jim Winstead.
