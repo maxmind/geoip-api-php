@@ -5,8 +5,7 @@ include("geoipcity.inc");
 include("Net/DNS.php");
 
 # replace LICENSE_KEY_HERE with your license key
-#$l = "LICENSE_KEY_HERE";
-$l = "DTel5OJ5iK0X";
+$l = "LICENSE_KEY_HERE";
 $ip = "24.24.24.24";
 
 if ($l == "LICENSE_KEY_HERE") {
