@@ -6,7 +6,7 @@
 /* -*- Mode: C; indent-tabs-mode: t; c-basic-offset: 2; tab-width: 2 -*- */
 /* geoip.inc
  *
- * Copyright (C) 2002 MaxMind
+ * Copyright (C) 2003 MaxMind LLC
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -123,6 +123,7 @@ define("GEOIP_COUNTRY_BEGIN", 16776960);
 define("GEOIP_STATE_BEGIN", 16700000);
 define("GEOIP_STANDARD", 0);
 define("GEOIP_MEMORY_CACHE", 1);
+define("GEOIP_SHARED_MEMORY", 2);
 define("STRUCTURE_INFO_MAX_SIZE",20);
 define("DATABASE_INFO_MAX_SIZE",100);
 define("GEOIP_COUNTRY_EDITION",106);
@@ -134,6 +135,7 @@ define("STANDARD_RECORD_LENGTH",3);
 define("ORG_RECORD_LENGTH",4);
 define("MAX_RECORD_LENGTH",4);
 define("MAX_ORG_RECORD_LENGTH",300);
+define("GEOIP_SHM_KEY", 0x4f415401);
 
 class GeoIP {
   var $flags;
@@ -142,38 +144,96 @@ class GeoIP {
   var $databaseType;
   var $databaseSegments;
   var $record_length;
+  var $shmid;
 }
 
+function geoip_load_shared_mem ($file) {
+
+  $fp = fopen($file, "rb");
+  if (!$fp) {
+    print "error opening $file: $php_errormsg\n";
+    exit;
+  }
+  $s_array = fstat($fp);
+  $size = $s_array['size'];
+
+  if ($shmid = shmop_open (GEOIP_SHM_KEY, "w", 0, 0)) {
+    shmop_delete ($shmid);
+    shmop_close ($shmid);
+  }
+  $shmid = shmop_open (GEOIP_SHM_KEY, "c", 0644, $size);
+  shmop_write ($shmid, fread($fp, $size), 0);
+  shmop_close ($shmid);
+}
+
+
 function _setup_segments($gi){
-  $filepos = ftell($gi->filehandle);
   $gi->databaseType = GEOIP_COUNTRY_EDITION;
   $gi->record_length = STANDARD_RECORD_LENGTH;
-  fseek($gi->filehandle, -3, SEEK_END);
-  for ($i = 0; $i < STRUCTURE_INFO_MAX_SIZE; $i++) {
-    $delim = fread($gi->filehandle,3);
-    if ($delim == (chr(255).chr(255).chr(255))){
-      $gi->databaseType = ord(fread($gi->filehandle,1));
-      if ($gi->databaseType == GEOIP_REGION_EDITION){
-        $gi->databaseSegments = GEOIP_STATE_BEGIN;
-      } else if ($gi->databaseType == GEOIP_CITY_EDITION || $gi->databaseType == GEOIP_ORG_EDITION){
-        $gi->databaseSegments = 0;
-        $buf = fread($gi->filehandle,SEGMENT_RECORD_LENGTH);
-        for ($j = 0;$j < SEGMENT_RECORD_LENGTH;$j++){
-          $gi->databaseSegments += (ord($buf[$j]) << ($j * 8));
+
+  if ($gi->flags & GEOIP_SHARED_MEMORY) {
+    $offset = shmop_size ($gi->shmid) - 3;
+    for ($i = 0; $i < STRUCTURE_INFO_MAX_SIZE; $i++) {
+        $delim = shmop_read ($gi->shmid, $offset, 3);
+        $offset += 3;
+        if ($delim == (chr(255).chr(255).chr(255))) {
+            $gi->databaseType = ord(shmop_read ($gi->shmid, $offset, 1));
+            $offset++;
+
+            if ($gi->databaseType == GEOIP_REGION_EDITION){
+                $gi->databaseSegments = GEOIP_STATE_BEGIN;
+            }
+            else if ($gi->databaseType == GEOIP_CITY_EDITION 
+                    || $gi->databaseType == GEOIP_ORG_EDITION){
+                $gi->databaseSegments = 0;
+                $buf = shmop_read ($gi->shmid, $offset, SEGMENT_RECORD_LENGTH);
+                for ($j = 0;$j < SEGMENT_RECORD_LENGTH;$j++){
+                    $gi->databaseSegments += (ord($buf[$j]) << ($j * 8));
+                }
+	            if ($gi->databaseType == GEOIP_ORG_EDITION) {
+	                $gi->record_length = ORG_RECORD_LENGTH;
+                }
+            }
+            break;
         }
-	if ($gi->databaseType == GEOIP_ORG_EDITION) {
-	  $gi->record_length = ORG_RECORD_LENGTH;
+        else {
+            $offset -= 4;
         }
-      }
-      break;
-    } else {
-      fseek($gi->filehandle, -4, SEEK_CUR);
+    }
+    if ($gi->databaseType == GEOIP_COUNTRY_EDITION){
+        $gi->databaseSegments = GEOIP_COUNTRY_BEGIN;
     }
   }
-  if ($gi->databaseType == GEOIP_COUNTRY_EDITION){
-    $gi->databaseSegments = GEOIP_COUNTRY_BEGIN;
+
+  else {
+    $filepos = ftell($gi->filehandle);
+    fseek($gi->filehandle, -3, SEEK_END);
+    for ($i = 0; $i < STRUCTURE_INFO_MAX_SIZE; $i++) {
+        $delim = fread($gi->filehandle,3);
+        if ($delim == (chr(255).chr(255).chr(255))){
+        $gi->databaseType = ord(fread($gi->filehandle,1));
+        if ($gi->databaseType == GEOIP_REGION_EDITION){
+            $gi->databaseSegments = GEOIP_STATE_BEGIN;
+        } else if ($gi->databaseType == GEOIP_CITY_EDITION || $gi->databaseType == GEOIP_ORG_EDITION){
+            $gi->databaseSegments = 0;
+            $buf = fread($gi->filehandle,SEGMENT_RECORD_LENGTH);
+            for ($j = 0;$j < SEGMENT_RECORD_LENGTH;$j++){
+            $gi->databaseSegments += (ord($buf[$j]) << ($j * 8));
+            }
+	    if ($gi->databaseType == GEOIP_ORG_EDITION) {
+	    $gi->record_length = ORG_RECORD_LENGTH;
+            }
+        }
+        break;
+        } else {
+        fseek($gi->filehandle, -4, SEEK_CUR);
+        }
+    }
+    if ($gi->databaseType == GEOIP_COUNTRY_EDITION){
+        $gi->databaseSegments = GEOIP_COUNTRY_BEGIN;
+    }
+    fseek($gi->filehandle,$filepos,SEEK_SET);
   }
-  fseek($gi->filehandle,$filepos,SEEK_SET);
   return $gi;
 }
 
@@ -181,12 +241,18 @@ function geoip_open($filename, $flags) {
   $gi = new GeoIP;
   $gi->flags = $flags;
 
-  $gi->filehandle = fopen($filename,"rb");
-
-  if ($gi->flags & GEOIP_MEMORY_CACHE) {
-    $s_array = fstat($gi->filehandle);
-    $gi->memory_buffer = fread($gi->filehandle, $s_array[size]);
+  if ($gi->flags & GEOIP_SHARED_MEMORY) {
+    $gi->shmid = shmop_open (GEOIP_SHM_KEY, "a", 0, 0);
   }
+  else {
+    $gi->filehandle = fopen($filename,"rb");
+
+    if ($gi->flags & GEOIP_MEMORY_CACHE) {
+        $s_array = fstat($gi->filehandle);
+        $gi->memory_buffer = fread($gi->filehandle, $s_array[size]);
+    }
+  }
+
   $gi = _setup_segments($gi);
   return $gi;
 }
@@ -244,8 +310,16 @@ function _geoip_seek_country($gi, $ipnum) {
   $offset = 0;
   for ($depth = 31; $depth >= 0; --$depth) {
     if ($gi->flags & GEOIP_MEMORY_CACHE) {
-      $buf = substr($gi->memory_buffer,2 * $gi->record_length * $offset, 6);
-    } else {
+      $buf = substr($gi->memory_buffer,
+                            2 * $gi->record_length * $offset,
+                            2 * $gi->record_length);
+    }
+    elseif ($gi->flags & GEOIP_SHARED_MEMORY) {
+      $buf = shmop_read ($gi->shmid, 
+                            2 * $gi->record_length * $offset,
+                            2 * $gi->record_length );
+    }
+    else {
       fseek($gi->filehandle, 2 * $gi->record_length * $offset, SEEK_SET) == 0
         or die("fseek failed");
       $buf = fread($gi->filehandle, 2 * $gi->record_length);
@@ -280,8 +354,13 @@ function _get_org($gi,$ipnum){
     return NULL;
   }
   $record_pointer = $seek_org + (2 * $gi->record_length - 1) * $gi->databaseSegments;
-  fseek($gi->filehandle, $record_pointer, SEEK_SET);
-  $org_buf = fread($gi->filehandle,MAX_ORG_RECORD_LENGTH);
+  if ($gi->flags & GEOIP_SHARED_MEMORY) {
+    $org_buf = shmop_read ($gi->shmid, $record_pointer, MAX_ORG_RECORD_LENGTH);
+  }
+  else {
+    fseek($gi->filehandle, $record_pointer, SEEK_SET);
+    $org_buf = fread($gi->filehandle,MAX_ORG_RECORD_LENGTH);
+  }
   $org_buf = substr($org_buf, 0, strpos($org_buf, 0));
   return $org_buf;
 }
