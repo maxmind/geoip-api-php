@@ -92,10 +92,12 @@ function getrecordwithdnsservice($str){
   $number = $GLOBALS['GEOIP_COUNTRY_CODE_TO_NUMBER'][$record->country_code];
   $record->country_code3 = $GLOBALS['GEOIP_COUNTRY_CODES3'][$number];
   $record->country_name = $GLOBALS['GEOIP_COUNTRY_NAMES'][$number];
-  if (($record->country_code == "US")|($record->country_code == "CA")){
-    $record->regionname = $GLOBALS['ISO'][$record->country_code][$record->region];
-  }else{
-    $record->regionname = $GLOBALS['FIPS'][$record->country_code][$record->region];
+  if ($record->region != "") {
+    if (($record->country_code == "US")|($record->country_code == "CA")){
+      $record->regionname = $GLOBALS['ISO'][$record->country_code][$record->region];
+    } else {
+      $record->regionname = $GLOBALS['FIPS'][$record->country_code][$record->region];
+    }
   }
   return $record;
 }
