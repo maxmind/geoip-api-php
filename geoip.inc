@@ -23,6 +23,8 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+global $GEOIP_COUNTRY_CODE_TO_NUMBER, $GEOIP_COUNTRY_CODES, $GEOIP_COUNTRY_NAMES;
+
 $GEOIP_COUNTRY_CODE_TO_NUMBER = array(
 "" => 0, "AP" => 1, "EU" => 2, "AD" => 3, "AE" => 4, "AF" => 5, 
 "AG" => 6, "AI" => 7, "AL" => 8, "AM" => 9, "AN" => 10, "AO" => 11, 

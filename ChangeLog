@@ -1,3 +1,6 @@
+	* added global definitions to prevent undefined variables error when including from function (Cédric Dufour)
+
+	* Updated country names
 	* Added support for GeoIP City, version 1 with DMA and Area codes
 
 1.2	2003-10-28
