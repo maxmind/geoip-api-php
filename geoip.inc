@@ -179,6 +179,7 @@ define("GEOIP_REGION_EDITION_REV1",3);
 define("GEOIP_CITY_EDITION_REV0",111);
 define("GEOIP_CITY_EDITION_REV1",2);
 define("GEOIP_ORG_EDITION",110);
+define("GEOIP_ISP_EDITION",4);
 define("SEGMENT_RECORD_LENGTH",3);
 define("STANDARD_RECORD_LENGTH",3);
 define("ORG_RECORD_LENGTH",4);
@@ -263,8 +264,8 @@ function _setup_segments($gi){
             $offset -= 4;
         }
     }
-    if (($gi->databaseType == GEOIP_COUNTRY_EDITION)|
-        ($gi->databaseType == GEOIP_PROXY_EDITION)|
+    if (($gi->databaseType == GEOIP_COUNTRY_EDITION)||
+        ($gi->databaseType == GEOIP_PROXY_EDITION)||
         ($gi->databaseType == GEOIP_NETSPEED_EDITION)){
         $gi->databaseSegments = GEOIP_COUNTRY_BEGIN;
     }
@@ -302,8 +303,8 @@ function _setup_segments($gi){
         fseek($gi->filehandle, -4, SEEK_CUR);
         }
     }
-    if (($gi->databaseType == GEOIP_COUNTRY_EDITION)|
-        ($gi->databaseType == GEOIP_PROXY_EDITION)|
+    if (($gi->databaseType == GEOIP_COUNTRY_EDITION)||
+        ($gi->databaseType == GEOIP_PROXY_EDITION)||
         ($gi->databaseType == GEOIP_NETSPEED_EDITION)){
          $gi->databaseSegments = GEOIP_COUNTRY_BEGIN;
     }
