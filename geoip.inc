@@ -42,7 +42,7 @@ $GEOIP_COUNTRY_CODES = array(
 "SJ", "SK", "SL", "SM", "SN", "SO", "SR", "ST", "SV", "SY", "SZ", "TC", "TD",
 "TF", "TG", "TH", "TJ", "TK", "TM", "TN", "TO", "TP", "TR", "TT", "TV", "TW",
 "TZ", "UA", "UG", "UM", "US", "UY", "UZ", "VA", "VC", "VE", "VG", "VI", "VN",
-"VU", "WF", "WS", "YE", "YT", "YU", "ZA", "ZM", "ZR", "ZW"
+"VU", "WF", "WS", "YE", "YT", "YU", "ZA", "ZM", "ZR", "ZW", "A1", "A2", "O1"
 );
 
 $GEOIP_COUNTRY_CODES3 = array (
@@ -115,7 +115,8 @@ Territories", "Togo", "Thailand", "Tajikistan", "Tokelau", "Turkmenistan",
 "Uzbekistan", "Holy See (Vatican City State)", "Saint Vincent and the
 Grenadines", "Venezuela", "Virgin Islands, British", "Virgin Islands, U.S.",
 "Vietnam", "Vanuatu", "Wallis and Futuna", "Samoa", "Yemen", "Mayotte",
-"Yugoslavia", "South Africa", "Zambia", "Zaire", "Zimbabwe"
+"Yugoslavia", "South Africa", "Zambia", "Zaire", "Zimbabwe",
+"Anonymous Proxy","Satellite Provider","Other"
 );
 
 define("GEOIP_COUNTRY_BEGIN", 16776960);
