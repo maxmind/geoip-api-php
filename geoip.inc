@@ -110,7 +110,7 @@ Occupied", "Portugal", "Palau", "Paraguay", "Qatar", "Reunion", "Romania",
 Republic", "Swaziland", "Turks and Caicos Islands", "Chad", "French Southern
 Territories", "Togo", "Thailand", "Tajikistan", "Tokelau", "Turkmenistan",
 "Tunisia", "Tonga", "East Timor", "Turkey", "Trinidad and Tobago", "Tuvalu",
-"Taiwan, Province of China", "Tanzania, United Republic of", "Ukraine",
+"Taiwan", "Tanzania, United Republic of", "Ukraine",
 "Uganda", "United States Minor Outlying Islands", "United States", "Uruguay",
 "Uzbekistan", "Holy See (Vatican City State)", "Saint Vincent and the
 Grenadines", "Venezuela", "Virgin Islands, British", "Virgin Islands, U.S.",
