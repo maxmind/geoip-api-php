@@ -3,7 +3,7 @@
 
 include("geoip.inc");
 
-$gi = geoip_open("/usr/local/share/GeoIP/GeoIPNetspeed.dat",GEOIP_STANDARD);
+$gi = geoip_open("/usr/local/share/GeoIP/GeoIPNetSpeed.dat",GEOIP_STANDARD);
 
 $netspeed = geoip_country_id_by_addr($gi,"24.24.24.24");
 
