@@ -1,0 +1,21 @@
+Requirements
+
+None (only the 'GeoIP.dat' file is needed).  To download a free March 2002
+database, go to
+http://maxmind.com/download/geoip/database/
+
+Install
+
+Just place the 'geoip.inc.php' file somewhere according to the 'include_path' directive of
+your 'php.ini' file.
+Edit the 'geoip.inc.php' file and change the value of the  'GeoIP_DATADIR' constant in
+order to match the location of your 'GeoIP.dat' file.
+
+Usage
+
+Gets country name by hostname :
+
+require('geoip.inc.php');
+
+$my_geoip = new GeoIP();
+echo $my_geoip->Country_name_by_name("amazon.com");
