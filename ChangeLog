@@ -1,6 +1,7 @@
 1.2	2003-10-28
 	* Added support for Shared Memory
 	* Added support for Distributed queries
+	* Added support for GeoIP Region, version 1
 	* Added Anonymous Proxy and Satellite Provider code/labels
 	* Changed Taiwan, Province of China to Taiwan
 

@@ -3,7 +3,7 @@
 /* -*- Mode: C; indent-tabs-mode: t; c-basic-offset: 2; tab-width: 2 -*- */
 /* geoipcity.inc
  *
- * Copyright (C) 2002 MaxMind
+ * Copyright (C) 2003 Maxmind LLC
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public
@@ -22,6 +22,7 @@
 
 define("FULL_RECORD_LENGTH",50);
 include("geoip.inc");
+include("geoipregionvars.php");
 
 class geoiprecord {
   var $country_code;
@@ -36,7 +37,10 @@ class geoiprecord {
 
 class geoipdnsrecord {
   var $country_code;
+  var $country_code3;
+  var $country_name;
   var $region;
+  var $regionname;
   var $city;
   var $postal_code;
   var $latitude;
@@ -83,6 +87,16 @@ function getrecordwithdnsservice($str){
       $record->longitude = $value;
     }
   }
+  $number = $GLOBALS['GEOIP_COUNTRY_CODE_TO_NUMBER'][$record->country_code];
+  $record->country_code3 = $GLOBALS['GEOIP_COUNTRY_CODES3'][$number];
+  $record->country_name = $GLOBALS['GEOIP_COUNTRY_NAMES'][$number];
+  if (($record->country_code == "US")|($record->country_code == "CA")){
+    $record->regionname = $GLOBALS['ISO'][$record->country_code][$record->region];
+  }else{
+    $record->regionname = $GLOBALS['FIPS'][$record->country_code][$record->region];
+  }
+  #ereg("\"(.*)\"",$record->regionname,$regs);
+  #$record->regionname = $regs[1];
   return $record;
 }
 
