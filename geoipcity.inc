@@ -33,6 +33,8 @@ class geoiprecord {
   var $postal_code;
   var $latitude;
   var $longitude;
+  var $area_code;
+  var $dma_code;
 }
 
 class geoipdnsrecord {
@@ -167,6 +169,17 @@ function _get_record($gi,$ipnum){
   }
   $record->longitude = ($longitude/10000) - 180;
 
+  if (GEOIP_CITY_EDITION_REV1 == $gi->databaseType){
+    $dmaarea_combo = 0;
+    if ($record->country_code == "US"){
+      for ($j = 0;$j < 3;++$j){
+        $char = ord(substr($record_buf,$record_buf_pos++,1));
+        $dmaarea_combo += ($char << ($j * 8));
+      }
+      $record->dma_code = floor($dmaarea_combo/1000);
+      $record->area_code = $dmaarea_combo%1000;
+    }
+  }
   return $record;
 }
 

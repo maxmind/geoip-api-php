@@ -174,7 +174,8 @@ define("DATABASE_INFO_MAX_SIZE",100);
 define("GEOIP_COUNTRY_EDITION",106);
 define("GEOIP_REGION_EDITION_REV0",112);
 define("GEOIP_REGION_EDITION_REV1",3);
-define("GEOIP_CITY_EDITION",111);
+define("GEOIP_CITY_EDITION_REV0",111);
+define("GEOIP_CITY_EDITION_REV1",2);
 define("GEOIP_ORG_EDITION",110);
 define("SEGMENT_RECORD_LENGTH",3);
 define("STANDARD_RECORD_LENGTH",3);
@@ -235,8 +236,9 @@ function _setup_segments($gi){
             else if ($gi->databaseType == GEOIP_REGION_EDITION_REV1){
                 $gi->databaseSegments = GEOIP_STATE_BEGIN_REV1;
 	    }
-            else if ($gi->databaseType == GEOIP_CITY_EDITION 
-                    || $gi->databaseType == GEOIP_ORG_EDITION){
+            else if (($gi->databaseType == GEOIP_CITY_EDITION_REV0)||
+                     ($gi->databaseType == GEOIP_CITY_EDITION_REV1) 
+                    || ($gi->databaseType == GEOIP_ORG_EDITION)){
                 $gi->databaseSegments = 0;
                 $buf = shmop_read ($gi->shmid, $offset, SEGMENT_RECORD_LENGTH);
                 for ($j = 0;$j < SEGMENT_RECORD_LENGTH;$j++){
@@ -270,7 +272,9 @@ function _setup_segments($gi){
         else if ($gi->databaseType == GEOIP_REGION_EDITION_REV1){
 	    $gi->databaseSegments = GEOIP_STATE_BEGIN_REV1;
 	} 
-        else if ($gi->databaseType == GEOIP_CITY_EDITION || $gi->databaseType == GEOIP_ORG_EDITION){
+        else if (($gi->databaseType == GEOIP_CITY_EDITION_REV0) || 
+                 ($gi->databaseType == GEOIP_CITY_EDITION_REV1) || 
+                 ($gi->databaseType == GEOIP_ORG_EDITION)){
             $gi->databaseSegments = 0;
             $buf = fread($gi->filehandle,SEGMENT_RECORD_LENGTH);
             for ($j = 0;$j < SEGMENT_RECORD_LENGTH;$j++){
