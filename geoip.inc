@@ -120,14 +120,16 @@ Grenadines", "Venezuela", "Virgin Islands, British", "Virgin Islands, U.S.",
 );
 
 define("GEOIP_COUNTRY_BEGIN", 16776960);
-define("GEOIP_STATE_BEGIN", 16700000);
+define("GEOIP_STATE_BEGIN_REV0", 16700000);
+define("GEOIP_STATE_BEGIN_REV1", 16000000);
 define("GEOIP_STANDARD", 0);
 define("GEOIP_MEMORY_CACHE", 1);
 define("GEOIP_SHARED_MEMORY", 2);
 define("STRUCTURE_INFO_MAX_SIZE",20);
 define("DATABASE_INFO_MAX_SIZE",100);
 define("GEOIP_COUNTRY_EDITION",106);
-define("GEOIP_REGION_EDITION",112);
+define("GEOIP_REGION_EDITION_REV0",112);
+define("GEOIP_REGION_EDITION_REV1",3);
 define("GEOIP_CITY_EDITION",111);
 define("GEOIP_ORG_EDITION",110);
 define("SEGMENT_RECORD_LENGTH",3);
@@ -136,6 +138,10 @@ define("ORG_RECORD_LENGTH",4);
 define("MAX_RECORD_LENGTH",4);
 define("MAX_ORG_RECORD_LENGTH",300);
 define("GEOIP_SHM_KEY", 0x4f415401);
+define("US_OFFSET",1);
+define("CANADA_OFFSET",677);
+define("WORLD_OFFSET",1353);
+define("FIPS_RANGE",360);
 
 class GeoIP {
   var $flags;
@@ -180,9 +186,12 @@ function _setup_segments($gi){
             $gi->databaseType = ord(shmop_read ($gi->shmid, $offset, 1));
             $offset++;
 
-            if ($gi->databaseType == GEOIP_REGION_EDITION){
-                $gi->databaseSegments = GEOIP_STATE_BEGIN;
+            if ($gi->databaseType == GEOIP_REGION_EDITION_REV0){
+                $gi->databaseSegments = GEOIP_STATE_BEGIN_REV0;
             }
+            else if ($gi->databaseType == GEOIP_REGION_EDITION_REV1){
+                $gi->databaseSegments = GEOIP_STATE_BEGIN_REV1;
+	    }
             else if ($gi->databaseType == GEOIP_CITY_EDITION 
                     || $gi->databaseType == GEOIP_ORG_EDITION){
                 $gi->databaseSegments = 0;
@@ -212,9 +221,13 @@ function _setup_segments($gi){
         $delim = fread($gi->filehandle,3);
         if ($delim == (chr(255).chr(255).chr(255))){
         $gi->databaseType = ord(fread($gi->filehandle,1));
-        if ($gi->databaseType == GEOIP_REGION_EDITION){
-            $gi->databaseSegments = GEOIP_STATE_BEGIN;
-        } else if ($gi->databaseType == GEOIP_CITY_EDITION || $gi->databaseType == GEOIP_ORG_EDITION){
+        if ($gi->databaseType == GEOIP_REGION_EDITION_REV0){
+            $gi->databaseSegments = GEOIP_STATE_BEGIN_REV0;
+        } 
+        else if ($gi->databaseType == GEOIP_REGION_EDITION_REV1){
+	    $gi->databaseSegments = GEOIP_STATE_BEGIN_REV1;
+	} 
+        else if ($gi->databaseType == GEOIP_CITY_EDITION || $gi->databaseType == GEOIP_ORG_EDITION){
             $gi->databaseSegments = 0;
             $buf = fread($gi->filehandle,SEGMENT_RECORD_LENGTH);
             for ($j = 0;$j < SEGMENT_RECORD_LENGTH;$j++){
@@ -374,15 +387,37 @@ function geoip_org_by_addr ($gi,$addr) {
 }
 
 function _get_region($gi,$ipnum){
-  $seek_region = _geoip_seek_country($gi,$ipnum) - GEOIP_STATE_BEGIN;
-  if ($seek_region >= 1000){
-    $country_code = "US";
-    $region = chr(($seek_region - 1000)/26 + 65) . chr(($seek_region - 1000)%26 + 65);
-  } else {
-    $country_code = $GLOBALS['GEOIP_COUNTRY_CODES'][$seek_region];
-    $region = "";
-  }
+  if ($gi->databaseType == GEOIP_REGION_EDITION_REV0){
+    $seek_region = _geoip_seek_country($gi,$ipnum) - GEOIP_STATE_BEGIN_REV0;
+    if ($seek_region >= 1000){
+      $country_code = "US";
+      $region = chr(($seek_region - 1000)/26 + 65) . chr(($seek_region - 1000)%26 + 65);
+    } else {
+      $country_code = $GLOBALS['GEOIP_COUNTRY_CODES'][$seek_region];
+      $region = "";
+    }
   return array ($country_code,$region);
+  }
+  else if ($gi->databaseType == GEOIP_REGION_EDITION_REV1){
+    $seek_region = _geoip_seek_country($gi,$ipnum) - GEOIP_STATE_BEGIN_REV1;
+    //print $seek_region;
+    if ($seek_region < US_OFFSET){
+      $country_code = "";
+      $region = "";  
+    }
+    else if ($seek_region < CANADA_OFFSET){
+      $country_code = "US";
+      $region = chr(($seek_region - US_OFFSET)/26 + 65) . chr(($seek_region - US_OFFSET)%26 + 65);
+    }
+    else if ($seek_region < WORLD_OFFSET){
+      $country_code = "CA";
+      $region = chr(($seek_region - CANADA_OFFSET)/26 + 65) . chr(($seek_region - CANADA_OFFSET)%26 + 65);
+    } else {
+      $country_code = $GLOBALS['GEOIP_COUNTRY_CODES'][($seek_region - WORLD_OFFSET) / FIPS_RANGE];
+      $region = "";
+    }
+  return array ($country_code,$region);
+  }
 }
 
 function geoip_region_by_addr ($gi,$addr) {

@@ -12,6 +12,8 @@ list ($countrycode,$region) = geoip_region_by_addr($gi,"24.24.24.24");
 print $countrycode . " " . $region . "\n";
 list ($countrycode,$region) = geoip_region_by_addr($gi,"80.24.24.24");
 print $countrycode . " " . $region . "\n";
+list ($countrycode,$region) = geoip_region_by_addr($gi,"199.243.137.184");
+print $countrycode . " " . $region . "\n";
 geoip_close($gi);
 
 ?>
