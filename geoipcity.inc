@@ -34,6 +34,58 @@ class geoiprecord {
   var $longitude;
 }
 
+class geoipdnsrecord {
+  var $country_code;
+  var $region;
+  var $city;
+  var $postal_code;
+  var $latitude;
+  var $longitude;
+  var $areacode;
+  var $dmacode;
+  var $isp;
+  var $org;
+}
+
+function getrecordwithdnsservice($str){
+  $record = new geoipdnsrecord;
+  $keyvalue = split(";",$str);
+  foreach ($keyvalue as $keyvalue2){
+    list($key,$value) = split("=",$keyvalue2);
+    if ($key == "co"){
+      $record->country_code = $value;
+    }
+    if ($key == "ci"){
+      $record->city = $value;
+    }
+    if ($key == "re"){
+      $record->region = $value;
+    }
+    if ($key == "ac"){
+      $record->areacode = $value;
+    }
+    if ($key == "dm"){
+      $record->dmacode = $value;
+    }
+    if ($key == "is"){
+      $record->isp = $value;
+    }
+    if ($key == "or"){
+      $record->org = $value;
+    }
+    if ($key == "zi"){
+      $record->postal_code = $value;
+    }
+    if ($key == "la"){
+      $record->latitude = $value;
+    }
+    if ($key == "lo"){
+      $record->longitude = $value;
+    }
+  }
+  return $record;
+}
+
 function _get_record($gi,$ipnum){
   $seek_country = _geoip_seek_country($gi,$ipnum);
   if ($seek_country == $gi->databaseSegments) {
