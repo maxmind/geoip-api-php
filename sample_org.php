@@ -11,6 +11,11 @@ $gi = geoip_open("/usr/local/share/GeoIP/GeoIPOrg.dat",GEOIP_STANDARD);
 $org = geoip_org_by_addr($gi,"80.24.24.24");
 print "80.24.24.24 belongs to " . $org . "\n";
 
+$gi = geoip_open("/usr/local/share/GeoIP/GeoIPISP.dat",GEOIP_STANDARD);
+
+$isp = geoip_org_by_addr($gi,"80.24.24.24");
+print "80.24.24.24 has isp " . $isp . "\n";
+
 geoip_close($gi);
 
 ?>
