@@ -138,8 +138,8 @@ People's Republic of", "Korea, Republic of", "Kuwait", "Cayman Islands",
 "Kazakstan", "Lao People's Democratic Republic", "Lebanon", "Saint Lucia",
 "Liechtenstein", "Sri Lanka", "Liberia", "Lesotho", "Lithuania", "Luxembourg",
 "Latvia", "Libyan Arab Jamahiriya", "Morocco", "Monaco", "Moldova, Republic
-of", "Madagascar", "Marshall Islands", "Macedonia, the Former Yugoslav Republic
-of", "Mali", "Myanmar", "Mongolia", "Macau", "Northern Mariana Islands",
+of", "Madagascar", "Marshall Islands", "Macedonia",
+"Mali", "Myanmar", "Mongolia", "Macau", "Northern Mariana Islands",
 "Martinique", "Mauritania", "Montserrat", "Malta", "Mauritius", "Maldives",
 "Malawi", "Mexico", "Malaysia", "Mozambique", "Namibia", "New Caledonia",
 "Niger", "Norfolk Island", "Nigeria", "Nicaragua", "Netherlands", "Norway",
