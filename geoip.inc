@@ -475,7 +475,7 @@ function getdnsattributes ($l,$ip){
   $r = new Net_DNS_Resolver();
   $r->nameservers = array("ws1.maxmind.com");
   $p = $r->search($l."." . $ip .".s.maxmind.com","TXT","IN");
-  $str = $p->answer[0]->string();
+  $str = is_object($p->answer[0])?$p->answer[0]->string():'';
   ereg("\"(.*)\"",$str,$regs);
   $str = $regs[1];
   return $str;
