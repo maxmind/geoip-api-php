@@ -7,6 +7,10 @@
 
 include("geoipcity.inc");
 
+// uncomment for Shared Memory support
+// geoip_load_shared_mem("/usr/local/share/GeoIP/GeoIPCity.dat");
+// $gi = geoip_open("/usr/local/share/GeoIP/GeoIPCity.dat",GEOIP_SHARED_MEMORY);
+
 $gi = geoip_open("/usr/local/share/GeoIP/GeoIPCity.dat",GEOIP_STANDARD);
 
 $record = geoip_record_by_addr($gi,"67.242.4.86");
