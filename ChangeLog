@@ -1,3 +1,5 @@
+1.5	2005-11-1
+	* Added Shared Memory support for GeoIP City (Frank Mather)
 	* Replaced Yugoslavia with Serbia and Montenegro
 	* Removed global declaration for $GEOIP_COUNTRY_CODE_TO_NUMBER, $GEOIP_COUNTRY_CODES,
 		and $GEOIP_COUNTRY_CODES3 

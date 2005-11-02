@@ -27,6 +27,9 @@ geoip_close($gi);
 Memory Caching:
 To enable memory caching, pass GEOIP_SHARED_MEMORY or
 GEOIP_MEMORY_CACHE to the second argument of geoip_open
+For shared memory caching, must call geoip_load_shared_mem
+before calling geoip_open.  See sample_city.php for an
+example of shared memory caching.
 
 Working with PHP5.
 geoip_country_code_by_addr should work
