@@ -27,7 +27,11 @@ geoip_close($gi);
 Memory Caching:
 To enable memory caching, pass GEOIP_SHARED_MEMORY or
 GEOIP_MEMORY_CACHE to the second argument of geoip_open
-For shared memory caching, must call geoip_load_shared_mem
+
+For GEOIP_SHARED_MEMORY, requires php >= 4.0.4,
+and --enable-shmop passed at configure time, see
+http://us2.php.net/manual/en/ref.shmop.php
+In addition, you should call geoip_load_shared_mem
 before calling geoip_open.  See sample_city.php for an
 example of shared memory caching.
 
