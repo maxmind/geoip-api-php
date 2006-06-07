@@ -109,7 +109,7 @@ class GeoIP {
 "SM" => 198, "SN" => 199, "SO" => 200, "SR" => 201, "ST" => 202, "SV" => 203, 
 "SY" => 204, "SZ" => 205, "TC" => 206, "TD" => 207, "TF" => 208, "TG" => 209, 
 "TH" => 210, "TJ" => 211, "TK" => 212, "TM" => 213, "TN" => 214, "TO" => 215, 
-"TP" => 216, "TR" => 217, "TT" => 218, "TV" => 219, "TW" => 220, "TZ" => 221, 
+"TL" => 216, "TR" => 217, "TT" => 218, "TV" => 219, "TW" => 220, "TZ" => 221, 
 "UA" => 222, "UG" => 223, "UM" => 224, "US" => 225, "UY" => 226, "UZ" => 227, 
 "VA" => 228, "VC" => 229, "VE" => 230, "VG" => 231, "VI" => 232, "VN" => 233,
 "VU" => 234, "WF" => 235, "WS" => 236, "YE" => 237, "YT" => 238, "CS" => 239, 
@@ -133,7 +133,7 @@ class GeoIP {
 "PE", "PF", "PG", "PH", "PK", "PL", "PM", "PN", "PR", "PS", "PT", "PW", "PY",
 "QA", "RE", "RO", "RU", "RW", "SA", "SB", "SC", "SD", "SE", "SG", "SH", "SI",
 "SJ", "SK", "SL", "SM", "SN", "SO", "SR", "ST", "SV", "SY", "SZ", "TC", "TD",
-"TF", "TG", "TH", "TJ", "TK", "TM", "TN", "TO", "TP", "TR", "TT", "TV", "TW",
+"TF", "TG", "TH", "TJ", "TK", "TM", "TN", "TO", "TL", "TR", "TT", "TV", "TW",
 "TZ", "UA", "UG", "UM", "US", "UY", "UZ", "VA", "VC", "VE", "VG", "VI", "VN",
 "VU", "WF", "WS", "YE", "YT", "CS", "ZA", "ZM", "ZR", "ZW", "A1", "A2", "O1"
 );
@@ -201,7 +201,7 @@ Pierre and Miquelon", "Pitcairn Islands", "Puerto Rico", "Palestinian Territory"
 "Somalia", "Suriname", "Sao Tome and Principe", "El Salvador", "Syrian Arab
 Republic", "Swaziland", "Turks and Caicos Islands", "Chad", "French Southern
 Territories", "Togo", "Thailand", "Tajikistan", "Tokelau", "Turkmenistan",
-"Tunisia", "Tonga", "East Timor", "Turkey", "Trinidad and Tobago", "Tuvalu",
+"Tunisia", "Tonga", "Timor-Leste", "Turkey", "Trinidad and Tobago", "Tuvalu",
 "Taiwan", "Tanzania, United Republic of", "Ukraine",
 "Uganda", "United States Minor Outlying Islands", "United States", "Uruguay",
 "Uzbekistan", "Holy See (Vatican City State)", "Saint Vincent and the
