@@ -1,3 +1,4 @@
+	* Added code to lookup zoneinfo timezone given country and region (Frank Mather)
 	* TP/East Timor changed to TL/Timor-Leste, reflecting changes in ISO-3166
 
 1.5	2005-11-1
