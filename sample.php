@@ -2,6 +2,9 @@
 <?php
 
 // This code demonstrates how to lookup the country by IP Address
+// Note this code will only work with GeoIP/GeoLite Country
+// It will not work with GeoIP/GeoLite City
+// For an example of how to query GeoIP/GeoLite City, see sample_city.php
 
 include("geoip.inc");
 
