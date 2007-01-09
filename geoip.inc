@@ -3,7 +3,7 @@
 /* -*- Mode: C; indent-tabs-mode: t; c-basic-offset: 2; tab-width: 2 -*- */
 /* geoip.inc
  *
- * Copyright (C) 2004 MaxMind LLC
+ * Copyright (C) 2007 MaxMind LLC
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -18,17 +18,6 @@
  * You should have received a copy of the GNU Lesser General Public
  * License along with this library; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
- */
-
-/*
- * Changelog:
- *
- * 2005-01-13   Andrew Hill, Awarez Ltd. (http://www.awarez.net)
- *              Formatted file according to PEAR library standards.
- *              Moved $GEOIP_COUNTRY_CODE_TO_NUMBER, $GEOIP_COUNTRY_CODES,
- *                  $GEOIP_COUNTRY_CODES3 and $GEOIP_COUNTRY_NAMES into the
- *                  GeoIP class, so that library will still work even when
- *                  not included in the $GLOBAL context.
  */
 
 define("GEOIP_COUNTRY_BEGIN", 16776960);
@@ -114,7 +103,7 @@ class GeoIP {
 "VA" => 228, "VC" => 229, "VE" => 230, "VG" => 231, "VI" => 232, "VN" => 233,
 "VU" => 234, "WF" => 235, "WS" => 236, "YE" => 237, "YT" => 238, "RS" => 239, 
 "ZA" => 240, "ZM" => 241, "ME" => 242, "ZW" => 243, "A1" => 244, "A2" => 245, 
-"O1" => 246
+"O1" => 246, "AX" => 247, "GG" => 248, "IM" => 249, "JE" => 250
 );
     var $GEOIP_COUNTRY_CODES = array(
 "", "AP", "EU", "AD", "AE", "AF", "AG", "AI", "AL", "AM", "AN", "AO", "AQ",
@@ -135,7 +124,8 @@ class GeoIP {
 "SJ", "SK", "SL", "SM", "SN", "SO", "SR", "ST", "SV", "SY", "SZ", "TC", "TD",
 "TF", "TG", "TH", "TJ", "TK", "TM", "TN", "TO", "TL", "TR", "TT", "TV", "TW",
 "TZ", "UA", "UG", "UM", "US", "UY", "UZ", "VA", "VC", "VE", "VG", "VI", "VN",
-"VU", "WF", "WS", "YE", "YT", "RS", "ZA", "ZM", "ME", "ZW", "A1", "A2", "O1"
+"VU", "WF", "WS", "YE", "YT", "RS", "ZA", "ZM", "ME", "ZW", "A1", "A2", "O1",
+"AX", "GG", "IM", "JE"
 );
     var $GEOIP_COUNTRY_CODES3 = array(
 "","AP","EU","AND","ARE","AFG","ATG","AIA","ALB","ARM","ANT","AGO","AQ","ARG",
@@ -156,7 +146,8 @@ class GeoIP {
 "SVK","SLE","SMR","SEN","SOM","SUR","STP","SLV","SYR","SWZ","TCA","TCD","TF",
 "TGO","THA","TJK","TKL","TLS","TKM","TUN","TON","TUR","TTO","TUV","TWN","TZA",
 "UKR","UGA","UM","USA","URY","UZB","VAT","VCT","VEN","VGB","VIR","VNM","VUT",
-        "WLF","WSM","YEM","YT","SRB","ZAF","ZMB","MNE","ZWE","A1","A2","O1"
+"WLF","WSM","YEM","YT","SRB","ZAF","ZMB","MNE","ZWE","A1","A2","O1",
+"ALA","GGY","IMN","JEY"
     );
     var $GEOIP_COUNTRY_NAMES = array(
 "", "Asia/Pacific Region", "Europe", "Andorra", "United Arab Emirates",
@@ -208,7 +199,8 @@ Territories", "Togo", "Thailand", "Tajikistan", "Tokelau", "Turkmenistan",
 Grenadines", "Venezuela", "Virgin Islands, British", "Virgin Islands, U.S.",
 "Vietnam", "Vanuatu", "Wallis and Futuna", "Samoa", "Yemen", "Mayotte",
 "Serbia", "South Africa", "Zambia", "Montenegro", "Zimbabwe",
-"Anonymous Proxy","Satellite Provider","Other"
+"Anonymous Proxy","Satellite Provider","Other",
+"Aland Islands","Guernsey","Isle of Man","Jersey"
 );
 }
 function geoip_load_shared_mem ($file) {
