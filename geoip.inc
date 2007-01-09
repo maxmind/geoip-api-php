@@ -366,17 +366,27 @@ function geoip_country_id_by_addr($gi, $addr) {
 }
 
 function geoip_country_code_by_addr($gi, $addr) {
-  $country_id = geoip_country_id_by_addr($gi,$addr);
-  if ($country_id !== false) {
-    return $gi->GEOIP_COUNTRY_CODES[$country_id];
+  if ($gi->databaseType == GEOIP_CITY_EDITION_REV1) {
+    $record = GeoIP_record_by_addr($gi,$addr);
+    return $record->country_code;
+  } else {
+    $country_id = geoip_country_id_by_addr($gi,$addr);
+    if ($country_id !== false) {
+      return $gi->GEOIP_COUNTRY_CODES[$country_id];
+    }
   }
   return false;
 }
 
 function geoip_country_name_by_addr($gi, $addr) {
-  $country_id = geoip_country_id_by_addr($gi,$addr);
-  if ($country_id !== false) {
-        return $gi->GEOIP_COUNTRY_NAMES[$country_id];
+  if ($gi->databaseType == GEOIP_CITY_EDITION_REV1) {
+    $record = GeoIP_record_by_addr($gi,$addr);
+    return $record->country_name;
+  } else {
+    $country_id = geoip_country_id_by_addr($gi,$addr);
+    if ($country_id !== false) {
+      return $gi->GEOIP_COUNTRY_NAMES[$country_id];
+    }
   }
   return false;
 }
