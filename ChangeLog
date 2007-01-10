@@ -1,3 +1,7 @@
+1.6	2006-1-10
+	* Added AX/Aland Islands, GG/Guernsey, IM/Isle of Man, JE/Jersey (ISO-3166-1 changes)
+	* Replaced CS/Serbia and Montenegro with RS/Serbia, removed ZR/Zaire, added ME/Montenegro
+	* geoip_country_(code|name)_by_addr now work against Geo(IP|Lite) City (Frank Mather)
 	* Added code to lookup zoneinfo timezone given country and region (Frank Mather)
 	* TP/East Timor changed to TL/Timor-Leste, reflecting changes in ISO-3166
 
