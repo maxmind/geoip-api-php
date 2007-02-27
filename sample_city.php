@@ -9,6 +9,7 @@
 // The old format (GEO-132) will not work.
 
 include("geoipcity.inc");
+include("geoipregionvars.php");
 
 // uncomment for Shared Memory support
 // geoip_load_shared_mem("/usr/local/share/GeoIP/GeoIPCity.dat");
@@ -16,9 +17,9 @@ include("geoipcity.inc");
 
 $gi = geoip_open("/usr/local/share/GeoIP/GeoIPCity.dat",GEOIP_STANDARD);
 
-$record = geoip_record_by_addr($gi,"67.242.4.86");
+$record = geoip_record_by_addr($gi,"24.24.24.24");
 print $record->country_code . " " . $record->country_code3 . " " . $record->country_name . "\n";
-print $record->region . "\n";
+print $record->region . " " . $GEOIP_REGION_NAME[$record->country_code][$record->region] . "\n";
 print $record->city . "\n";
 print $record->postal_code . "\n";
 print $record->latitude . "\n";
