@@ -312,7 +312,7 @@ function geoip_open($filename, $flags) {
     $gi->filehandle = fopen($filename,"rb");
     if ($gi->flags & GEOIP_MEMORY_CACHE) {
         $s_array = fstat($gi->filehandle);
-        $gi->memory_buffer = fread($gi->filehandle, $s_array[size]);
+        $gi->memory_buffer = fread($gi->filehandle, $s_array['size']);
     }
   }
 
