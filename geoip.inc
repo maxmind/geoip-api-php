@@ -284,7 +284,8 @@ function _setup_segments($gi){
             for ($j = 0;$j < SEGMENT_RECORD_LENGTH;$j++){
             $gi->databaseSegments += (ord($buf[$j]) << ($j * 8));
             }
-	    if ($gi->databaseType == GEOIP_ORG_EDITION) {
+	    if ($gi->databaseType == GEOIP_ORG_EDITION ||
+		$gi->databaseType == GEOIP_ISP_EDITION) {
 	    $gi->record_length = ORG_RECORD_LENGTH;
             }
         }
