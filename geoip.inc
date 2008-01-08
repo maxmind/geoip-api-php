@@ -103,7 +103,8 @@ class GeoIP {
 "VA" => 228, "VC" => 229, "VE" => 230, "VG" => 231, "VI" => 232, "VN" => 233,
 "VU" => 234, "WF" => 235, "WS" => 236, "YE" => 237, "YT" => 238, "RS" => 239, 
 "ZA" => 240, "ZM" => 241, "ME" => 242, "ZW" => 243, "A1" => 244, "A2" => 245, 
-"O1" => 246, "AX" => 247, "GG" => 248, "IM" => 249, "JE" => 250
+"O1" => 246, "AX" => 247, "GG" => 248, "IM" => 249, "JE" => 250, "BL" => 251,
+"MF" => 252
 );
     var $GEOIP_COUNTRY_CODES = array(
 "", "AP", "EU", "AD", "AE", "AF", "AG", "AI", "AL", "AM", "AN", "AO", "AQ",
@@ -125,7 +126,7 @@ class GeoIP {
 "TF", "TG", "TH", "TJ", "TK", "TM", "TN", "TO", "TL", "TR", "TT", "TV", "TW",
 "TZ", "UA", "UG", "UM", "US", "UY", "UZ", "VA", "VC", "VE", "VG", "VI", "VN",
 "VU", "WF", "WS", "YE", "YT", "RS", "ZA", "ZM", "ME", "ZW", "A1", "A2", "O1",
-"AX", "GG", "IM", "JE"
+"AX", "GG", "IM", "JE", "BL", "MF"
 );
     var $GEOIP_COUNTRY_CODES3 = array(
 "","AP","EU","AND","ARE","AFG","ATG","AIA","ALB","ARM","ANT","AGO","AQ","ARG",
@@ -147,7 +148,7 @@ class GeoIP {
 "TGO","THA","TJK","TKL","TLS","TKM","TUN","TON","TUR","TTO","TUV","TWN","TZA",
 "UKR","UGA","UM","USA","URY","UZB","VAT","VCT","VEN","VGB","VIR","VNM","VUT",
 "WLF","WSM","YEM","YT","SRB","ZAF","ZMB","MNE","ZWE","A1","A2","O1",
-"ALA","GGY","IMN","JEY"
+"ALA","GGY","IMN","JEY","BLM","MAF"
     );
     var $GEOIP_COUNTRY_NAMES = array(
 "", "Asia/Pacific Region", "Europe", "Andorra", "United Arab Emirates",
@@ -200,7 +201,7 @@ class GeoIP {
 "Vietnam", "Vanuatu", "Wallis and Futuna", "Samoa", "Yemen", "Mayotte",
 "Serbia", "South Africa", "Zambia", "Montenegro", "Zimbabwe",
 "Anonymous Proxy","Satellite Provider","Other",
-"Aland Islands","Guernsey","Isle of Man","Jersey"
+"Aland Islands","Guernsey","Isle of Man","Jersey","Saint Barthelemy","Saint Martin"
 );
 }
 function geoip_load_shared_mem ($file) {
