@@ -1,3 +1,7 @@
+1.7	2008-1-8
+	* Added BL/Saint Barthelemy, MF/Saint Martin (ISO-3166-1 additions)
+	* fixed bug with newlines in Country Name
+	* replaced $s_array[size] with $s_array['size'] (Daniel Horchner)
 	* Fix bug where PHP API didn't work with new edition of GeoIP ISP
 
 1.6	2007-1-10
