@@ -311,7 +311,7 @@ function geoip_open($filename, $flags) {
   if ($gi->flags & GEOIP_SHARED_MEMORY) {
     $gi->shmid = @shmop_open (GEOIP_SHM_KEY, "a", 0, 0);
     } else {
-    $gi->filehandle = fopen($filename,"rb");
+    $gi->filehandle = fopen($filename,"rb") or die( "Can not open $filename\n" );
     if ($gi->flags & GEOIP_MEMORY_CACHE) {
         $s_array = fstat($gi->filehandle);
         $gi->memory_buffer = fread($gi->filehandle, $s_array['size']);
