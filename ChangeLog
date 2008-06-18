@@ -1,3 +1,4 @@
+	* update regions ( geoipregionvars.php ) ( Boris Zentner )
 	* Die when the database file is not found or readable ( Boris Zentner ) 
 1.7	2008-1-8
 	* Added BL/Saint Barthelemy, MF/Saint Martin (ISO-3166-1 additions)
