@@ -1,3 +1,4 @@
+	* remove wrong but unreferenced Singapur SG fips regions codes ( Boris Zentner )  
 	* update regions ( geoipregionvars.php ) ( Boris Zentner )
 	* Die when the database file is not found or readable ( Boris Zentner ) 
 1.7	2008-1-8
