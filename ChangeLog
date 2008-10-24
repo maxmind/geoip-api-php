@@ -1,3 +1,4 @@
+	* replace the depreciated dma_code field with metro_code ( Boris Zentner )
 	* remove wrong but unreferenced Singapur SG fips regions codes ( Boris Zentner )  
 	* update regions ( geoipregionvars.php ) ( Boris Zentner )
 	* Die when the database file is not found or readable ( Boris Zentner ) 
