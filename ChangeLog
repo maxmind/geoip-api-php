@@ -1,3 +1,4 @@
+	* use metro_code in sample_city.php ( Boris Zentner )  
 	* replace the depreciated dma_code field with metro_code ( Boris Zentner )
 	* remove wrong but unreferenced Singapur SG fips regions codes ( Boris Zentner )  
 	* update regions ( geoipregionvars.php ) ( Boris Zentner )

@@ -24,7 +24,7 @@ print $record->city . "\n";
 print $record->postal_code . "\n";
 print $record->latitude . "\n";
 print $record->longitude . "\n";
-print $record->dma_code . "\n";
+print $record->metro_code . "\n";
 print $record->area_code . "\n";
 
 geoip_close($gi);
