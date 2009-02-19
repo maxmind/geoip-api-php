@@ -362,7 +362,9 @@ function geoip_country_id_by_addr($gi, $addr) {
 function geoip_country_code_by_addr($gi, $addr) {
   if ($gi->databaseType == GEOIP_CITY_EDITION_REV1) {
     $record = geoip_record_by_addr($gi,$addr);
-    return $record->country_code;
+    if ( $record !== false ) {
+      return $record->country_code;
+    }
   } else {
     $country_id = geoip_country_id_by_addr($gi,$addr);
     if ($country_id !== false) {
