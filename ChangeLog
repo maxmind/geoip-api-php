@@ -1,3 +1,4 @@
+	* Fix TN FIPS codes and add two new TH79 and TH80 ( Boris Zentner )
 	* Fix geoip_country_code_by_addr when used with a city database for unknown or private records ( cpw )
 	* Update timezone.php
 	* Sync geoipregionvars.php with fips codes from Jan, 14th 2009 ( Boris Zentner )
