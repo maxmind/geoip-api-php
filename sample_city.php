@@ -26,6 +26,7 @@ print $record->latitude . "\n";
 print $record->longitude . "\n";
 print $record->metro_code . "\n";
 print $record->area_code . "\n";
+print $record->continent_code . "\n";
 
 geoip_close($gi);
 

@@ -45,6 +45,7 @@ class geoiprecord {
   var $area_code;
   var $dma_code;   # metro and dma code are the same. use metro_code
   var $metro_code;
+  var $continent_code;
 }
 
 class geoipdnsrecord {
@@ -135,6 +136,7 @@ function _get_record($gi,$ipnum){
     $record->country_code = $gi->GEOIP_COUNTRY_CODES[$char];
     $record->country_code3 = $gi->GEOIP_COUNTRY_CODES3[$char];
     $record->country_name = $gi->GEOIP_COUNTRY_NAMES[$char];
+  $record->continent_code = $gi->GEOIP_CONTINENT_CODES[$char];
   $record_buf_pos++;
   $str_length = 0;
     // Get region

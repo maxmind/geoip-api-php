@@ -8,7 +8,7 @@ include("geoip.inc");
 // Uncomment if querying against GeoIP/Lite City.
 // include("geoipcity.inc");
 
-$gi = geoip_open("/usr/local/share/GeoIP/GeoIPCity.dat",GEOIP_STANDARD);
+$gi = geoip_open("/usr/local/share/GeoIP/GeoIP.dat",GEOIP_STANDARD);
 
 echo geoip_country_code_by_addr($gi, "24.24.24.24") . "\t" .
      geoip_country_name_by_addr($gi, "24.24.24.24") . "\n";
