@@ -226,7 +226,7 @@ class GeoIP {
 "OC", "SA", "AS", "AF", "EU", "AS", "AF", "AS", "OC", "AF",
 "AF", "EU", "AS", "AF", "EU", "EU", "EU", "AF", "EU", "AF",
 "AF", "SA", "AF", "SA", "AS", "AF", "SA", "AF", "AF", "AF",
-"AS", "AS", "OC", "AS", "AF", "OC", "AS", "AS", "SA", "OC",
+"AS", "AS", "OC", "AS", "AF", "OC", "AS", "EU", "SA", "OC",
 "AS", "AF", "EU", "AF", "OC", "NA", "SA", "AS", "EU", "SA",
 "SA", "SA", "SA", "AS", "OC", "OC", "OC", "AS", "AF", "EU",
 "AF", "AF", "EU", "AF", "--", "--", "--", "EU", "EU", "EU",
