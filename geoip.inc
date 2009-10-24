@@ -420,10 +420,17 @@ function _geoip_seek_country($gi, $ipnum) {
   $offset = 0;
   for ($depth = 31; $depth >= 0; --$depth) {
     if ($gi->flags & GEOIP_MEMORY_CACHE) {
+      // workaround php's broken substr, strpos, etc handling with
+      // mbstring.func_overload and mbstring.internal_encoding
+      $enc = mb_internal_encoding();
+       mb_internal_encoding('ISO-8859-1'); 
+
       $buf = substr($gi->memory_buffer,
                             2 * $gi->record_length * $offset,
                             2 * $gi->record_length);
-        } elseif ($gi->flags & GEOIP_SHARED_MEMORY) {
+
+      mb_internal_encoding($enc);
+    } elseif ($gi->flags & GEOIP_SHARED_MEMORY) {
       $buf = @shmop_read ($gi->shmid, 
                             2 * $gi->record_length * $offset,
                             2 * $gi->record_length );
@@ -466,7 +473,12 @@ function _get_org($gi,$ipnum){
     fseek($gi->filehandle, $record_pointer, SEEK_SET);
     $org_buf = fread($gi->filehandle,MAX_ORG_RECORD_LENGTH);
   }
+  // workaround php's broken substr, strpos, etc handling with
+  // mbstring.func_overload and mbstring.internal_encoding
+  $enc = mb_internal_encoding();
+  mb_internal_encoding('ISO-8859-1'); 
   $org_buf = substr($org_buf, 0, strpos($org_buf, 0));
+  mb_internal_encoding($enc);
   return $org_buf;
 }
 

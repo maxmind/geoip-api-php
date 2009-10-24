@@ -1,3 +1,5 @@
+	* Workaround php's broken usage of mb_substr instead of substr with
+	mbstring.func_overload and mbstring.internal_encoding ( Boris Zentner )
 	* Change Turkey's continent code from AS to EU ( Boris Zentner )
 	* Update FIPS codes 20090723 ( Boris Zentner )
 1.8	2009-04-02
