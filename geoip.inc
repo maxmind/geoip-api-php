@@ -52,6 +52,11 @@ define("GEOIP_UNKNOWN_SPEED", 0);
 define("GEOIP_DIALUP_SPEED", 1);
 define("GEOIP_CABLEDSL_SPEED", 2);
 define("GEOIP_CORPORATE_SPEED", 3);
+define("GEOIP_DOMAIN_EDITION", 11);
+define("GEOIP_LOCATIONA_EDITION", 13);
+define("GEOIP_ACCURACYRADIUS_EDITION", 14);
+define("GEOIP_CITYCOMBINED_EDITION", 15);
+define("CITYCOMBINED_FIXED_RECORD", 7 );
 
 class GeoIP {
     var $flags;
@@ -129,14 +134,14 @@ class GeoIP {
 "AX", "GG", "IM", "JE", "BL", "MF"
 );
     var $GEOIP_COUNTRY_CODES3 = array(
-"","AP","EU","AND","ARE","AFG","ATG","AIA","ALB","ARM","ANT","AGO","AQ","ARG",
+"","AP","EU","AND","ARE","AFG","ATG","AIA","ALB","ARM","ANT","AGO","ATA","ARG",
 "ASM","AUT","AUS","ABW","AZE","BIH","BRB","BGD","BEL","BFA","BGR","BHR","BDI",
-"BEN","BMU","BRN","BOL","BRA","BHS","BTN","BV","BWA","BLR","BLZ","CAN","CC",
+"BEN","BMU","BRN","BOL","BRA","BHS","BTN","BVT","BWA","BLR","BLZ","CAN","CCK",
 "COD","CAF","COG","CHE","CIV","COK","CHL","CMR","CHN","COL","CRI","CUB","CPV",
-"CX","CYP","CZE","DEU","DJI","DNK","DMA","DOM","DZA","ECU","EST","EGY","ESH",
+"CXR","CYP","CZE","DEU","DJI","DNK","DMA","DOM","DZA","ECU","EST","EGY","ESH",
 "ERI","ESP","ETH","FIN","FJI","FLK","FSM","FRO","FRA","FX","GAB","GBR","GRD",
-"GEO","GUF","GHA","GIB","GRL","GMB","GIN","GLP","GNQ","GRC","GS","GTM","GUM",
-"GNB","GUY","HKG","HM","HND","HRV","HTI","HUN","IDN","IRL","ISR","IND","IO",
+"GEO","GUF","GHA","GIB","GRL","GMB","GIN","GLP","GNQ","GRC","SGS","GTM","GUM",
+"GNB","GUY","HKG","HMD","HND","HRV","HTI","HUN","IDN","IRL","ISR","IND","IOT",
 "IRQ","IRN","ISL","ITA","JAM","JOR","JPN","KEN","KGZ","KHM","KIR","COM","KNA",
 "PRK","KOR","KWT","CYM","KAZ","LAO","LBN","LCA","LIE","LKA","LBR","LSO","LTU",
 "LUX","LVA","LBY","MAR","MCO","MDA","MDG","MHL","MKD","MLI","MMR","MNG","MAC",
@@ -144,10 +149,10 @@ class GeoIP {
 "NER","NFK","NGA","NIC","NLD","NOR","NPL","NRU","NIU","NZL","OMN","PAN","PER",
 "PYF","PNG","PHL","PAK","POL","SPM","PCN","PRI","PSE","PRT","PLW","PRY","QAT",
 "REU","ROU","RUS","RWA","SAU","SLB","SYC","SDN","SWE","SGP","SHN","SVN","SJM",
-"SVK","SLE","SMR","SEN","SOM","SUR","STP","SLV","SYR","SWZ","TCA","TCD","TF",
+"SVK","SLE","SMR","SEN","SOM","SUR","STP","SLV","SYR","SWZ","TCA","TCD","ATF",
 "TGO","THA","TJK","TKL","TLS","TKM","TUN","TON","TUR","TTO","TUV","TWN","TZA",
-"UKR","UGA","UM","USA","URY","UZB","VAT","VCT","VEN","VGB","VIR","VNM","VUT",
-"WLF","WSM","YEM","YT","SRB","ZAF","ZMB","MNE","ZWE","A1","A2","O1",
+"UKR","UGA","UMI","USA","URY","UZB","VAT","VCT","VEN","VGB","VIR","VNM","VUT",
+"WLF","WSM","YEM","MYT","SRB","ZAF","ZMB","MNE","ZWE","A1","A2","O1",
 "ALA","GGY","IMN","JEY","BLM","MAF"
     );
     var $GEOIP_COUNTRY_NAMES = array(
@@ -205,32 +210,33 @@ class GeoIP {
 );
 
     var $GEOIP_CONTINENT_CODES = array(
-"--", "AS", "EU", "EU", "AS", "AS", "SA", "SA", "EU", "AS",
-"SA", "AF", "AN", "SA", "OC", "EU", "OC", "SA", "AS", "EU",
-"SA", "AS", "EU", "AF", "EU", "AS", "AF", "AF", "SA", "AS",
-"SA", "SA", "SA", "AS", "AF", "AF", "EU", "SA", "NA", "AS",
-"AF", "AF", "AF", "EU", "AF", "OC", "SA", "AF", "AS", "SA",
-"SA", "SA", "AF", "AS", "AS", "EU", "EU", "AF", "EU", "SA",
-"SA", "AF", "SA", "EU", "AF", "AF", "AF", "EU", "AF", "EU",
-"OC", "SA", "OC", "EU", "EU", "EU", "AF", "EU", "SA", "AS",
-"SA", "AF", "EU", "SA", "AF", "AF", "SA", "AF", "EU", "SA",
-"SA", "OC", "AF", "SA", "AS", "AF", "SA", "EU", "SA", "EU",
-"AS", "EU", "AS", "AS", "AS", "AS", "AS", "EU", "EU", "SA",
-"AS", "AS", "AF", "AS", "AS", "OC", "AF", "SA", "AS", "AS",
-"AS", "SA", "AS", "AS", "AS", "SA", "EU", "AS", "AF", "AF",
-"EU", "EU", "EU", "AF", "AF", "EU", "EU", "AF", "OC", "EU",
-"AF", "AS", "AS", "AS", "OC", "SA", "AF", "SA", "EU", "AF",
-"AS", "AF", "NA", "AS", "AF", "AF", "OC", "AF", "OC", "AF",
-"SA", "EU", "EU", "AS", "OC", "OC", "OC", "AS", "SA", "SA",
-"OC", "OC", "AS", "AS", "EU", "SA", "OC", "SA", "AS", "EU",
-"OC", "SA", "AS", "AF", "EU", "AS", "AF", "AS", "OC", "AF",
-"AF", "EU", "AS", "AF", "EU", "EU", "EU", "AF", "EU", "AF",
-"AF", "SA", "AF", "SA", "AS", "AF", "SA", "AF", "AF", "AF",
-"AS", "AS", "OC", "AS", "AF", "OC", "AS", "EU", "SA", "OC",
-"AS", "AF", "EU", "AF", "OC", "NA", "SA", "AS", "EU", "SA",
-"SA", "SA", "SA", "AS", "OC", "OC", "OC", "AS", "AF", "EU",
-"AF", "AF", "EU", "AF", "--", "--", "--", "EU", "EU", "EU",
-"EU", "SA", "SA" );
+  "--", "AS", "EU", "EU", "AS", "AS", "NA", "NA", "EU", "AS", 
+  "NA", "AF", "AN", "SA", "OC", "EU", "OC", "NA", "AS", "EU", 
+  "NA", "AS", "EU", "AF", "EU", "AS", "AF", "AF", "NA", "AS", 
+  "SA", "SA", "NA", "AS", "AN", "AF", "EU", "NA", "NA", "AS", 
+  "AF", "AF", "AF", "EU", "AF", "OC", "SA", "AF", "AS", "SA", 
+  "NA", "NA", "AF", "AS", "AS", "EU", "EU", "AF", "EU", "NA", 
+  "NA", "AF", "SA", "EU", "AF", "AF", "AF", "EU", "AF", "EU", 
+  "OC", "SA", "OC", "EU", "EU", "EU", "AF", "EU", "NA", "AS", 
+  "SA", "AF", "EU", "NA", "AF", "AF", "NA", "AF", "EU", "AN", 
+  "NA", "OC", "AF", "SA", "AS", "AN", "NA", "EU", "NA", "EU", 
+  "AS", "EU", "AS", "AS", "AS", "AS", "AS", "EU", "EU", "NA", 
+  "AS", "AS", "AF", "AS", "AS", "OC", "AF", "NA", "AS", "AS", 
+  "AS", "NA", "AS", "AS", "AS", "NA", "EU", "AS", "AF", "AF", 
+  "EU", "EU", "EU", "AF", "AF", "EU", "EU", "AF", "OC", "EU", 
+  "AF", "AS", "AS", "AS", "OC", "NA", "AF", "NA", "EU", "AF", 
+  "AS", "AF", "NA", "AS", "AF", "AF", "OC", "AF", "OC", "AF", 
+  "NA", "EU", "EU", "AS", "OC", "OC", "OC", "AS", "NA", "SA", 
+  "OC", "OC", "AS", "AS", "EU", "NA", "OC", "NA", "AS", "EU", 
+  "OC", "SA", "AS", "AF", "EU", "EU", "AF", "AS", "OC", "AF", 
+  "AF", "EU", "AS", "AF", "EU", "EU", "EU", "AF", "EU", "AF", 
+  "AF", "SA", "AF", "NA", "AS", "AF", "NA", "AF", "AN", "AF", 
+  "AS", "AS", "OC", "AS", "AF", "OC", "AS", "EU", "NA", "OC", 
+  "AS", "AF", "EU", "AF", "OC", "NA", "SA", "AS", "EU", "NA", 
+  "SA", "NA", "NA", "AS", "OC", "OC", "OC", "AS", "AF", "EU", 
+  "AF", "AF", "EU", "AF", "--", "--", "--", "EU", "EU", "EU", 
+  "EU", "NA", "NA"
+);
     
 }
 function geoip_load_shared_mem ($file) {
@@ -270,15 +276,19 @@ function _setup_segments($gi){
 	    } else if (($gi->databaseType == GEOIP_CITY_EDITION_REV0)||
                      ($gi->databaseType == GEOIP_CITY_EDITION_REV1) 
                     || ($gi->databaseType == GEOIP_ORG_EDITION)
+                    || ($gi->databaseType == GEOIP_DOMAIN_EDITION)
 		    || ($gi->databaseType == GEOIP_ISP_EDITION)
+		    || ($gi->databaseType == GEOIP_LOCATIONA_EDITION)
+		    || ($gi->databaseType == GEOIP_ACCURACYRADIUS_EDITION)
 		    || ($gi->databaseType == GEOIP_ASNUM_EDITION)){
                 $gi->databaseSegments = 0;
                 $buf = @shmop_read ($gi->shmid, $offset, SEGMENT_RECORD_LENGTH);
                 for ($j = 0;$j < SEGMENT_RECORD_LENGTH;$j++){
                     $gi->databaseSegments += (ord($buf[$j]) << ($j * 8));
                 }
-	            if (($gi->databaseType == GEOIP_ORG_EDITION)||
-			($gi->databaseType == GEOIP_ISP_EDITION)) {
+	            if (($gi->databaseType == GEOIP_ORG_EDITION)
+                        || ($gi->databaseType == GEOIP_DOMAIN_EDITION)
+			|| ($gi->databaseType == GEOIP_ISP_EDITION)) {
 	                $gi->record_length = ORG_RECORD_LENGTH;
                 }
             }
@@ -304,18 +314,22 @@ function _setup_segments($gi){
         }
         else if ($gi->databaseType == GEOIP_REGION_EDITION_REV1){
 	    $gi->databaseSegments = GEOIP_STATE_BEGIN_REV1;
-                }  else if (($gi->databaseType == GEOIP_CITY_EDITION_REV0) ||
-                 ($gi->databaseType == GEOIP_CITY_EDITION_REV1) || 
-                 ($gi->databaseType == GEOIP_ORG_EDITION) || 
-		 ($gi->databaseType == GEOIP_ISP_EDITION) || 
-                 ($gi->databaseType == GEOIP_ASNUM_EDITION)){
+                }  else if (($gi->databaseType == GEOIP_CITY_EDITION_REV0)
+                    || ($gi->databaseType == GEOIP_CITY_EDITION_REV1) 
+                    || ($gi->databaseType == GEOIP_ORG_EDITION) 
+                    || ($gi->databaseType == GEOIP_DOMAIN_EDITION)
+		    || ($gi->databaseType == GEOIP_ISP_EDITION)
+		    || ($gi->databaseType == GEOIP_LOCATIONA_EDITION)
+		    || ($gi->databaseType == GEOIP_ACCURACYRADIUS_EDITION)
+                    || ($gi->databaseType == GEOIP_ASNUM_EDITION)){
             $gi->databaseSegments = 0;
             $buf = fread($gi->filehandle,SEGMENT_RECORD_LENGTH);
             for ($j = 0;$j < SEGMENT_RECORD_LENGTH;$j++){
             $gi->databaseSegments += (ord($buf[$j]) << ($j * 8));
             }
-	    if ($gi->databaseType == GEOIP_ORG_EDITION ||
-		$gi->databaseType == GEOIP_ISP_EDITION) {
+	    if (   ( $gi->databaseType == GEOIP_ORG_EDITION )
+                || ( $gi->databaseType == GEOIP_DOMAIN_EDITION )
+                || ( $gi->databaseType == GEOIP_ISP_EDITION ) ) {
 	    $gi->record_length = ORG_RECORD_LENGTH;
             }
         }
@@ -477,7 +491,7 @@ function _get_org($gi,$ipnum){
   // mbstring.func_overload and mbstring.internal_encoding
   $enc = mb_internal_encoding();
   mb_internal_encoding('ISO-8859-1'); 
-  $org_buf = substr($org_buf, 0, strpos($org_buf, 0));
+  $org_buf = substr($org_buf, 0, strpos($org_buf, "\0"));
   mb_internal_encoding($enc);
   return $org_buf;
 }

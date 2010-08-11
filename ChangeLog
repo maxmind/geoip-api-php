@@ -1,3 +1,8 @@
+	* Fix some 3letter codes ( Boris Zentner )
+	* Fix some continent codes ( Boris Zentner )
+	* Update FIPS codes 20100810 ( Boris Zentner )
+	* Add new database types GEOIP_LOCATIONA_EDITION, GEOIP_DOMAIN_EDITION
+	and GEOIP_ACCURACYRADIUS_EDITION ( Boris Zentner )
 	* Workaround php's broken usage of mb_substr instead of substr with
 	mbstring.func_overload and mbstring.internal_encoding ( Boris Zentner )
 	* Change Turkey's continent code from AS to EU ( Boris Zentner )
