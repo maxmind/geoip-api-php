@@ -42,7 +42,7 @@ function get_iso_3166_2_subcountry_codes(){
     $str = fgets($f,4096);
   while (!feof($f)){
     $str = fgets($f,4096);
-    $substrs = split(",",$str);
+    $substrs = explode(",",$str);
     list($country,$region,$name) = $substrs;
     if (count($substrs) > 3){
     for ($a0 = 3;$a0 < count($substrs);$a0++){ 
@@ -62,7 +62,7 @@ function get_fips_10_4_subcountry_codes(){
     $str = fgets($f,4096);
   while (!feof($f)){
     $str = fgets($f,4096);
-    $substrs = split(",",$str);
+    $substrs = explode(",",$str);
     list($country,$region,$name) = $substrs; 
     if (count($substrs) > 3){
     for ($a0 = 3;$a0 < count($substrs);$a0++){ 
