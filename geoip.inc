@@ -548,8 +548,7 @@ function getdnsattributes ($l,$ip){
   $r->nameservers = array("ws1.maxmind.com");
   $p = $r->search($l."." . $ip .".s.maxmind.com","TXT","IN");
   $str = is_object($p->answer[0])?$p->answer[0]->string():'';
-  ereg("\"(.*)\"",$str,$regs);
-  $str = $regs[1];
+  $str = substr( $str, 1, -1 );
   return $str;
 }
 

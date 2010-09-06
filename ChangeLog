@@ -1,3 +1,5 @@
+<<<<<<< ChangeLog
+	* Replace ereg with substr ( Boris Zentner )
 	* replace split by explode ( Boris Zentner )
 	* Add all missing timezones ( Boris Zentner )
 	* Fix some 3letter codes ( Boris Zentner )
