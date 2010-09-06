@@ -1,4 +1,3 @@
-<<<<<<< ChangeLog
 	* Replace ereg with substr ( Boris Zentner )
 	* replace split by explode ( Boris Zentner )
 	* Add all missing timezones ( Boris Zentner )
