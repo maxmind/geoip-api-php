@@ -424,7 +424,6 @@ function geoip_country_id_by_name_v6($gi, $name) {
   if (!$addr || $addr == $name) {
     return false;
   }
-  echo $addr;
   return geoip_country_id_by_addr_v6($gi, $addr);
 }
 
