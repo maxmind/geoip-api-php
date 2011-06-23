@@ -1,3 +1,20 @@
+	* Add new datatypes 
+	GEOIP_COUNTRY_EDITION_V6, GEOIP_CITY_EDITION_REV1_V6
+	GEOIP_CITY_EDITION_REV0_V6, GEOIP_NETSPEED_EDITION_REV1,
+	GEOIP_NETSPEED_EDITION_REV1_V6, GEOIP_ASNUM_EDITION_V6,
+	GEOIP_ORG_EDITION_V6, GEOIP_DOMAIN_EDITION_V6,
+	GEOIP_ISP_EDITION_V6 ( Boris Zentner )
+	* Add new functions
+	geoip_country_id_by_name_v6
+	geoip_country_code_by_name_v6
+	geoip_country_name_by_name_v6
+	geoip_country_id_by_addr_v6
+	geoip_country_code_by_addr_v6
+	geoip_country_name_by_addr_v6
+	geoip_name_by_addr_v6
+	GeoIP_record_by_addr_v6 ( Boris Zentner )
+	* Add new examples sample-v6.php, sample_city-v6.php and
+	sample_asn-v6.php ( Boris Zentner )
 	* Replace ereg with substr ( Boris Zentner )
 	* replace split by explode ( Boris Zentner )
 	* Add all missing timezones ( Boris Zentner )
