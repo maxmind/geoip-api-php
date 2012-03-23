@@ -19,7 +19,7 @@ while ($str = <FILE>) {
   if ($country ne $old_country) {
     if ($old_region ne "") {
       print "  } \n";
-      print "  break; \n";
+      print "  break;\n";
     }
     print "case " . qq(") . $country . qq(") . ":\n";
     if ($region ne "") {
@@ -31,9 +31,9 @@ while ($str = <FILE>) {
   }
   print qq(    \$timezone = ") . $timezone . qq(") . ";\n";
   if ($region ne "") {
-    print "      break; \n";
+    print "      break;\n";
   } else {
-    print "    break; \n";
+    print "    break;\n";
   }
   $old_country = $country;
   $old_region = $region;
