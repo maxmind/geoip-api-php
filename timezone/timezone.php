@@ -5,2103 +5,2112 @@ case "US":
     switch ($region) { 
   case "AL":
       $timezone = "America/Chicago";
-      break; 
+      break;
   case "AK":
       $timezone = "America/Anchorage";
-      break; 
+      break;
   case "AZ":
       $timezone = "America/Phoenix";
-      break; 
+      break;
   case "AR":
       $timezone = "America/Chicago";
-      break; 
+      break;
   case "CA":
       $timezone = "America/Los_Angeles";
-      break; 
+      break;
   case "CO":
       $timezone = "America/Denver";
-      break; 
+      break;
   case "CT":
       $timezone = "America/New_York";
-      break; 
+      break;
   case "DE":
       $timezone = "America/New_York";
-      break; 
+      break;
   case "DC":
       $timezone = "America/New_York";
-      break; 
+      break;
   case "FL":
       $timezone = "America/New_York";
-      break; 
+      break;
   case "GA":
       $timezone = "America/New_York";
-      break; 
+      break;
   case "HI":
       $timezone = "Pacific/Honolulu";
-      break; 
+      break;
   case "ID":
       $timezone = "America/Denver";
-      break; 
+      break;
   case "IL":
       $timezone = "America/Chicago";
-      break; 
+      break;
   case "IN":
       $timezone = "America/Indianapolis";
-      break; 
+      break;
   case "IA":
       $timezone = "America/Chicago";
-      break; 
+      break;
   case "KS":
       $timezone = "America/Chicago";
-      break; 
+      break;
   case "KY":
       $timezone = "America/New_York";
-      break; 
+      break;
   case "LA":
       $timezone = "America/Chicago";
-      break; 
+      break;
   case "ME":
       $timezone = "America/New_York";
-      break; 
+      break;
   case "MD":
       $timezone = "America/New_York";
-      break; 
+      break;
   case "MA":
       $timezone = "America/New_York";
-      break; 
+      break;
   case "MI":
       $timezone = "America/New_York";
-      break; 
+      break;
   case "MN":
       $timezone = "America/Chicago";
-      break; 
+      break;
   case "MS":
       $timezone = "America/Chicago";
-      break; 
+      break;
   case "MO":
       $timezone = "America/Chicago";
-      break; 
+      break;
   case "MT":
       $timezone = "America/Denver";
-      break; 
+      break;
   case "NE":
       $timezone = "America/Chicago";
-      break; 
+      break;
   case "NV":
       $timezone = "America/Los_Angeles";
-      break; 
+      break;
   case "NH":
       $timezone = "America/New_York";
-      break; 
+      break;
   case "NJ":
       $timezone = "America/New_York";
-      break; 
+      break;
   case "NM":
       $timezone = "America/Denver";
-      break; 
+      break;
   case "NY":
       $timezone = "America/New_York";
-      break; 
+      break;
   case "NC":
       $timezone = "America/New_York";
-      break; 
+      break;
   case "ND":
       $timezone = "America/Chicago";
-      break; 
+      break;
   case "OH":
       $timezone = "America/New_York";
-      break; 
+      break;
   case "OK":
       $timezone = "America/Chicago";
-      break; 
+      break;
   case "OR":
       $timezone = "America/Los_Angeles";
-      break; 
+      break;
   case "PA":
       $timezone = "America/New_York";
-      break; 
+      break;
   case "RI":
       $timezone = "America/New_York";
-      break; 
+      break;
   case "SC":
       $timezone = "America/New_York";
-      break; 
+      break;
   case "SD":
       $timezone = "America/Chicago";
-      break; 
+      break;
   case "TN":
       $timezone = "America/Chicago";
-      break; 
+      break;
   case "TX":
       $timezone = "America/Chicago";
-      break; 
+      break;
   case "UT":
       $timezone = "America/Denver";
-      break; 
+      break;
   case "VT":
       $timezone = "America/New_York";
-      break; 
+      break;
   case "VA":
       $timezone = "America/New_York";
-      break; 
+      break;
   case "WA":
       $timezone = "America/Los_Angeles";
-      break; 
+      break;
   case "WV":
       $timezone = "America/New_York";
-      break; 
+      break;
   case "WI":
       $timezone = "America/Chicago";
-      break; 
+      break;
   case "WY":
       $timezone = "America/Denver";
-      break; 
+      break;
   } 
-  break; 
+  break;
 case "CA":
     switch ($region) { 
   case "AB":
       $timezone = "America/Edmonton";
-      break; 
+      break;
   case "BC":
       $timezone = "America/Vancouver";
-      break; 
+      break;
   case "MB":
       $timezone = "America/Winnipeg";
-      break; 
+      break;
   case "NB":
       $timezone = "America/Halifax";
-      break; 
+      break;
   case "NL":
       $timezone = "America/St_Johns";
-      break; 
+      break;
   case "NT":
       $timezone = "America/Yellowknife";
-      break; 
+      break;
   case "NS":
       $timezone = "America/Halifax";
-      break; 
+      break;
   case "NU":
       $timezone = "America/Rankin_Inlet";
-      break; 
+      break;
   case "ON":
       $timezone = "America/Rainy_River";
-      break; 
+      break;
   case "PE":
       $timezone = "America/Halifax";
-      break; 
+      break;
   case "QC":
       $timezone = "America/Montreal";
-      break; 
+      break;
   case "SK":
       $timezone = "America/Regina";
-      break; 
+      break;
   case "YT":
       $timezone = "America/Whitehorse";
-      break; 
+      break;
   } 
-  break; 
+  break;
 case "AU":
     switch ($region) { 
   case "01":
       $timezone = "Australia/Canberra";
-      break; 
+      break;
   case "02":
       $timezone = "Australia/NSW";
-      break; 
+      break;
   case "03":
       $timezone = "Australia/North";
-      break; 
+      break;
   case "04":
       $timezone = "Australia/Queensland";
-      break; 
+      break;
   case "05":
       $timezone = "Australia/South";
-      break; 
+      break;
   case "06":
       $timezone = "Australia/Tasmania";
-      break; 
+      break;
   case "07":
       $timezone = "Australia/Victoria";
-      break; 
+      break;
   case "08":
       $timezone = "Australia/West";
-      break; 
+      break;
   } 
-  break; 
+  break;
 case "AS":
     $timezone = "US/Samoa";
-    break; 
+    break;
 case "CI":
     $timezone = "Africa/Abidjan";
-    break; 
+    break;
 case "GH":
     $timezone = "Africa/Accra";
-    break; 
+    break;
 case "DZ":
     $timezone = "Africa/Algiers";
-    break; 
+    break;
 case "ER":
     $timezone = "Africa/Asmera";
-    break; 
+    break;
 case "ML":
     $timezone = "Africa/Bamako";
-    break; 
+    break;
 case "CF":
     $timezone = "Africa/Bangui";
-    break; 
+    break;
 case "GM":
     $timezone = "Africa/Banjul";
-    break; 
+    break;
 case "GW":
     $timezone = "Africa/Bissau";
-    break; 
+    break;
 case "CG":
     $timezone = "Africa/Brazzaville";
-    break; 
+    break;
 case "BI":
     $timezone = "Africa/Bujumbura";
-    break; 
+    break;
 case "EG":
     $timezone = "Africa/Cairo";
-    break; 
+    break;
 case "MA":
     $timezone = "Africa/Casablanca";
-    break; 
+    break;
 case "GN":
     $timezone = "Africa/Conakry";
-    break; 
+    break;
 case "SN":
     $timezone = "Africa/Dakar";
-    break; 
+    break;
 case "DJ":
     $timezone = "Africa/Djibouti";
-    break; 
+    break;
 case "SL":
     $timezone = "Africa/Freetown";
-    break; 
+    break;
 case "BW":
     $timezone = "Africa/Gaborone";
-    break; 
+    break;
 case "ZW":
     $timezone = "Africa/Harare";
-    break; 
+    break;
 case "ZA":
     $timezone = "Africa/Johannesburg";
-    break; 
+    break;
 case "UG":
     $timezone = "Africa/Kampala";
-    break; 
+    break;
 case "SD":
     $timezone = "Africa/Khartoum";
-    break; 
+    break;
 case "RW":
     $timezone = "Africa/Kigali";
-    break; 
+    break;
 case "NG":
     $timezone = "Africa/Lagos";
-    break; 
+    break;
 case "GA":
     $timezone = "Africa/Libreville";
-    break; 
+    break;
 case "TG":
     $timezone = "Africa/Lome";
-    break; 
+    break;
 case "AO":
     $timezone = "Africa/Luanda";
-    break; 
+    break;
 case "ZM":
     $timezone = "Africa/Lusaka";
-    break; 
+    break;
 case "GQ":
     $timezone = "Africa/Malabo";
-    break; 
+    break;
 case "MZ":
     $timezone = "Africa/Maputo";
-    break; 
+    break;
 case "LS":
     $timezone = "Africa/Maseru";
-    break; 
+    break;
 case "SZ":
     $timezone = "Africa/Mbabane";
-    break; 
+    break;
 case "SO":
     $timezone = "Africa/Mogadishu";
-    break; 
+    break;
 case "LR":
     $timezone = "Africa/Monrovia";
-    break; 
+    break;
 case "KE":
     $timezone = "Africa/Nairobi";
-    break; 
+    break;
 case "TD":
     $timezone = "Africa/Ndjamena";
-    break; 
+    break;
 case "NE":
     $timezone = "Africa/Niamey";
-    break; 
+    break;
 case "MR":
     $timezone = "Africa/Nouakchott";
-    break; 
+    break;
 case "BF":
     $timezone = "Africa/Ouagadougou";
-    break; 
+    break;
 case "ST":
     $timezone = "Africa/Sao_Tome";
-    break; 
+    break;
 case "LY":
     $timezone = "Africa/Tripoli";
-    break; 
+    break;
 case "TN":
     $timezone = "Africa/Tunis";
-    break; 
+    break;
 case "AI":
     $timezone = "America/Anguilla";
-    break; 
+    break;
 case "AG":
     $timezone = "America/Antigua";
-    break; 
+    break;
 case "AW":
     $timezone = "America/Aruba";
-    break; 
+    break;
 case "BB":
     $timezone = "America/Barbados";
-    break; 
+    break;
 case "BZ":
     $timezone = "America/Belize";
-    break; 
+    break;
 case "CO":
     $timezone = "America/Bogota";
-    break; 
+    break;
 case "VE":
     $timezone = "America/Caracas";
-    break; 
+    break;
 case "KY":
     $timezone = "America/Cayman";
-    break; 
+    break;
 case "CR":
     $timezone = "America/Costa_Rica";
-    break; 
+    break;
 case "DM":
     $timezone = "America/Dominica";
-    break; 
+    break;
 case "SV":
     $timezone = "America/El_Salvador";
-    break; 
+    break;
 case "GD":
     $timezone = "America/Grenada";
-    break; 
+    break;
 case "FR":
     $timezone = "Europe/Paris";
-    break; 
+    break;
 case "GP":
     $timezone = "America/Guadeloupe";
-    break; 
+    break;
 case "GT":
     $timezone = "America/Guatemala";
-    break; 
+    break;
 case "GY":
     $timezone = "America/Guyana";
-    break; 
+    break;
 case "CU":
     $timezone = "America/Havana";
-    break; 
+    break;
 case "JM":
     $timezone = "America/Jamaica";
-    break; 
+    break;
 case "BO":
     $timezone = "America/La_Paz";
-    break; 
+    break;
 case "PE":
     $timezone = "America/Lima";
-    break; 
+    break;
 case "NI":
     $timezone = "America/Managua";
-    break; 
+    break;
 case "MQ":
     $timezone = "America/Martinique";
-    break; 
+    break;
 case "UY":
     $timezone = "America/Montevideo";
-    break; 
+    break;
 case "MS":
     $timezone = "America/Montserrat";
-    break; 
+    break;
 case "BS":
     $timezone = "America/Nassau";
-    break; 
+    break;
 case "PA":
     $timezone = "America/Panama";
-    break; 
+    break;
 case "SR":
     $timezone = "America/Paramaribo";
-    break; 
+    break;
 case "PR":
     $timezone = "America/Puerto_Rico";
-    break; 
+    break;
 case "KN":
     $timezone = "America/St_Kitts";
-    break; 
+    break;
 case "LC":
     $timezone = "America/St_Lucia";
-    break; 
+    break;
 case "VC":
     $timezone = "America/St_Vincent";
-    break; 
+    break;
 case "HN":
     $timezone = "America/Tegucigalpa";
-    break; 
+    break;
 case "YE":
     $timezone = "Asia/Aden";
-    break; 
+    break;
 case "JO":
     $timezone = "Asia/Amman";
-    break; 
+    break;
 case "TM":
     $timezone = "Asia/Ashgabat";
-    break; 
+    break;
 case "IQ":
     $timezone = "Asia/Baghdad";
-    break; 
+    break;
 case "BH":
     $timezone = "Asia/Bahrain";
-    break; 
+    break;
 case "AZ":
     $timezone = "Asia/Baku";
-    break; 
+    break;
 case "TH":
     $timezone = "Asia/Bangkok";
-    break; 
+    break;
 case "LB":
     $timezone = "Asia/Beirut";
-    break; 
+    break;
 case "KG":
     $timezone = "Asia/Bishkek";
-    break; 
+    break;
 case "BN":
     $timezone = "Asia/Brunei";
-    break; 
+    break;
 case "IN":
     $timezone = "Asia/Calcutta";
-    break; 
+    break;
 case "MN":
     $timezone = "Asia/Choibalsan";
-    break; 
+    break;
 case "LK":
     $timezone = "Asia/Colombo";
-    break; 
+    break;
 case "BD":
     $timezone = "Asia/Dhaka";
-    break; 
+    break;
 case "AE":
     $timezone = "Asia/Dubai";
-    break; 
+    break;
 case "TJ":
     $timezone = "Asia/Dushanbe";
-    break; 
+    break;
 case "HK":
     $timezone = "Asia/Hong_Kong";
-    break; 
+    break;
 case "TR":
     $timezone = "Asia/Istanbul";
-    break; 
+    break;
 case "IL":
     $timezone = "Asia/Jerusalem";
-    break; 
+    break;
 case "AF":
     $timezone = "Asia/Kabul";
-    break; 
+    break;
 case "PK":
     $timezone = "Asia/Karachi";
-    break; 
+    break;
 case "NP":
     $timezone = "Asia/Katmandu";
-    break; 
+    break;
 case "KW":
     $timezone = "Asia/Kuwait";
-    break; 
+    break;
 case "MO":
     $timezone = "Asia/Macao";
-    break; 
+    break;
 case "PH":
     $timezone = "Asia/Manila";
-    break; 
+    break;
 case "OM":
     $timezone = "Asia/Muscat";
-    break; 
+    break;
 case "CY":
     $timezone = "Asia/Nicosia";
-    break; 
+    break;
 case "KP":
     $timezone = "Asia/Pyongyang";
-    break; 
+    break;
 case "QA":
     $timezone = "Asia/Qatar";
-    break; 
+    break;
 case "MM":
     $timezone = "Asia/Rangoon";
-    break; 
+    break;
 case "SA":
     $timezone = "Asia/Riyadh";
-    break; 
+    break;
 case "KR":
     $timezone = "Asia/Seoul";
-    break; 
+    break;
 case "SG":
     $timezone = "Asia/Singapore";
-    break; 
+    break;
 case "TW":
     $timezone = "Asia/Taipei";
-    break; 
+    break;
 case "GE":
     $timezone = "Asia/Tbilisi";
-    break; 
+    break;
 case "BT":
     $timezone = "Asia/Thimphu";
-    break; 
+    break;
 case "JP":
     $timezone = "Asia/Tokyo";
-    break; 
+    break;
 case "LA":
     $timezone = "Asia/Vientiane";
-    break; 
+    break;
 case "AM":
     $timezone = "Asia/Yerevan";
-    break; 
+    break;
 case "BM":
     $timezone = "Atlantic/Bermuda";
-    break; 
+    break;
 case "CV":
     $timezone = "Atlantic/Cape_Verde";
-    break; 
+    break;
 case "FO":
     $timezone = "Atlantic/Faeroe";
-    break; 
+    break;
 case "IS":
     $timezone = "Atlantic/Reykjavik";
-    break; 
+    break;
 case "GS":
     $timezone = "Atlantic/South_Georgia";
-    break; 
+    break;
 case "SH":
     $timezone = "Atlantic/St_Helena";
-    break; 
+    break;
 case "CL":
     $timezone = "Chile/Continental";
-    break; 
+    break;
 case "NL":
     $timezone = "Europe/Amsterdam";
-    break; 
+    break;
 case "AD":
     $timezone = "Europe/Andorra";
-    break; 
+    break;
 case "GR":
     $timezone = "Europe/Athens";
-    break; 
+    break;
 case "YU":
     $timezone = "Europe/Belgrade";
-    break; 
+    break;
 case "DE":
     $timezone = "Europe/Berlin";
-    break; 
+    break;
 case "SK":
     $timezone = "Europe/Bratislava";
-    break; 
+    break;
 case "BE":
     $timezone = "Europe/Brussels";
-    break; 
+    break;
 case "RO":
     $timezone = "Europe/Bucharest";
-    break; 
+    break;
 case "HU":
     $timezone = "Europe/Budapest";
-    break; 
+    break;
 case "DK":
     $timezone = "Europe/Copenhagen";
-    break; 
+    break;
 case "IE":
     $timezone = "Europe/Dublin";
-    break; 
+    break;
 case "GI":
     $timezone = "Europe/Gibraltar";
-    break; 
+    break;
 case "FI":
     $timezone = "Europe/Helsinki";
-    break; 
+    break;
 case "SI":
     $timezone = "Europe/Ljubljana";
-    break; 
+    break;
 case "GB":
     $timezone = "Europe/London";
-    break; 
+    break;
 case "LU":
     $timezone = "Europe/Luxembourg";
-    break; 
+    break;
 case "MT":
     $timezone = "Europe/Malta";
-    break; 
+    break;
 case "BY":
     $timezone = "Europe/Minsk";
-    break; 
+    break;
 case "MC":
     $timezone = "Europe/Monaco";
-    break; 
+    break;
 case "NO":
     $timezone = "Europe/Oslo";
-    break; 
+    break;
 case "CZ":
     $timezone = "Europe/Prague";
-    break; 
+    break;
 case "LV":
     $timezone = "Europe/Riga";
-    break; 
+    break;
 case "IT":
     $timezone = "Europe/Rome";
-    break; 
+    break;
 case "SM":
     $timezone = "Europe/San_Marino";
-    break; 
+    break;
 case "BA":
     $timezone = "Europe/Sarajevo";
-    break; 
+    break;
 case "MK":
     $timezone = "Europe/Skopje";
-    break; 
+    break;
 case "BG":
     $timezone = "Europe/Sofia";
-    break; 
+    break;
 case "SE":
     $timezone = "Europe/Stockholm";
-    break; 
+    break;
 case "EE":
     $timezone = "Europe/Tallinn";
-    break; 
+    break;
 case "AL":
     $timezone = "Europe/Tirane";
-    break; 
+    break;
 case "LI":
     $timezone = "Europe/Vaduz";
-    break; 
+    break;
 case "VA":
     $timezone = "Europe/Vatican";
-    break; 
+    break;
 case "AT":
     $timezone = "Europe/Vienna";
-    break; 
+    break;
 case "LT":
     $timezone = "Europe/Vilnius";
-    break; 
+    break;
 case "PL":
     $timezone = "Europe/Warsaw";
-    break; 
+    break;
 case "HR":
     $timezone = "Europe/Zagreb";
-    break; 
+    break;
 case "IR":
     $timezone = "Asia/Tehran";
-    break; 
+    break;
 case "MG":
     $timezone = "Indian/Antananarivo";
-    break; 
+    break;
 case "CX":
     $timezone = "Indian/Christmas";
-    break; 
+    break;
 case "CC":
     $timezone = "Indian/Cocos";
-    break; 
+    break;
 case "KM":
     $timezone = "Indian/Comoro";
-    break; 
+    break;
 case "MV":
     $timezone = "Indian/Maldives";
-    break; 
+    break;
 case "MU":
     $timezone = "Indian/Mauritius";
-    break; 
+    break;
 case "YT":
     $timezone = "Indian/Mayotte";
-    break; 
+    break;
 case "RE":
     $timezone = "Indian/Reunion";
-    break; 
+    break;
 case "FJ":
     $timezone = "Pacific/Fiji";
-    break; 
+    break;
 case "TV":
     $timezone = "Pacific/Funafuti";
-    break; 
+    break;
 case "GU":
     $timezone = "Pacific/Guam";
-    break; 
+    break;
 case "NR":
     $timezone = "Pacific/Nauru";
-    break; 
+    break;
 case "NU":
     $timezone = "Pacific/Niue";
-    break; 
+    break;
 case "NF":
     $timezone = "Pacific/Norfolk";
-    break; 
+    break;
 case "PW":
     $timezone = "Pacific/Palau";
-    break; 
+    break;
 case "PN":
     $timezone = "Pacific/Pitcairn";
-    break; 
+    break;
 case "CK":
     $timezone = "Pacific/Rarotonga";
-    break; 
+    break;
 case "WS":
     $timezone = "Pacific/Samoa";
-    break; 
+    break;
 case "KI":
     $timezone = "Pacific/Tarawa";
-    break; 
+    break;
 case "TO":
     $timezone = "Pacific/Tongatapu";
-    break; 
+    break;
 case "WF":
     $timezone = "Pacific/Wallis";
-    break; 
+    break;
 case "TZ":
     $timezone = "Africa/Dar_es_Salaam";
-    break; 
+    break;
 case "VN":
     $timezone = "Asia/Phnom_Penh";
-    break; 
+    break;
 case "KH":
     $timezone = "Asia/Phnom_Penh";
-    break; 
+    break;
 case "CM":
     $timezone = "Africa/Lagos";
-    break; 
+    break;
 case "DO":
     $timezone = "America/Santo_Domingo";
-    break; 
+    break;
 case "ET":
     $timezone = "Africa/Addis_Ababa";
-    break; 
+    break;
 case "FX":
     $timezone = "Europe/Paris";
-    break; 
+    break;
 case "HT":
     $timezone = "America/Port-au-Prince";
-    break; 
+    break;
 case "CH":
     $timezone = "Europe/Zurich";
-    break; 
+    break;
 case "AN":
     $timezone = "America/Curacao";
-    break; 
+    break;
 case "BJ":
     $timezone = "Africa/Porto-Novo";
-    break; 
+    break;
 case "EH":
     $timezone = "Africa/El_Aaiun";
-    break; 
+    break;
 case "FK":
     $timezone = "Atlantic/Stanley";
-    break; 
+    break;
 case "GF":
     $timezone = "America/Cayenne";
-    break; 
+    break;
 case "IO":
     $timezone = "Indian/Chagos";
-    break; 
+    break;
 case "MD":
     $timezone = "Europe/Chisinau";
-    break; 
+    break;
 case "MP":
     $timezone = "Pacific/Saipan";
-    break; 
+    break;
 case "MW":
     $timezone = "Africa/Blantyre";
-    break; 
+    break;
 case "NA":
     $timezone = "Africa/Windhoek";
-    break; 
+    break;
 case "NC":
     $timezone = "Pacific/Noumea";
-    break; 
+    break;
 case "PG":
     $timezone = "Pacific/Port_Moresby";
-    break; 
+    break;
 case "PM":
     $timezone = "America/Miquelon";
-    break; 
+    break;
 case "PS":
     $timezone = "Asia/Gaza";
-    break; 
+    break;
 case "PY":
     $timezone = "America/Asuncion";
-    break; 
+    break;
 case "SB":
     $timezone = "Pacific/Guadalcanal";
-    break; 
+    break;
 case "SC":
     $timezone = "Indian/Mahe";
-    break; 
+    break;
 case "SJ":
     $timezone = "Arctic/Longyearbyen";
-    break; 
+    break;
 case "SY":
     $timezone = "Asia/Damascus";
-    break; 
+    break;
 case "TC":
     $timezone = "America/Grand_Turk";
-    break; 
+    break;
 case "TF":
     $timezone = "Indian/Kerguelen";
-    break; 
+    break;
 case "TK":
     $timezone = "Pacific/Fakaofo";
-    break; 
+    break;
 case "TT":
     $timezone = "America/Port_of_Spain";
-    break; 
+    break;
 case "VG":
     $timezone = "America/Tortola";
-    break; 
+    break;
 case "VI":
     $timezone = "America/St_Thomas";
-    break; 
+    break;
 case "VU":
     $timezone = "Pacific/Efate";
-    break; 
+    break;
 case "RS":
     $timezone = "Europe/Belgrade";
-    break; 
+    break;
 case "ME":
     $timezone = "Europe/Podgorica";
-    break; 
+    break;
 case "AX":
     $timezone = "Europe/Mariehamn";
-    break; 
+    break;
 case "GG":
     $timezone = "Europe/Guernsey";
-    break; 
+    break;
 case "IM":
     $timezone = "Europe/Isle_of_Man";
-    break; 
+    break;
 case "JE":
     $timezone = "Europe/Jersey";
-    break; 
+    break;
 case "BL":
     $timezone = "America/St_Barthelemy";
-    break; 
+    break;
 case "MF":
     $timezone = "America/Marigot";
-    break; 
+    break;
 case "AR":
     switch ($region) { 
   case "01":
       $timezone = "America/Argentina/Buenos_Aires";
-      break; 
+      break;
   case "02":
       $timezone = "America/Argentina/Catamarca";
-      break; 
+      break;
   case "03":
       $timezone = "America/Argentina/Tucuman";
-      break; 
+      break;
   case "04":
       $timezone = "America/Argentina/Rio_Gallegos";
-      break; 
+      break;
   case "05":
       $timezone = "America/Argentina/Cordoba";
-      break; 
+      break;
   case "06":
       $timezone = "America/Argentina/Tucuman";
-      break; 
+      break;
   case "07":
       $timezone = "America/Argentina/Buenos_Aires";
-      break; 
+      break;
   case "08":
       $timezone = "America/Argentina/Buenos_Aires";
-      break; 
+      break;
   case "09":
       $timezone = "America/Argentina/Tucuman";
-      break; 
+      break;
   case "10":
       $timezone = "America/Argentina/Jujuy";
-      break; 
+      break;
   case "11":
       $timezone = "America/Argentina/San_Luis";
-      break; 
+      break;
   case "12":
       $timezone = "America/Argentina/La_Rioja";
-      break; 
+      break;
   case "13":
       $timezone = "America/Argentina/Mendoza";
-      break; 
+      break;
   case "14":
       $timezone = "America/Argentina/Buenos_Aires";
-      break; 
+      break;
   case "15":
       $timezone = "America/Argentina/San_Luis";
-      break; 
+      break;
   case "16":
       $timezone = "America/Argentina/Buenos_Aires";
-      break; 
+      break;
   case "17":
       $timezone = "America/Argentina/Salta";
-      break; 
+      break;
   case "18":
       $timezone = "America/Argentina/San_Juan";
-      break; 
+      break;
   case "19":
       $timezone = "America/Argentina/San_Luis";
-      break; 
+      break;
   case "20":
       $timezone = "America/Argentina/Rio_Gallegos";
-      break; 
+      break;
   case "21":
       $timezone = "America/Argentina/Buenos_Aires";
-      break; 
+      break;
   case "22":
       $timezone = "America/Argentina/Catamarca";
-      break; 
+      break;
   case "23":
       $timezone = "America/Argentina/Ushuaia";
-      break; 
+      break;
   case "24":
       $timezone = "America/Argentina/Tucuman";
-      break; 
+      break;
   } 
-  break; 
+  break;
 case "BR":
     switch ($region) { 
   case "01":
       $timezone = "America/Rio_Branco";
-      break; 
+      break;
   case "02":
       $timezone = "America/Maceio";
-      break; 
+      break;
   case "03":
       $timezone = "America/Sao_Paulo";
-      break; 
+      break;
   case "04":
       $timezone = "America/Manaus";
-      break; 
+      break;
   case "05":
       $timezone = "America/Bahia";
-      break; 
+      break;
   case "06":
       $timezone = "America/Fortaleza";
-      break; 
+      break;
   case "07":
       $timezone = "America/Sao_Paulo";
-      break; 
+      break;
   case "08":
       $timezone = "America/Sao_Paulo";
-      break; 
+      break;
   case "11":
       $timezone = "America/Campo_Grande";
-      break; 
+      break;
   case "13":
       $timezone = "America/Belem";
-      break; 
+      break;
   case "14":
       $timezone = "America/Cuiaba";
-      break; 
+      break;
   case "15":
       $timezone = "America/Sao_Paulo";
-      break; 
+      break;
   case "16":
       $timezone = "America/Belem";
-      break; 
+      break;
   case "17":
       $timezone = "America/Recife";
-      break; 
+      break;
   case "18":
       $timezone = "America/Sao_Paulo";
-      break; 
+      break;
   case "20":
       $timezone = "America/Fortaleza";
-      break; 
+      break;
   case "21":
       $timezone = "America/Sao_Paulo";
-      break; 
+      break;
   case "22":
       $timezone = "America/Recife";
-      break; 
+      break;
   case "23":
       $timezone = "America/Sao_Paulo";
-      break; 
+      break;
   case "24":
       $timezone = "America/Porto_Velho";
-      break; 
+      break;
   case "25":
       $timezone = "America/Boa_Vista";
-      break; 
+      break;
   case "26":
       $timezone = "America/Sao_Paulo";
-      break; 
+      break;
   case "27":
       $timezone = "America/Sao_Paulo";
-      break; 
+      break;
   case "28":
       $timezone = "America/Maceio";
-      break; 
+      break;
   case "29":
       $timezone = "America/Sao_Paulo";
-      break; 
+      break;
   case "30":
       $timezone = "America/Recife";
-      break; 
+      break;
   case "31":
       $timezone = "America/Araguaina";
-      break; 
+      break;
   } 
-  break; 
+  break;
 case "CD":
     switch ($region) { 
   case "02":
       $timezone = "Africa/Kinshasa";
-      break; 
+      break;
   case "05":
       $timezone = "Africa/Lubumbashi";
-      break; 
+      break;
   case "06":
       $timezone = "Africa/Kinshasa";
-      break; 
+      break;
   case "08":
       $timezone = "Africa/Kinshasa";
-      break; 
+      break;
   case "10":
       $timezone = "Africa/Lubumbashi";
-      break; 
+      break;
   case "11":
       $timezone = "Africa/Lubumbashi";
-      break; 
+      break;
   case "12":
       $timezone = "Africa/Lubumbashi";
-      break; 
+      break;
   } 
-  break; 
+  break;
 case "CN":
     switch ($region) { 
   case "01":
       $timezone = "Asia/Shanghai";
-      break; 
+      break;
   case "02":
       $timezone = "Asia/Shanghai";
-      break; 
+      break;
   case "03":
       $timezone = "Asia/Shanghai";
-      break; 
+      break;
   case "04":
       $timezone = "Asia/Shanghai";
-      break; 
+      break;
   case "05":
       $timezone = "Asia/Harbin";
-      break; 
+      break;
   case "06":
       $timezone = "Asia/Chongqing";
-      break; 
+      break;
   case "07":
       $timezone = "Asia/Shanghai";
-      break; 
+      break;
   case "08":
       $timezone = "Asia/Harbin";
-      break; 
+      break;
   case "09":
       $timezone = "Asia/Shanghai";
-      break; 
+      break;
   case "10":
       $timezone = "Asia/Shanghai";
-      break; 
+      break;
   case "11":
       $timezone = "Asia/Chongqing";
-      break; 
+      break;
   case "12":
       $timezone = "Asia/Shanghai";
-      break; 
+      break;
   case "13":
       $timezone = "Asia/Urumqi";
-      break; 
+      break;
   case "14":
       $timezone = "Asia/Chongqing";
-      break; 
+      break;
   case "15":
       $timezone = "Asia/Chongqing";
-      break; 
+      break;
   case "16":
       $timezone = "Asia/Chongqing";
-      break; 
+      break;
   case "18":
       $timezone = "Asia/Chongqing";
-      break; 
+      break;
   case "19":
       $timezone = "Asia/Harbin";
-      break; 
+      break;
   case "20":
       $timezone = "Asia/Harbin";
-      break; 
+      break;
   case "21":
       $timezone = "Asia/Chongqing";
-      break; 
+      break;
   case "22":
       $timezone = "Asia/Harbin";
-      break; 
+      break;
   case "23":
       $timezone = "Asia/Shanghai";
-      break; 
+      break;
   case "24":
       $timezone = "Asia/Chongqing";
-      break; 
+      break;
   case "25":
       $timezone = "Asia/Shanghai";
-      break; 
+      break;
   case "26":
       $timezone = "Asia/Chongqing";
-      break; 
+      break;
   case "28":
       $timezone = "Asia/Shanghai";
-      break; 
+      break;
   case "29":
       $timezone = "Asia/Chongqing";
-      break; 
+      break;
   case "30":
       $timezone = "Asia/Chongqing";
-      break; 
+      break;
   case "31":
       $timezone = "Asia/Chongqing";
-      break; 
+      break;
   case "32":
       $timezone = "Asia/Chongqing";
-      break; 
+      break;
   case "33":
       $timezone = "Asia/Chongqing";
-      break; 
+      break;
   } 
-  break; 
+  break;
 case "EC":
     switch ($region) { 
   case "01":
       $timezone = "Pacific/Galapagos";
-      break; 
+      break;
   case "02":
       $timezone = "America/Guayaquil";
-      break; 
+      break;
   case "03":
       $timezone = "America/Guayaquil";
-      break; 
+      break;
   case "04":
       $timezone = "America/Guayaquil";
-      break; 
+      break;
   case "05":
       $timezone = "America/Guayaquil";
-      break; 
+      break;
   case "06":
       $timezone = "America/Guayaquil";
-      break; 
+      break;
   case "07":
       $timezone = "America/Guayaquil";
-      break; 
+      break;
   case "08":
       $timezone = "America/Guayaquil";
-      break; 
+      break;
   case "09":
       $timezone = "America/Guayaquil";
-      break; 
+      break;
   case "10":
       $timezone = "America/Guayaquil";
-      break; 
+      break;
   case "11":
       $timezone = "America/Guayaquil";
-      break; 
+      break;
   case "12":
       $timezone = "America/Guayaquil";
-      break; 
+      break;
   case "13":
       $timezone = "America/Guayaquil";
-      break; 
+      break;
   case "14":
       $timezone = "America/Guayaquil";
-      break; 
+      break;
   case "15":
       $timezone = "America/Guayaquil";
-      break; 
+      break;
   case "17":
       $timezone = "America/Guayaquil";
-      break; 
+      break;
   case "18":
       $timezone = "America/Guayaquil";
-      break; 
+      break;
   case "19":
       $timezone = "America/Guayaquil";
-      break; 
+      break;
   case "20":
       $timezone = "America/Guayaquil";
-      break; 
+      break;
   case "22":
       $timezone = "America/Guayaquil";
-      break; 
+      break;
   } 
-  break; 
+  break;
 case "ES":
     switch ($region) { 
   case "07":
       $timezone = "Europe/Madrid";
-      break; 
+      break;
   case "27":
       $timezone = "Europe/Madrid";
-      break; 
+      break;
   case "29":
       $timezone = "Europe/Madrid";
-      break; 
+      break;
   case "31":
       $timezone = "Europe/Madrid";
-      break; 
+      break;
   case "32":
       $timezone = "Europe/Madrid";
-      break; 
+      break;
   case "34":
       $timezone = "Europe/Madrid";
-      break; 
+      break;
   case "39":
       $timezone = "Europe/Madrid";
-      break; 
+      break;
   case "51":
       $timezone = "Africa/Ceuta";
-      break; 
+      break;
   case "52":
       $timezone = "Europe/Madrid";
-      break; 
+      break;
   case "53":
       $timezone = "Atlantic/Canary";
-      break; 
+      break;
   case "54":
       $timezone = "Europe/Madrid";
-      break; 
+      break;
   case "55":
       $timezone = "Europe/Madrid";
-      break; 
+      break;
   case "56":
       $timezone = "Europe/Madrid";
-      break; 
+      break;
   case "57":
       $timezone = "Europe/Madrid";
-      break; 
+      break;
   case "58":
       $timezone = "Europe/Madrid";
-      break; 
+      break;
   case "59":
       $timezone = "Europe/Madrid";
-      break; 
+      break;
   case "60":
       $timezone = "Europe/Madrid";
-      break; 
+      break;
   } 
-  break; 
+  break;
 case "GL":
     switch ($region) { 
   case "01":
       $timezone = "America/Thule";
-      break; 
+      break;
   case "02":
       $timezone = "America/Godthab";
-      break; 
+      break;
   case "03":
       $timezone = "America/Godthab";
-      break; 
+      break;
   } 
-  break; 
+  break;
 case "ID":
     switch ($region) { 
   case "01":
       $timezone = "Asia/Pontianak";
-      break; 
+      break;
   case "02":
       $timezone = "Asia/Makassar";
-      break; 
+      break;
   case "03":
       $timezone = "Asia/Jakarta";
-      break; 
+      break;
   case "04":
       $timezone = "Asia/Jakarta";
-      break; 
+      break;
   case "05":
       $timezone = "Asia/Jakarta";
-      break; 
+      break;
   case "06":
       $timezone = "Asia/Jakarta";
-      break; 
+      break;
   case "07":
       $timezone = "Asia/Jakarta";
-      break; 
+      break;
   case "08":
       $timezone = "Asia/Jakarta";
-      break; 
+      break;
   case "09":
       $timezone = "Asia/Jayapura";
-      break; 
+      break;
   case "10":
       $timezone = "Asia/Jakarta";
-      break; 
+      break;
   case "11":
       $timezone = "Asia/Pontianak";
-      break; 
+      break;
   case "12":
       $timezone = "Asia/Makassar";
-      break; 
+      break;
   case "13":
       $timezone = "Asia/Makassar";
-      break; 
+      break;
   case "14":
       $timezone = "Asia/Makassar";
-      break; 
+      break;
   case "15":
       $timezone = "Asia/Jakarta";
-      break; 
+      break;
   case "16":
       $timezone = "Asia/Makassar";
-      break; 
+      break;
   case "17":
       $timezone = "Asia/Makassar";
-      break; 
+      break;
   case "18":
       $timezone = "Asia/Makassar";
-      break; 
+      break;
   case "19":
       $timezone = "Asia/Pontianak";
-      break; 
+      break;
   case "20":
       $timezone = "Asia/Makassar";
-      break; 
+      break;
   case "21":
       $timezone = "Asia/Makassar";
-      break; 
+      break;
   case "22":
       $timezone = "Asia/Makassar";
-      break; 
+      break;
   case "23":
       $timezone = "Asia/Makassar";
-      break; 
+      break;
   case "24":
       $timezone = "Asia/Jakarta";
-      break; 
+      break;
   case "25":
       $timezone = "Asia/Pontianak";
-      break; 
+      break;
   case "26":
       $timezone = "Asia/Pontianak";
-      break; 
+      break;
   case "30":
       $timezone = "Asia/Jakarta";
-      break; 
+      break;
   case "31":
       $timezone = "Asia/Makassar";
-      break; 
+      break;
   case "33":
       $timezone = "Asia/Jakarta";
-      break; 
+      break;
   } 
-  break; 
+  break;
 case "KZ":
     switch ($region) { 
   case "01":
       $timezone = "Asia/Almaty";
-      break; 
+      break;
   case "02":
       $timezone = "Asia/Almaty";
-      break; 
+      break;
   case "03":
       $timezone = "Asia/Qyzylorda";
-      break; 
+      break;
   case "04":
       $timezone = "Asia/Aqtobe";
-      break; 
+      break;
   case "05":
       $timezone = "Asia/Qyzylorda";
-      break; 
+      break;
   case "06":
       $timezone = "Asia/Aqtau";
-      break; 
+      break;
   case "07":
       $timezone = "Asia/Oral";
-      break; 
+      break;
   case "08":
       $timezone = "Asia/Qyzylorda";
-      break; 
+      break;
   case "09":
       $timezone = "Asia/Aqtau";
-      break; 
+      break;
   case "10":
       $timezone = "Asia/Qyzylorda";
-      break; 
+      break;
   case "11":
       $timezone = "Asia/Almaty";
-      break; 
+      break;
   case "12":
       $timezone = "Asia/Qyzylorda";
-      break; 
+      break;
   case "13":
       $timezone = "Asia/Aqtobe";
-      break; 
+      break;
   case "14":
       $timezone = "Asia/Qyzylorda";
-      break; 
+      break;
   case "15":
       $timezone = "Asia/Almaty";
-      break; 
+      break;
   case "16":
       $timezone = "Asia/Aqtobe";
-      break; 
+      break;
   case "17":
       $timezone = "Asia/Almaty";
-      break; 
+      break;
   } 
-  break; 
+  break;
 case "MX":
     switch ($region) { 
   case "01":
       $timezone = "America/Mexico_City";
-      break; 
+      break;
   case "02":
       $timezone = "America/Tijuana";
-      break; 
+      break;
   case "03":
       $timezone = "America/Hermosillo";
-      break; 
+      break;
   case "04":
       $timezone = "America/Merida";
-      break; 
+      break;
   case "05":
       $timezone = "America/Mexico_City";
-      break; 
+      break;
   case "06":
       $timezone = "America/Chihuahua";
-      break; 
+      break;
   case "07":
       $timezone = "America/Monterrey";
-      break; 
+      break;
   case "08":
       $timezone = "America/Mexico_City";
-      break; 
+      break;
   case "09":
       $timezone = "America/Mexico_City";
-      break; 
+      break;
   case "10":
       $timezone = "America/Mazatlan";
-      break; 
+      break;
   case "11":
       $timezone = "America/Mexico_City";
-      break; 
+      break;
   case "12":
       $timezone = "America/Mexico_City";
-      break; 
+      break;
   case "13":
       $timezone = "America/Mexico_City";
-      break; 
+      break;
   case "14":
       $timezone = "America/Mazatlan";
-      break; 
+      break;
   case "15":
       $timezone = "America/Chihuahua";
-      break; 
+      break;
   case "16":
       $timezone = "America/Mexico_City";
-      break; 
+      break;
   case "17":
       $timezone = "America/Mexico_City";
-      break; 
+      break;
   case "18":
       $timezone = "America/Mazatlan";
-      break; 
+      break;
   case "19":
       $timezone = "America/Monterrey";
-      break; 
+      break;
   case "20":
       $timezone = "America/Mexico_City";
-      break; 
+      break;
   case "21":
       $timezone = "America/Mexico_City";
-      break; 
+      break;
   case "22":
       $timezone = "America/Mexico_City";
-      break; 
+      break;
   case "23":
       $timezone = "America/Cancun";
-      break; 
+      break;
   case "24":
       $timezone = "America/Mexico_City";
-      break; 
+      break;
   case "25":
       $timezone = "America/Mazatlan";
-      break; 
+      break;
   case "26":
       $timezone = "America/Hermosillo";
-      break; 
+      break;
   case "27":
       $timezone = "America/Merida";
-      break; 
+      break;
   case "28":
       $timezone = "America/Monterrey";
-      break; 
+      break;
   case "29":
       $timezone = "America/Mexico_City";
-      break; 
+      break;
   case "30":
       $timezone = "America/Mexico_City";
-      break; 
+      break;
   case "31":
       $timezone = "America/Merida";
-      break; 
+      break;
   case "32":
       $timezone = "America/Monterrey";
-      break; 
+      break;
   } 
-  break; 
+  break;
 case "MY":
     switch ($region) { 
   case "01":
       $timezone = "Asia/Kuala_Lumpur";
-      break; 
+      break;
   case "02":
       $timezone = "Asia/Kuala_Lumpur";
-      break; 
+      break;
   case "03":
       $timezone = "Asia/Kuala_Lumpur";
-      break; 
+      break;
   case "04":
       $timezone = "Asia/Kuala_Lumpur";
-      break; 
+      break;
   case "05":
       $timezone = "Asia/Kuala_Lumpur";
-      break; 
+      break;
   case "06":
       $timezone = "Asia/Kuala_Lumpur";
-      break; 
+      break;
   case "07":
       $timezone = "Asia/Kuala_Lumpur";
-      break; 
+      break;
   case "08":
       $timezone = "Asia/Kuala_Lumpur";
-      break; 
+      break;
   case "09":
       $timezone = "Asia/Kuala_Lumpur";
-      break; 
+      break;
   case "11":
       $timezone = "Asia/Kuching";
-      break; 
+      break;
   case "12":
       $timezone = "Asia/Kuala_Lumpur";
-      break; 
+      break;
   case "13":
       $timezone = "Asia/Kuala_Lumpur";
-      break; 
+      break;
   case "14":
       $timezone = "Asia/Kuala_Lumpur";
-      break; 
+      break;
   case "15":
       $timezone = "Asia/Kuching";
-      break; 
+      break;
   case "16":
       $timezone = "Asia/Kuching";
-      break; 
+      break;
   } 
-  break; 
+  break;
 case "NZ":
     switch ($region) { 
   case "85":
       $timezone = "Pacific/Auckland";
-      break; 
+      break;
   case "E7":
       $timezone = "Pacific/Auckland";
-      break; 
+      break;
   case "E8":
       $timezone = "Pacific/Auckland";
-      break; 
+      break;
   case "E9":
       $timezone = "Pacific/Auckland";
-      break; 
+      break;
   case "F1":
       $timezone = "Pacific/Auckland";
-      break; 
+      break;
   case "F2":
       $timezone = "Pacific/Auckland";
-      break; 
+      break;
   case "F3":
       $timezone = "Pacific/Auckland";
-      break; 
+      break;
   case "F4":
       $timezone = "Pacific/Auckland";
-      break; 
+      break;
   case "F5":
       $timezone = "Pacific/Auckland";
-      break; 
+      break;
   case "F7":
       $timezone = "Pacific/Chatham";
-      break; 
+      break;
   case "F8":
       $timezone = "Pacific/Auckland";
-      break; 
+      break;
   case "F9":
       $timezone = "Pacific/Auckland";
-      break; 
+      break;
   case "G1":
       $timezone = "Pacific/Auckland";
-      break; 
+      break;
   case "G2":
       $timezone = "Pacific/Auckland";
-      break; 
+      break;
   case "G3":
       $timezone = "Pacific/Auckland";
-      break; 
+      break;
   } 
-  break; 
+  break;
 case "PT":
     switch ($region) { 
   case "02":
       $timezone = "Europe/Lisbon";
-      break; 
+      break;
   case "03":
       $timezone = "Europe/Lisbon";
-      break; 
+      break;
   case "04":
       $timezone = "Europe/Lisbon";
-      break; 
+      break;
   case "05":
       $timezone = "Europe/Lisbon";
-      break; 
+      break;
   case "06":
       $timezone = "Europe/Lisbon";
-      break; 
+      break;
   case "07":
       $timezone = "Europe/Lisbon";
-      break; 
+      break;
   case "08":
       $timezone = "Europe/Lisbon";
-      break; 
+      break;
   case "09":
       $timezone = "Europe/Lisbon";
-      break; 
+      break;
   case "10":
       $timezone = "Atlantic/Madeira";
-      break; 
+      break;
   case "11":
       $timezone = "Europe/Lisbon";
-      break; 
+      break;
   case "13":
       $timezone = "Europe/Lisbon";
-      break; 
+      break;
   case "14":
       $timezone = "Europe/Lisbon";
-      break; 
+      break;
   case "16":
       $timezone = "Europe/Lisbon";
-      break; 
+      break;
   case "17":
       $timezone = "Europe/Lisbon";
-      break; 
+      break;
   case "18":
       $timezone = "Europe/Lisbon";
-      break; 
+      break;
   case "19":
       $timezone = "Europe/Lisbon";
-      break; 
+      break;
   case "20":
       $timezone = "Europe/Lisbon";
-      break; 
+      break;
   case "21":
       $timezone = "Europe/Lisbon";
-      break; 
+      break;
   case "22":
       $timezone = "Europe/Lisbon";
-      break; 
+      break;
   } 
-  break; 
+  break;
 case "RU":
     switch ($region) { 
   case "01":
       $timezone = "Europe/Volgograd";
-      break; 
+      break;
   case "02":
       $timezone = "Asia/Irkutsk";
-      break; 
+      break;
   case "03":
       $timezone = "Asia/Novokuznetsk";
-      break; 
+      break;
   case "04":
       $timezone = "Asia/Novosibirsk";
-      break; 
+      break;
   case "05":
       $timezone = "Asia/Vladivostok";
-      break; 
+      break;
   case "06":
       $timezone = "Europe/Moscow";
-      break; 
+      break;
   case "07":
       $timezone = "Europe/Volgograd";
-      break; 
+      break;
   case "08":
       $timezone = "Europe/Samara";
-      break; 
+      break;
   case "09":
       $timezone = "Europe/Moscow";
-      break; 
+      break;
   case "10":
       $timezone = "Europe/Moscow";
-      break; 
+      break;
   case "11":
       $timezone = "Asia/Irkutsk";
-      break; 
+      break;
   case "13":
       $timezone = "Asia/Yekaterinburg";
-      break; 
+      break;
   case "14":
       $timezone = "Asia/Irkutsk";
-      break; 
+      break;
   case "15":
       $timezone = "Asia/Anadyr";
-      break; 
+      break;
   case "16":
       $timezone = "Europe/Samara";
-      break; 
+      break;
   case "17":
       $timezone = "Europe/Volgograd";
-      break; 
+      break;
   case "18":
       $timezone = "Asia/Krasnoyarsk";
-      break; 
+      break;
   case "20":
       $timezone = "Asia/Irkutsk";
-      break; 
+      break;
   case "21":
       $timezone = "Europe/Moscow";
-      break; 
+      break;
   case "22":
       $timezone = "Europe/Volgograd";
-      break; 
+      break;
   case "23":
       $timezone = "Europe/Kaliningrad";
-      break; 
+      break;
   case "24":
       $timezone = "Europe/Volgograd";
-      break; 
+      break;
   case "25":
       $timezone = "Europe/Moscow";
-      break; 
+      break;
   case "26":
       $timezone = "Asia/Kamchatka";
-      break; 
+      break;
   case "27":
       $timezone = "Europe/Volgograd";
-      break; 
+      break;
   case "28":
       $timezone = "Europe/Moscow";
-      break; 
+      break;
   case "29":
       $timezone = "Asia/Novokuznetsk";
-      break; 
+      break;
   case "30":
       $timezone = "Asia/Vladivostok";
-      break; 
+      break;
   case "31":
       $timezone = "Asia/Krasnoyarsk";
-      break; 
+      break;
   case "32":
       $timezone = "Asia/Omsk";
-      break; 
+      break;
   case "33":
       $timezone = "Asia/Yekaterinburg";
-      break; 
+      break;
   case "34":
       $timezone = "Asia/Yekaterinburg";
-      break; 
+      break;
   case "35":
       $timezone = "Asia/Yekaterinburg";
-      break; 
+      break;
   case "36":
       $timezone = "Asia/Anadyr";
-      break; 
+      break;
   case "37":
       $timezone = "Europe/Moscow";
-      break; 
+      break;
   case "38":
       $timezone = "Europe/Volgograd";
-      break; 
+      break;
   case "39":
       $timezone = "Asia/Krasnoyarsk";
-      break; 
+      break;
   case "40":
       $timezone = "Asia/Yekaterinburg";
-      break; 
+      break;
   case "41":
       $timezone = "Europe/Moscow";
-      break; 
+      break;
   case "42":
       $timezone = "Europe/Moscow";
-      break; 
+      break;
   case "43":
       $timezone = "Europe/Moscow";
-      break; 
+      break;
   case "44":
       $timezone = "Asia/Magadan";
-      break; 
+      break;
   case "45":
       $timezone = "Europe/Samara";
-      break; 
+      break;
   case "46":
       $timezone = "Europe/Samara";
-      break; 
+      break;
   case "47":
       $timezone = "Europe/Moscow";
-      break; 
+      break;
   case "48":
       $timezone = "Europe/Moscow";
-      break; 
+      break;
   case "49":
       $timezone = "Europe/Moscow";
-      break; 
+      break;
   case "50":
       $timezone = "Asia/Yekaterinburg";
-      break; 
+      break;
   case "51":
       $timezone = "Europe/Moscow";
-      break; 
+      break;
   case "52":
       $timezone = "Europe/Moscow";
-      break; 
+      break;
   case "53":
       $timezone = "Asia/Novosibirsk";
-      break; 
+      break;
   case "54":
       $timezone = "Asia/Omsk";
-      break; 
+      break;
   case "55":
       $timezone = "Europe/Samara";
-      break; 
+      break;
   case "56":
       $timezone = "Europe/Moscow";
-      break; 
+      break;
   case "57":
       $timezone = "Europe/Samara";
-      break; 
+      break;
   case "58":
       $timezone = "Asia/Yekaterinburg";
-      break; 
+      break;
   case "59":
       $timezone = "Asia/Vladivostok";
-      break; 
+      break;
   case "60":
       $timezone = "Europe/Kaliningrad";
-      break; 
+      break;
   case "61":
       $timezone = "Europe/Volgograd";
-      break; 
+      break;
   case "62":
       $timezone = "Europe/Moscow";
-      break; 
+      break;
   case "63":
       $timezone = "Asia/Yakutsk";
-      break; 
+      break;
   case "64":
       $timezone = "Asia/Sakhalin";
-      break; 
+      break;
   case "65":
       $timezone = "Europe/Samara";
-      break; 
+      break;
   case "66":
       $timezone = "Europe/Moscow";
-      break; 
+      break;
   case "67":
       $timezone = "Europe/Samara";
-      break; 
+      break;
   case "68":
       $timezone = "Europe/Volgograd";
-      break; 
+      break;
   case "69":
       $timezone = "Europe/Moscow";
-      break; 
+      break;
   case "70":
       $timezone = "Europe/Volgograd";
-      break; 
+      break;
   case "71":
       $timezone = "Asia/Yekaterinburg";
-      break; 
+      break;
   case "72":
       $timezone = "Europe/Moscow";
-      break; 
+      break;
   case "73":
       $timezone = "Europe/Samara";
-      break; 
+      break;
   case "74":
       $timezone = "Asia/Krasnoyarsk";
-      break; 
+      break;
   case "75":
       $timezone = "Asia/Novosibirsk";
-      break; 
+      break;
   case "76":
       $timezone = "Europe/Moscow";
-      break; 
+      break;
   case "77":
       $timezone = "Europe/Moscow";
-      break; 
+      break;
   case "78":
       $timezone = "Asia/Yekaterinburg";
-      break; 
+      break;
   case "79":
       $timezone = "Asia/Irkutsk";
-      break; 
+      break;
   case "80":
       $timezone = "Asia/Yekaterinburg";
-      break; 
+      break;
   case "81":
       $timezone = "Europe/Samara";
-      break; 
+      break;
   case "82":
       $timezone = "Asia/Irkutsk";
-      break; 
+      break;
   case "83":
       $timezone = "Europe/Moscow";
-      break; 
+      break;
   case "84":
       $timezone = "Europe/Volgograd";
-      break; 
+      break;
   case "85":
       $timezone = "Europe/Moscow";
-      break; 
+      break;
   case "86":
       $timezone = "Europe/Moscow";
-      break; 
+      break;
   case "87":
       $timezone = "Asia/Novosibirsk";
-      break; 
+      break;
   case "88":
       $timezone = "Europe/Moscow";
-      break; 
+      break;
   case "89":
       $timezone = "Asia/Vladivostok";
-      break; 
+      break;
   } 
-  break; 
+  break;
 case "UA":
     switch ($region) { 
   case "01":
       $timezone = "Europe/Kiev";
-      break; 
+      break;
   case "02":
       $timezone = "Europe/Kiev";
-      break; 
+      break;
   case "03":
       $timezone = "Europe/Uzhgorod";
-      break; 
+      break;
   case "04":
       $timezone = "Europe/Zaporozhye";
-      break; 
+      break;
   case "05":
       $timezone = "Europe/Zaporozhye";
-      break; 
+      break;
   case "06":
       $timezone = "Europe/Uzhgorod";
-      break; 
+      break;
   case "07":
       $timezone = "Europe/Zaporozhye";
-      break; 
+      break;
   case "08":
       $timezone = "Europe/Simferopol";
-      break; 
+      break;
   case "09":
       $timezone = "Europe/Kiev";
-      break; 
+      break;
   case "10":
       $timezone = "Europe/Zaporozhye";
-      break; 
+      break;
   case "11":
       $timezone = "Europe/Simferopol";
-      break; 
+      break;
   case "13":
       $timezone = "Europe/Kiev";
-      break; 
+      break;
   case "14":
       $timezone = "Europe/Zaporozhye";
-      break; 
+      break;
   case "15":
       $timezone = "Europe/Uzhgorod";
-      break; 
+      break;
   case "16":
       $timezone = "Europe/Zaporozhye";
-      break; 
+      break;
   case "17":
       $timezone = "Europe/Simferopol";
-      break; 
+      break;
   case "18":
       $timezone = "Europe/Zaporozhye";
-      break; 
+      break;
   case "19":
       $timezone = "Europe/Kiev";
-      break; 
+      break;
   case "20":
       $timezone = "Europe/Simferopol";
-      break; 
+      break;
   case "21":
       $timezone = "Europe/Kiev";
-      break; 
+      break;
   case "22":
       $timezone = "Europe/Uzhgorod";
-      break; 
+      break;
   case "23":
       $timezone = "Europe/Kiev";
-      break; 
+      break;
   case "24":
       $timezone = "Europe/Uzhgorod";
-      break; 
+      break;
   case "25":
       $timezone = "Europe/Uzhgorod";
-      break; 
+      break;
   case "26":
       $timezone = "Europe/Zaporozhye";
-      break; 
+      break;
   case "27":
       $timezone = "Europe/Kiev";
-      break; 
+      break;
   } 
-  break; 
+  break;
 case "UZ":
     switch ($region) { 
   case "01":
       $timezone = "Asia/Tashkent";
-      break; 
+      break;
   case "02":
       $timezone = "Asia/Samarkand";
-      break; 
+      break;
   case "03":
       $timezone = "Asia/Tashkent";
-      break; 
+      break;
   case "06":
       $timezone = "Asia/Tashkent";
-      break; 
+      break;
   case "07":
       $timezone = "Asia/Samarkand";
-      break; 
+      break;
   case "08":
       $timezone = "Asia/Samarkand";
-      break; 
+      break;
   case "09":
       $timezone = "Asia/Samarkand";
-      break; 
+      break;
   case "10":
       $timezone = "Asia/Samarkand";
-      break; 
+      break;
   case "12":
       $timezone = "Asia/Samarkand";
-      break; 
+      break;
   case "13":
       $timezone = "Asia/Tashkent";
-      break; 
+      break;
   case "14":
       $timezone = "Asia/Tashkent";
-      break; 
+      break;
   } 
-  break; 
+  break;
 case "TL":
     $timezone = "Asia/Dili";
-    break; 
+    break;
 case "PF":
     $timezone = "Pacific/Marquesas";
-    break; 
+    break;
+case "SX":
+    $timezone = "America/Curacao";
+    break;
+case "BQ":
+    $timezone = "America/Curacao";
+    break;
+case "CW":
+    $timezone = "America/Curacao";
+    break;
   } 
   return $timezone; 
 } 
