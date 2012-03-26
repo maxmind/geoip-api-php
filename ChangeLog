@@ -1,3 +1,6 @@
+1.10	2012-03-26
+	* Update time zones and country codes ( Boris Zentner )
+	* Add example for netspeedcell databases. ( Boris Zentner )
 1.9	2011-08-23
 	* Add new datatypes 
 	GEOIP_COUNTRY_EDITION_V6, GEOIP_CITY_EDITION_REV1_V6
