@@ -381,7 +381,8 @@ function geoip_open($filename, $flags) {
   $gi->flags = $flags;
   if ($gi->flags & GEOIP_SHARED_MEMORY) {
     $gi->shmid = @shmop_open (GEOIP_SHM_KEY, "a", 0, 0);
-    } else {
+    if ($gi->shmid === FALSE) { geoip_load_shared_mem($filename); }
+  } else {
     $gi->filehandle = fopen($filename,"rb") or die( "Can not open $filename\n" );
     if ($gi->flags & GEOIP_MEMORY_CACHE) {
         $s_array = fstat($gi->filehandle);
