@@ -2,7 +2,7 @@ Requirements
 
 None (only the 'GeoIP.dat' file is needed).  To download a free GeoIP Standard Country
 database, go to
-http://maxmind.com/download/geoip/database/
+http://dev.maxmind.com/geoip/geolite
 
 Install
 
