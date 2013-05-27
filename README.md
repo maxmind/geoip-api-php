@@ -76,10 +76,6 @@ configure time.  See (http://us2.php.net/manual/en/ref.shmop.php).
 In addition, you should call `geoip_load_shared_mem` before calling
 `geoip_open`.  See `sample_city.php` for an example of shared memory caching.
 
-## PHP5 ##
-
-`geoip_country_code_by_addr` should work with PHP.
-
 ## Support ##
 
 For help with this API or our databases, please see [our support page]
