@@ -1,7 +1,9 @@
 {
-    "name": "maxmind/geoip-api-php",
+    "name": "geoip/geoip",
+    "type": "library",
     "description": "GeoIP PHP API",
-    "license": "CHECK THIS",
+    "keywords": [ "geoip", "geolocation", "maxmind" ],
+    "license": "LGPL 2.1+",
     "authors": [
         {
             "name": "MaxMind, Inc.",
