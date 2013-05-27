@@ -1,3 +1,4 @@
+1.13    * Composer support ( Maksim Kotlyar )
 	* Remove duplicate key - A placeholder for unused countries.
 	( Boris Zentner )
 1.12	2013-02-20
@@ -11,7 +12,7 @@
 	* Update time zones and country codes ( Boris Zentner )
 	* Add example for netspeedcell databases. ( Boris Zentner )
 1.9	2011-08-23
-	* Add new datatypes 
+	* Add new datatypes
 	GEOIP_COUNTRY_EDITION_V6, GEOIP_CITY_EDITION_REV1_V6
 	GEOIP_CITY_EDITION_REV0_V6, GEOIP_NETSPEED_EDITION_REV1,
 	GEOIP_NETSPEED_EDITION_REV1_V6, GEOIP_ASNUM_EDITION_V6,
@@ -48,11 +49,11 @@
 	* Fix geoip_country_code_by_addr when used with a city database for unknown or private records ( cpw )
 	* Update timezone.php
 	* Sync geoipregionvars.php with fips codes from Jan, 14th 2009 ( Boris Zentner )
-	* use metro_code in sample_city.php ( Boris Zentner )  
+	* use metro_code in sample_city.php ( Boris Zentner )
 	* replace the depreciated dma_code field with metro_code ( Boris Zentner )
-	* remove wrong but unreferenced Singapur SG fips regions codes ( Boris Zentner )  
+	* remove wrong but unreferenced Singapur SG fips regions codes ( Boris Zentner )
 	* update regions ( geoipregionvars.php ) ( Boris Zentner )
-	* Die when the database file is not found or readable ( Boris Zentner ) 
+	* Die when the database file is not found or readable ( Boris Zentner )
 
 1.7	2008-1-8
 	* Added BL/Saint Barthelemy, MF/Saint Martin (ISO-3166-1 additions)
@@ -71,7 +72,7 @@
 	* Added Shared Memory support for GeoIP City (Frank Mather)
 	* Replaced Yugoslavia with Serbia and Montenegro
 	* Removed global declaration for $GEOIP_COUNTRY_CODE_TO_NUMBER, $GEOIP_COUNTRY_CODES,
-		and $GEOIP_COUNTRY_CODES3 
+		and $GEOIP_COUNTRY_CODES3
 
 1.4	2005-01-13   Andrew Hill, Awarez Ltd. (http://www.awarez.net)
  *              Formatted file according to PEAR library standards.
