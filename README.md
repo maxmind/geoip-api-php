@@ -85,6 +85,13 @@ In addition, you should call `geoip_load_shared_mem` before calling
 For help with this API or our databases, please see [our support page]
 (http://www.maxmind.com/en/support).
 
+## Copyright and License ##
+
+This software is Copyright (c) 2013 by MaxMind, Inc.
+
+This is free software, licensed under the GNU Lesser General Public License
+version 2.1 or later.
+
 ## Thanks ##
 
 Thanks to Jim Winstead.
