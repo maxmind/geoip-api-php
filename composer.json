@@ -1,0 +1,14 @@
+{
+    "name": "maxmind/geoip-api-php",
+    "description": "GeoIP PHP API",
+    "license": "CHECK THIS",
+    "authors": [
+        {
+            "name": "MaxMind, Inc.",
+            "homepage": "http://dev.maxmind.com/geoip/legacy/downloadable"
+        }
+    ],
+    "autoload": {
+        "files": ["geoip.inc", "geoipcity.inc"]
+    }
+}
