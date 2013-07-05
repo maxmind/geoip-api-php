@@ -46,7 +46,7 @@ case "US":
       $timezone = "America/Chicago";
       break;
   case "IN":
-      $timezone = "America/Indianapolis";
+      $timezone = "America/Indiana/Indianapolis";
       break;
   case "IA":
       $timezone = "America/Chicago";
@@ -170,7 +170,7 @@ case "CA":
       $timezone = "America/Winnipeg";
       break;
   case "NB":
-      $timezone = "America/Moncton";
+      $timezone = "America/Halifax";
       break;
   case "NL":
       $timezone = "America/St_Johns";
@@ -182,16 +182,16 @@ case "CA":
       $timezone = "America/Halifax";
       break;
   case "NU":
-      $timezone = "America/Iqaluit";
+      $timezone = "America/Rankin_Inlet";
       break;
   case "ON":
-      $timezone = "America/Montreal";
+      $timezone = "America/Toronto";
       break;
   case "PE":
       $timezone = "America/Halifax";
       break;
   case "QC":
-      $timezone = "America/Moncton";
+      $timezone = "America/Montreal";
       break;
   case "SK":
       $timezone = "America/Regina";
@@ -292,9 +292,6 @@ case "ZA":
 case "UG":
     $timezone = "Africa/Kampala";
     break;
-case "UM":
-    $timezone = "Pacific/Wake";
-    break;
 case "SD":
     $timezone = "Africa/Khartoum";
     break;
@@ -315,9 +312,6 @@ case "TG":
     break;
 case "AO":
     $timezone = "Africa/Luanda";
-    break;
-case "AQ":
-    $timezone = "Antarctica/South_Pole";
     break;
 case "ZM":
     $timezone = "Africa/Lusaka";
@@ -493,34 +487,6 @@ case "BN":
 case "IN":
     $timezone = "Asia/Kolkata";
     break;
-case "MN":
-    switch ($region) {
-  case "06":
-      $timezone = "Asia/Choibalsan";
-      break;
-  case "11":
-      $timezone = "Asia/Ulaanbaatar";
-      break;
-  case "17":
-      $timezone = "Asia/Choibalsan";
-      break;
-  case "19":
-      $timezone = "Asia/Hovd";
-      break;
-  case "20":
-      $timezone = "Asia/Ulaanbaatar";
-      break;
-  case "21":
-      $timezone = "Asia/Ulaanbaatar";
-      break;
-  case "25":
-      $timezone = "Asia/Ulaanbaatar";
-      break;
-  }
-  break;
-case "MO":
-    $timezone = "Asia/Macau";
-    break;
 case "LK":
     $timezone = "Asia/Colombo";
     break;
@@ -537,7 +503,7 @@ case "HK":
     $timezone = "Asia/Hong_Kong";
     break;
 case "TR":
-    $timezone = "Europe/Istanbul";
+    $timezone = "Asia/Istanbul";
     break;
 case "IL":
     $timezone = "Asia/Jerusalem";
@@ -555,7 +521,7 @@ case "KW":
     $timezone = "Asia/Kuwait";
     break;
 case "MO":
-    $timezone = "Asia/Macao";
+    $timezone = "Asia/Macau";
     break;
 case "PH":
     $timezone = "Asia/Manila";
@@ -593,9 +559,6 @@ case "GE":
 case "BT":
     $timezone = "Asia/Thimphu";
     break;
-case "BV":
-    $timezone = "Antarctica/Syowa";
-    break;
 case "JP":
     $timezone = "Asia/Tokyo";
     break;
@@ -614,9 +577,6 @@ case "CV":
 case "FO":
     $timezone = "Atlantic/Faroe";
     break;
-case "FM":
-    $timezone = "Pacific/Pohnpei";
-    break;
 case "IS":
     $timezone = "Atlantic/Reykjavik";
     break;
@@ -627,7 +587,7 @@ case "SH":
     $timezone = "Atlantic/St_Helena";
     break;
 case "CL":
-    $timezone = "Chile/Santiago";
+    $timezone = "America/Santiago";
     break;
 case "NL":
     $timezone = "Europe/Amsterdam";
@@ -792,7 +752,7 @@ case "CK":
     $timezone = "Pacific/Rarotonga";
     break;
 case "WS":
-    $timezone = "Pacific/Apia";
+    $timezone = "Pacific/Pago_Pago";
     break;
 case "KI":
     $timezone = "Pacific/Tarawa";
@@ -807,19 +767,16 @@ case "TZ":
     $timezone = "Africa/Dar_es_Salaam";
     break;
 case "VN":
-    $timezone = "Asia/Ho_Chi_Minh";
+    $timezone = "Asia/Phnom_Penh";
     break;
 case "KH":
     $timezone = "Asia/Phnom_Penh";
     break;
 case "CM":
-    $timezone = "Africa/Douala";
+    $timezone = "Africa/Lagos";
     break;
 case "DO":
     $timezone = "America/Santo_Domingo";
-    break;
-case "TL":
-    $timezone = "Asia/Jakarta";
     break;
 case "ET":
     $timezone = "Africa/Addis_Ababa";
@@ -935,6 +892,12 @@ case "BL":
 case "MF":
     $timezone = "America/Marigot";
     break;
+case "MH":
+    $timezone = "Pacific/Kwajalein";
+    break;
+case "UM":
+    $timezone = "Pacific/Wake";
+    break;
 case "AR":
     switch ($region) {
   case "01":
@@ -983,7 +946,7 @@ case "AR":
       $timezone = "America/Argentina/San_Luis";
       break;
   case "16":
-      $timezone = "America/Argentina/Mendoza";
+      $timezone = "America/Argentina/Buenos_Aires";
       break;
   case "17":
       $timezone = "America/Argentina/Salta";
@@ -1001,7 +964,7 @@ case "AR":
       $timezone = "America/Argentina/Buenos_Aires";
       break;
   case "22":
-      $timezone = "America/Argentina/Tucuman";
+      $timezone = "America/Argentina/Catamarca";
       break;
   case "23":
       $timezone = "America/Argentina/Ushuaia";
@@ -1020,7 +983,7 @@ case "BR":
       $timezone = "America/Maceio";
       break;
   case "03":
-      $timezone = "America/Belem";
+      $timezone = "America/Sao_Paulo";
       break;
   case "04":
       $timezone = "America/Manaus";
@@ -1086,7 +1049,7 @@ case "BR":
       $timezone = "America/Maceio";
       break;
   case "29":
-      $timezone = "America/Campo_Grande";
+      $timezone = "America/Sao_Paulo";
       break;
   case "30":
       $timezone = "America/Recife";
@@ -1178,7 +1141,7 @@ case "CN":
       $timezone = "Asia/Urumqi";
       break;
   case "14":
-      $timezone = "Asia/Kashgar";
+      $timezone = "Asia/Chongqing";
       break;
   case "15":
       $timezone = "Asia/Chongqing";
@@ -1407,7 +1370,7 @@ case "ID":
       $timezone = "Asia/Makassar";
       break;
   case "13":
-      $timezone = "Asia/Pontianak";
+      $timezone = "Asia/Makassar";
       break;
   case "14":
       $timezone = "Asia/Makassar";
@@ -1449,7 +1412,7 @@ case "ID":
       $timezone = "Asia/Pontianak";
       break;
   case "28":
-      $timezone = "Asia/Makassar";
+      $timezone = "Asia/Jayapura";
       break;
   case "29":
       $timezone = "Asia/Makassar";
@@ -1528,7 +1491,7 @@ case "KZ":
       $timezone = "Asia/Almaty";
       break;
   case "12":
-      $timezone = "Asia/Almaty";
+      $timezone = "Asia/Qyzylorda";
       break;
   case "13":
       $timezone = "Asia/Aqtobe";
@@ -1547,22 +1510,47 @@ case "KZ":
       break;
   }
   break;
+case "MN":
+    switch ($region) {
+  case "06":
+      $timezone = "Asia/Choibalsan";
+      break;
+  case "11":
+      $timezone = "Asia/Ulaanbaatar";
+      break;
+  case "17":
+      $timezone = "Asia/Choibalsan";
+      break;
+  case "19":
+      $timezone = "Asia/Hovd";
+      break;
+  case "20":
+      $timezone = "Asia/Ulaanbaatar";
+      break;
+  case "21":
+      $timezone = "Asia/Ulaanbaatar";
+      break;
+  case "25":
+      $timezone = "Asia/Ulaanbaatar";
+      break;
+  }
+  break;
 case "MX":
     switch ($region) {
   case "01":
-      $timezone = "America/Bahia_Banderas";
+      $timezone = "America/Mexico_City";
       break;
   case "02":
       $timezone = "America/Tijuana";
       break;
   case "03":
-      $timezone = "America/Mazatlan";
+      $timezone = "America/Hermosillo";
       break;
   case "04":
       $timezone = "America/Merida";
       break;
   case "05":
-      $timezone = "America/Merida";
+      $timezone = "America/Mexico_City";
       break;
   case "06":
       $timezone = "America/Chihuahua";
@@ -1571,7 +1559,7 @@ case "MX":
       $timezone = "America/Monterrey";
       break;
   case "08":
-      $timezone = "America/Bahia_Banderas";
+      $timezone = "America/Mexico_City";
       break;
   case "09":
       $timezone = "America/Mexico_City";
@@ -1589,10 +1577,10 @@ case "MX":
       $timezone = "America/Mexico_City";
       break;
   case "14":
-      $timezone = "America/Bahia_Banderas";
+      $timezone = "America/Mazatlan";
       break;
   case "15":
-      $timezone = "America/Ojinaga";
+      $timezone = "America/Chihuahua";
       break;
   case "16":
       $timezone = "America/Mexico_City";
@@ -1601,7 +1589,7 @@ case "MX":
       $timezone = "America/Mexico_City";
       break;
   case "18":
-      $timezone = "America/Bahia_Banderas";
+      $timezone = "America/Mazatlan";
       break;
   case "19":
       $timezone = "America/Monterrey";
@@ -1631,7 +1619,7 @@ case "MX":
       $timezone = "America/Merida";
       break;
   case "28":
-      $timezone = "America/Matamoros";
+      $timezone = "America/Monterrey";
       break;
   case "29":
       $timezone = "America/Mexico_City";
@@ -1643,7 +1631,7 @@ case "MX":
       $timezone = "America/Merida";
       break;
   case "32":
-      $timezone = "America/Bahia_Banderas";
+      $timezone = "America/Monterrey";
       break;
   }
   break;
@@ -1836,7 +1824,7 @@ case "RU":
       $timezone = "Europe/Volgograd";
       break;
   case "08":
-      $timezone = "Europe/Yekaterinburg";
+      $timezone = "Europe/Samara";
       break;
   case "09":
       $timezone = "Europe/Moscow";
@@ -1899,7 +1887,7 @@ case "RU":
       $timezone = "Asia/Novokuznetsk";
       break;
   case "30":
-      $timezone = "Asia/Sakhalin";
+      $timezone = "Asia/Vladivostok";
       break;
   case "31":
       $timezone = "Asia/Krasnoyarsk";
@@ -1908,7 +1896,7 @@ case "RU":
       $timezone = "Asia/Omsk";
       break;
   case "33":
-      $timezone = "Europe/Samara";
+      $timezone = "Asia/Yekaterinburg";
       break;
   case "34":
       $timezone = "Asia/Yekaterinburg";
@@ -1917,7 +1905,7 @@ case "RU":
       $timezone = "Asia/Yekaterinburg";
       break;
   case "36":
-      $timezone = "Asia/Magadan";
+      $timezone = "Asia/Anadyr";
       break;
   case "37":
       $timezone = "Europe/Moscow";
@@ -2010,7 +1998,7 @@ case "RU":
       $timezone = "Europe/Moscow";
       break;
   case "67":
-      $timezone = "Europe/Volgograd";
+      $timezone = "Europe/Samara";
       break;
   case "68":
       $timezone = "Europe/Volgograd";
@@ -2031,7 +2019,7 @@ case "RU":
       $timezone = "Europe/Samara";
       break;
   case "74":
-      $timezone = "Asia/Yakutsk";
+      $timezone = "Asia/Krasnoyarsk";
       break;
   case "75":
       $timezone = "Asia/Novosibirsk";
@@ -2046,7 +2034,7 @@ case "RU":
       $timezone = "Asia/Yekaterinburg";
       break;
   case "79":
-      $timezone = "Asia/Krasnoyarsk";
+      $timezone = "Asia/Irkutsk";
       break;
   case "80":
       $timezone = "Asia/Yekaterinburg";
@@ -2070,7 +2058,7 @@ case "RU":
       $timezone = "Europe/Moscow";
       break;
   case "87":
-      $timezone = "Asia/Omsk";
+      $timezone = "Asia/Novosibirsk";
       break;
   case "88":
       $timezone = "Europe/Moscow";
@@ -2085,16 +2073,10 @@ case "RU":
       $timezone = "Asia/Krasnoyarsk";
       break;
   case "92":
-      $timezone = "Asia/Kamchatka";
+      $timezone = "Asia/Anadyr";
       break;
   case "93":
       $timezone = "Asia/Irkutsk";
-      break;
-  case "CI":
-      $timezone = "Europe/Volgograd";
-      break;
-  case "JA":
-      $timezone = "Asia/Sakhalin";
       break;
   }
   break;
@@ -2223,36 +2205,6 @@ case "UZ":
       break;
   }
   break;
-case "SH":
-    $timezone = "Atlantic/St_Helena";
-    break;
-case "CC":
-    $timezone = "Indian/Cocos";
-    break;
-case "TF":
-    $timezone = "Indian/Kerguelen";
-    break;
-case "SJ":
-    $timezone = "Arctic/Longyearbyen";
-    break;
-case "GS":
-    $timezone = "Atlantic/South_Georgia";
-    break;
-case "CX":
-    $timezone = "Indian/Christmas";
-    break;
-case "PN":
-    $timezone = "Pacific/Pitcairn";
-    break;
-case "MF":
-    $timezone = "America/Marigot";
-    break;
-case "BL":
-    $timezone = "America/St_Barthelemy";
-    break;
-case "EH":
-    $timezone = "Africa/El_Aaiun";
-    break;
 case "TL":
     $timezone = "Asia/Dili";
     break;
@@ -2267,6 +2219,15 @@ case "BQ":
     break;
 case "CW":
     $timezone = "America/Curacao";
+    break;
+case "AQ":
+    $timezone = "Antarctica/South_Pole";
+    break;
+case "BV":
+    $timezone = "Antarctica/Syowa";
+    break;
+case "FM":
+    $timezone = "Pacific/Pohnpei";
     break;
   }
   return $timezone;
