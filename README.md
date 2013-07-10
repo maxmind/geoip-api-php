@@ -54,7 +54,9 @@ Place the 'geoip.inc' file in the `include_path` as specified in your
 Gets country name by hostname :
 
 ```php
-include("geoip.inc");
+<?php
+
+require 'vendor/autoload.php';
 
 $gi = geoip_open("/usr/local/share/GeoIP/GeoIP.dat",GEOIP_STANDARD);
 
