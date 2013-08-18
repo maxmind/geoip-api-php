@@ -239,21 +239,24 @@ class GeoIP {
     
 }
 function geoip_load_shared_mem ($file) {
-
-  $fp = fopen($file, "rb");
-  if (!$fp) {
-    print "error opening $file: $php_errormsg\n";
-    exit;
+  $gi->shmid = shmop_open(GEOIP_SHM_KEY,"a", 0, 0);
+  if (empty($gi->shmid)) {
+	  echo "Empty, creating new segment... ";
+	  $fp = fopen($file, "rb");
+	  if (!$fp) {
+		print "error opening $file: $php_errormsg\n";
+		exit;
+	  }
+	  $s_array = fstat($fp);
+	  $size = $s_array['size'];
+	  if ($shmid = @shmop_open (GEOIP_SHM_KEY, "w", 0, 0)) {
+		shmop_delete ($shmid);
+		shmop_close ($shmid);
+	  }
+	  $shmid = shmop_open (GEOIP_SHM_KEY, "c", 0644, $size);
+	  shmop_write ($shmid, fread($fp, $size), 0);
+	  shmop_close ($shmid);
   }
-  $s_array = fstat($fp);
-  $size = $s_array['size'];
-  if ($shmid = @shmop_open (GEOIP_SHM_KEY, "w", 0, 0)) {
-    shmop_delete ($shmid);
-    shmop_close ($shmid);
-  }
-  $shmid = shmop_open (GEOIP_SHM_KEY, "c", 0644, $size);
-  shmop_write ($shmid, fread($fp, $size), 0);
-  shmop_close ($shmid);
 }
 
 function _setup_segments($gi){
