@@ -1,3 +1,4 @@
+        * Fix lookup issues with some domain databases (Boris Zentner)
 1.13    * Composer support ( Maksim Kotlyar )
 	* Remove duplicate key - A placeholder for unused countries.
 	( Boris Zentner )

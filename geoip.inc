@@ -28,15 +28,15 @@ define("GEOIP_MEMORY_CACHE", 1);
 define("GEOIP_SHARED_MEMORY", 2);
 define("STRUCTURE_INFO_MAX_SIZE", 20);
 define("DATABASE_INFO_MAX_SIZE", 100);
-define("GEOIP_COUNTRY_EDITION", 106);
+define("GEOIP_COUNTRY_EDITION", 1);
 define("GEOIP_PROXY_EDITION", 8);
 define("GEOIP_ASNUM_EDITION", 9);
 define("GEOIP_NETSPEED_EDITION", 10);
-define("GEOIP_REGION_EDITION_REV0", 112);
+define("GEOIP_REGION_EDITION_REV0", 7);
 define("GEOIP_REGION_EDITION_REV1", 3);
-define("GEOIP_CITY_EDITION_REV0", 111);
+define("GEOIP_CITY_EDITION_REV0", 6);
 define("GEOIP_CITY_EDITION_REV1", 2);
-define("GEOIP_ORG_EDITION", 110);
+define("GEOIP_ORG_EDITION", 5);
 define("GEOIP_ISP_EDITION", 4);
 define("SEGMENT_RECORD_LENGTH", 3);
 define("STANDARD_RECORD_LENGTH", 3);
@@ -266,6 +266,9 @@ function _setup_segments($gi){
         $offset += 3;
         if ($delim == (chr(255).chr(255).chr(255))) {
             $gi->databaseType = ord(@shmop_read ($gi->shmid, $offset, 1));
+	    if ( $gi->databaseType >= 106 ){
+	        $gi->databaseType -= 105;
+	    }
             $offset++;
 
             if ($gi->databaseType == GEOIP_REGION_EDITION_REV0){
@@ -322,6 +325,9 @@ function _setup_segments($gi){
         $delim = fread($gi->filehandle,3);
         if ($delim == (chr(255).chr(255).chr(255))){
         $gi->databaseType = ord(fread($gi->filehandle,1));
+	if ( $gi->databaseType >= 106 ){
+	    $gi->databaseType -= 105;
+	}
         if ($gi->databaseType == GEOIP_REGION_EDITION_REV0){
             $gi->databaseSegments = GEOIP_STATE_BEGIN_REV0;
         }
@@ -350,7 +356,7 @@ function _setup_segments($gi){
             $gi->databaseSegments = 0;
             $buf = fread($gi->filehandle,SEGMENT_RECORD_LENGTH);
             for ($j = 0;$j < SEGMENT_RECORD_LENGTH;$j++){
-            $gi->databaseSegments += (ord($buf[$j]) << ($j * 8));
+                $gi->databaseSegments += (ord($buf[$j]) << ($j * 8));
             }
 	    if (   ( $gi->databaseType == GEOIP_ORG_EDITION )
                 || ( $gi->databaseType == GEOIP_DOMAIN_EDITION )
