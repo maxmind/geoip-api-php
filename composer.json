@@ -13,7 +13,10 @@
         }
     ],
     "autoload": {
-        "files": ["geoip.inc", "geoipcity.inc"]
+        "files": [
+        "src/geoip.inc",
+        "src/geoipcity.inc"
+        ]
     },
     "conflict": {
         "ext-geoip": "*"

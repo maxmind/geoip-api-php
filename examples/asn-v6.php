@@ -4,7 +4,7 @@
 // This code demonstrates how to lookup the country and region by IP Address
 // It is designed to work with GeoIP Organization or GeoIP ISP available from MaxMind
 
-include("geoip.inc");
+include("../src/geoip.inc");
 
 $giasn = geoip_open("/usr/local/share/GeoIP/GeoIPASNumv6.dat",GEOIP_STANDARD);
 
@@ -15,4 +15,3 @@ print "$ip has asn " . $asn . "\n";
 geoip_close($giasn);
 
 ?>
-

@@ -1,7 +1,7 @@
 #!/usr/bin/php -q
 <?php
 
-include("geoip.inc");
+include("../src/geoip.inc");
 
 $gi = geoip_open("/usr/local/share/GeoIP/GeoIPNetSpeed.dat",GEOIP_STANDARD);
 

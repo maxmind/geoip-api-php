@@ -3,15 +3,17 @@
 
 set_time_limit('300');
 
-include("geoip.inc");
-include("geoipcity.inc");
+include("../src/geoip.inc");
+include("../src/geoipcity.inc");
 define("GEOIP_COUNTRY_DATABASE",0);
 define("GEOIP_REGION_DATABASE",1);
 define("GEOIP_CITY_DATABASE",2);
 
-class mainappc{
-  var $dbfilename = array("/usr/local/share/GeoIP/GeoIP.dat","/usr/local/share/GeoIP/GeoIPRegion.dat","/usr/local/share/GeoIP/GeoIPCity.dat");
-  function randomipaddress(){
+class mainappc
+{
+  public $dbfilename = array("/usr/local/share/GeoIP/GeoIP.dat","/usr/local/share/GeoIP/GeoIPRegion.dat","/usr/local/share/GeoIP/GeoIPCity.dat");
+  public function randomipaddress()
+  {
     $result = "";
     for ($a = 0;$a < 4;$a++){
       if ($a > 0){$result = $result . ".";}
@@ -20,11 +22,13 @@ class mainappc{
     }
     return $result;
   }
-  function ftime(){
+  public function ftime()
+  {
     $a = gettimeofday();
     return $a[sec] + ($a[usec]*0.000001);
   }
-  function testgeoipdatabase($type,$flags,$msg,$numlookups){
+  public function testgeoipdatabase($type,$flags,$msg,$numlookups)
+  {
     $gi = geoip_open($this->dbfilename[$type],$flags);
     if ($gi == null){
       print "error: " . $this->dbfilename[$type] . " does not exist\n" ;
@@ -35,10 +39,10 @@ class mainappc{
     for ($i2 = 0;$i2 < $numlookups;$i2++){
       switch ($type) {
         case GEOIP_COUNTRY_DATABASE:
-        geoip_country_code_by_addr($gi,$this->randomipaddress());  
+        geoip_country_code_by_addr($gi,$this->randomipaddress());
         break;
         case GEOIP_REGION_DATABASE:
-        geoip_region_by_addr($gi,$this->randomipaddress());  
+        geoip_region_by_addr($gi,$this->randomipaddress());
         break;
         case GEOIP_CITY_DATABASE:
         GeoIP_record_by_addr($gi,$this->randomipaddress());
@@ -48,7 +52,7 @@ class mainappc{
     $t2 = $this->ftime();
     $t3 = $t2-$t1;
     print $msg . "\n";
-    print $numlookups . " lookups made in " . $t3 . " seconds \n"; 
+    print $numlookups . " lookups made in " . $t3 . " seconds \n";
     geoip_close($gi);
   }
 }

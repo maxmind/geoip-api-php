@@ -4,8 +4,8 @@
 // This code demonstrates how to lookup the country and region by IP Address
 // It is designed to work with GeoIP Region available from MaxMind
 
-include("geoip.inc");
-include("geoipregionvars.php");
+include("../src/geoip.inc");
+include("../src/geoipregionvars.php");
 
 $gi = geoip_open("/usr/local/share/GeoIP/GeoIPRegion.dat",GEOIP_STANDARD);
 
