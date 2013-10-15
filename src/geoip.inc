@@ -524,16 +524,9 @@ function _geoip_seek_country_v6($gi, $ipnum) {
     $offset = 0;
     for ($depth = 127; $depth >= 0; --$depth) {
     if ($gi->flags & GEOIP_MEMORY_CACHE) {
-        // workaround php's broken substr, strpos, etc handling with
-        // mbstring.func_overload and mbstring.internal_encoding
-        $enc = mb_internal_encoding();
-        mb_internal_encoding('ISO-8859-1');
-
-        $buf = substr($gi->memory_buffer,
+        $buf = _safe_substr($gi->memory_buffer,
             2 * $gi->record_length * $offset,
             2 * $gi->record_length);
-
-        mb_internal_encoding($enc);
     } elseif ($gi->flags & GEOIP_SHARED_MEMORY) {
         $buf = @shmop_read ($gi->shmid,
             2 * $gi->record_length * $offset,
@@ -573,16 +566,9 @@ function _geoip_seek_country($gi, $ipnum) {
     $offset = 0;
     for ($depth = 31; $depth >= 0; --$depth) {
     if ($gi->flags & GEOIP_MEMORY_CACHE) {
-        // workaround php's broken substr, strpos, etc handling with
-        // mbstring.func_overload and mbstring.internal_encoding
-        $enc = mb_internal_encoding();
-        mb_internal_encoding('ISO-8859-1');
-
-        $buf = substr($gi->memory_buffer,
+        $buf = _safe_substr($gi->memory_buffer,
             2 * $gi->record_length * $offset,
             2 * $gi->record_length);
-
-        mb_internal_encoding($enc);
     } elseif ($gi->flags & GEOIP_SHARED_MEMORY) {
         $buf = @shmop_read ($gi->shmid,
             2 * $gi->record_length * $offset,
@@ -622,12 +608,7 @@ function _common_get_org($gi, $seek_org){
     fseek($gi->filehandle, $record_pointer, SEEK_SET);
     $org_buf = fread($gi->filehandle,MAX_ORG_RECORD_LENGTH);
     }
-    // workaround php's broken substr, strpos, etc handling with
-    // mbstring.func_overload and mbstring.internal_encoding
-    $enc = mb_internal_encoding();
-    mb_internal_encoding('ISO-8859-1');
-    $org_buf = substr($org_buf, 0, strpos($org_buf, "\0"));
-    mb_internal_encoding($enc);
+    $org_buf = _safe_substr($org_buf, 0, strpos($org_buf, "\0"));
     return $org_buf;
 }
 
@@ -715,6 +696,25 @@ function getdnsattributes ($l,$ip){
     $str = is_object($p->answer[0])?$p->answer[0]->string():'';
     $str = substr( $str, 1, -1 );
     return $str;
+}
+
+function _safe_substr($string, $start, $length) {
+    // workaround php's broken substr, strpos, etc handling with
+    // mbstring.func_overload and mbstring.internal_encoding
+    $mbExists = extension_loaded('mbstring');
+
+    if ($mbExists) {
+        $enc = mb_internal_encoding();
+        mb_internal_encoding('ISO-8859-1');
+    }
+
+    $buf = substr($string, $start, $length);
+
+    if ($mbExists) {
+        mb_internal_encoding($enc);
+    }
+
+    return $buf;
 }
 
 ?>

@@ -119,8 +119,11 @@ function _get_record_v6($gi,$ipnum){
 function _common_get_record($gi, $seek_country){
     // workaround php's broken substr, strpos, etc handling with
     // mbstring.func_overload and mbstring.internal_encoding
-    $enc = mb_internal_encoding();
-    mb_internal_encoding('ISO-8859-1');
+    $mbExists = extension_loaded('mbstring');
+    if ($mbExists) {
+        $enc = mb_internal_encoding();
+        mb_internal_encoding('ISO-8859-1');
+    }
 
     $record_pointer = $seek_country + (2 * $gi->record_length - 1) * $gi->databaseSegments;
 
@@ -198,7 +201,9 @@ function _common_get_record($gi, $seek_country){
             $record->area_code = $metroarea_combo%1000;
         }
     }
-    mb_internal_encoding($enc);
+    if ($mbExists) {
+        mb_internal_encoding($enc);
+    }
     return $record;
 }
 
