@@ -70,7 +70,7 @@ define("GEOIP_DOMAIN_EDITION_V6", 24);
 
 define("CITYCOMBINED_FIXED_RECORD", 7);
 
-class geoip
+class GeoIP
 {
     public $flags;
     public $filehandle;
