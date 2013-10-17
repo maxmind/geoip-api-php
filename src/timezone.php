@@ -1,5 +1,6 @@
 <?php
-function get_time_zone($country,$region) {
+function get_time_zone($country,$region)
+{
   switch ($country) {
 case "US":
     switch ($region) {
@@ -2232,4 +2233,3 @@ case "FM":
   }
   return $timezone;
 }
-?>
