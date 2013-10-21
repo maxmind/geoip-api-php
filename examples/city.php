@@ -15,9 +15,9 @@ include("../src/geoipregionvars.php");
 // geoip_load_shared_mem("/usr/local/share/GeoIP/GeoIPCity.dat");
 // $gi = geoip_open("/usr/local/share/GeoIP/GeoIPCity.dat",GEOIP_SHARED_MEMORY);
 
-$gi = geoip_open("/usr/local/share/GeoIP/GeoIPCity.dat",GEOIP_STANDARD);
+$gi = geoip_open("/usr/local/share/GeoIP/GeoIPCity.dat", GEOIP_STANDARD);
 
-$record = geoip_record_by_addr($gi,"24.24.24.24");
+$record = geoip_record_by_addr($gi, "24.24.24.24");
 print $record->country_code . " " . $record->country_code3 . " " . $record->country_name . "\n";
 print $record->region . " " . $GEOIP_REGION_NAME[$record->country_code][$record->region] . "\n";
 print $record->city . "\n";

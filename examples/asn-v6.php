@@ -6,10 +6,10 @@
 
 include("../src/geoip.inc");
 
-$giasn = geoip_open("/usr/local/share/GeoIP/GeoIPASNumv6.dat",GEOIP_STANDARD);
+$giasn = geoip_open("/usr/local/share/GeoIP/GeoIPASNumv6.dat", GEOIP_STANDARD);
 
 $ip = '2001:4860:0:1001::68';
-$asn = geoip_name_by_addr_v6($giasn,$ip);
+$asn = geoip_name_by_addr_v6($giasn, $ip);
 print "$ip has asn " . $asn . "\n";
 
 geoip_close($giasn);

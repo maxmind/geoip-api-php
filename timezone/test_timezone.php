@@ -1,5 +1,5 @@
 #!/usr/bin/php -q
-<?php 
+<?php
 require("timezone.php");
-print get_time_zone("US","WV");
+print get_time_zone("US", "WV");
 ?>

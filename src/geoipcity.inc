@@ -2,7 +2,7 @@
 
 /* geoipcity.inc
  *
- * Copyright (C) 2004 Maxmind LLC
+ * Copyright (C) 2013 MaxMind, Inc.
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -36,7 +36,7 @@ class geoiprecord
     public $latitude;
     public $longitude;
     public $area_code;
-    public $dma_code;     # metro and dma code are the same. use metro_code
+    public $dma_code; # metro and dma code are the same. use metro_code
     public $metro_code;
     public $continent_code;
 }
@@ -64,7 +64,7 @@ function getrecordwithdnsservice($str)
     $record = new geoipdnsrecord;
     $keyvalue = explode(";", $str);
     foreach ($keyvalue as $keyvalue2) {
-        list($key,$value) = explode("=", $keyvalue2);
+        list($key, $value) = explode("=", $keyvalue2);
         if ($key == "co") {
             $record->country_code = $value;
         }
@@ -78,7 +78,7 @@ function getrecordwithdnsservice($str)
             $record->areacode = $value;
         }
         if ($key == "dm" || $key == "me") {
-            $record->dmacode     = $value;
+            $record->dmacode = $value;
             $record->metrocode = $value;
         }
         if ($key == "is") {
@@ -111,7 +111,7 @@ function getrecordwithdnsservice($str)
 }
 
 
-function _get_record_v6($gi,$ipnum)
+function _get_record_v6($gi, $ipnum)
 {
     $seek_country = _geoip_seek_country_v6($gi, $ipnum);
     if ($seek_country == $gi->databaseSegments) {
@@ -161,7 +161,7 @@ function _common_get_record($gi, $seek_country)
     }
     $record_buf_pos += $str_length + 1;
     $str_length = 0;
-        // Get city
+    // Get city
     $char = ord(substr($record_buf, $record_buf_pos + $str_length, 1));
     while ($char != 0) {
         $str_length++;
@@ -172,7 +172,7 @@ function _common_get_record($gi, $seek_country)
     }
     $record_buf_pos += $str_length + 1;
     $str_length = 0;
-        // Get postal code
+    // Get postal code
     $char = ord(substr($record_buf, $record_buf_pos + $str_length, 1));
     while ($char != 0) {
         $str_length++;
@@ -183,19 +183,19 @@ function _common_get_record($gi, $seek_country)
     }
     $record_buf_pos += $str_length + 1;
     $str_length = 0;
-        // Get latitude and longitude
+    // Get latitude and longitude
     $latitude = 0;
     $longitude = 0;
     for ($j = 0; $j < 3; ++$j) {
         $char = ord(substr($record_buf, $record_buf_pos++, 1));
         $latitude += ($char << ($j * 8));
     }
-    $record->latitude = ($latitude/10000) - 180;
+    $record->latitude = ($latitude / 10000) - 180;
     for ($j = 0; $j < 3; ++$j) {
         $char = ord(substr($record_buf, $record_buf_pos++, 1));
         $longitude += ($char << ($j * 8));
     }
-    $record->longitude = ($longitude/10000) - 180;
+    $record->longitude = ($longitude / 10000) - 180;
     if (GEOIP_CITY_EDITION_REV1 == $gi->databaseType) {
         $metroarea_combo = 0;
         if ($record->country_code == "US") {
@@ -203,8 +203,8 @@ function _common_get_record($gi, $seek_country)
                 $char = ord(substr($record_buf, $record_buf_pos++, 1));
                 $metroarea_combo += ($char << ($j * 8));
             }
-            $record->metro_code = $record->dma_code = floor($metroarea_combo/1000);
-            $record->area_code = $metroarea_combo%1000;
+            $record->metro_code = $record->dma_code = floor($metroarea_combo / 1000);
+            $record->area_code = $metroarea_combo % 1000;
         }
     }
     if ($mbExists) {
@@ -213,10 +213,10 @@ function _common_get_record($gi, $seek_country)
     return $record;
 }
 
-function GeoIP_record_by_addr_v6 ($gi, $addr)
+function GeoIP_record_by_addr_v6($gi, $addr)
 {
     if ($addr == null) {
-         return 0;
+        return 0;
     }
     $ipnum = inet_pton($addr);
     return _get_record_v6($gi, $ipnum);
@@ -231,10 +231,10 @@ function _get_record($gi, $ipnum)
     return _common_get_record($gi, $seek_country);
 }
 
-function GeoIP_record_by_addr ($gi, $addr)
+function GeoIP_record_by_addr($gi, $addr)
 {
     if ($addr == null) {
-         return 0;
+        return 0;
     }
     $ipnum = ip2long($addr);
     return _get_record($gi, $ipnum);

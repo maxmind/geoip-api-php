@@ -6,9 +6,9 @@
 
 include("../src/geoip.inc");
 
-$gi = geoip_open("/usr/local/share/GeoIP/GeoIPDomain.dat",GEOIP_STANDARD);
+$gi = geoip_open("/usr/local/share/GeoIP/GeoIPDomain.dat", GEOIP_STANDARD);
 
-$domain = geoip_org_by_addr($gi,"80.24.24.24");
+$domain = geoip_org_by_addr($gi, "80.24.24.24");
 print "80.24.24.24 belongs to " . $domain . "\n";
 
 geoip_close($gi);

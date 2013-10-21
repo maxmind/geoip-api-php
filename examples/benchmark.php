@@ -11,7 +11,12 @@ define("GEOIP_CITY_DATABASE", 2);
 
 class mainappc
 {
-    public $dbfilename = array("/usr/local/share/GeoIP/GeoIP.dat", "/usr/local/share/GeoIP/GeoIPRegion.dat","/usr/local/share/GeoIP/GeoIPCity.dat");
+    public $dbfilename = array(
+        "/usr/local/share/GeoIP/GeoIP.dat",
+        "/usr/local/share/GeoIP/GeoIPRegion.dat",
+        "/usr/local/share/GeoIP/GeoIPCity.dat"
+    );
+
     public function randomipaddress()
     {
         $result = "";
@@ -29,7 +34,7 @@ class mainappc
     {
         $gi = geoip_open($this->dbfilename[$type], $flags);
         if ($gi == null) {
-            print "error: " . $this->dbfilename[$type] . " does not exist\n" ;
+            print "error: " . $this->dbfilename[$type] . " does not exist\n";
             return;
         }
         $startTime = microtime(true);

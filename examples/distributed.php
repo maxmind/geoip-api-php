@@ -9,11 +9,11 @@ $l = "LICENSE_KEY_HERE";
 $ip = "24.24.24.24";
 
 if ($l == "LICENSE_KEY_HERE") {
-  print "Error, must edit sample_distributed.php to replace LICENSE_KEY_HERE\n";
-  exit;
+    print "Error, must edit sample_distributed.php to replace LICENSE_KEY_HERE\n";
+    exit;
 }
 
-$str = getdnsattributes($l,$ip);
+$str = getdnsattributes($l, $ip);
 $r = getrecordwithdnsservice($str);
 print "country code: " . $r->country_code . "\n";
 print "country code3: " . $r->country_code3 . "\n";
