@@ -16,7 +16,7 @@ To do this, add ```geoip/geoip``` to your ```composer.json``` file.
 ```json
 {
     "require": {
-        "geoip/geoip": "~1.13"
+        "geoip/geoip": "~1.14"
     }
 }
 ```

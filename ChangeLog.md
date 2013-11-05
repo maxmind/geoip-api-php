@@ -1,8 +1,11 @@
 # Change Log #
 
-## 1.14 (2013-XX-XX)
+## 1.14 (2013-11-05)
 
-* Fix lookup issues with some domain databases (Boris Zentner)
+* Fix lookup issues with some domain databases ( Boris Zentner )
+* Reorganize and clean up code ( Gregory Oschwald )
+* Fix for module when mbstring extension is missing ( Gregory Oschwald )
+* Updated timezones ( Boriss Zentner )
 
 ## 1.13 (2013-05-27)
 
