@@ -762,8 +762,12 @@ $_time_zones = array(
 function get_time_zone($country, $region)
 {
     global $_time_zones;
+    if(!isset($_time_zones[$country])) {
+        return FALSE;
+    }
     if(is_string($_time_zones[$country])) {
         return $_time_zones[$country];
     }
-    return $_time_zones[$country][$region];
+    return isset($_time_zones[$country][$region]) ?
+        $_time_zones[$country][$region] : FALSE;
 }
