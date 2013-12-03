@@ -1,6 +1,7 @@
 <?php
-# Copyright 2013 MaxMind, Inc. All Rights Reserved
-Global $GEOIP_REGION_NAME = array (
+// Copyright 2013 MaxMind, Inc. All Rights Reserved
+global $GEOIP_REGION_NAME;
+$GEOIP_REGION_NAME = array (
   'AD' => 
   array (
     '02' => 'Canillo',
@@ -4599,4 +4600,4 @@ Global $GEOIP_REGION_NAME = array (
     '09' => 'Bulawayo',
     10 => 'Harare',
   ),
-)
+);

@@ -1,10 +1,10 @@
 #!/usr/bin/php -q
 <?php
 
-function download_and_open($url)
+function downloadAndOpen($url)
 {
     $file = basename($url);
-    if ( !file_exists( sprintf('%s/%s', __DIR__, $file) ) ) {
+    if (!file_exists(sprintf('%s/%s', __DIR__, $file))) {
         $ch = curl_init();
         $timeout = 5;
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -12,12 +12,12 @@ function download_and_open($url)
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
         $data = curl_exec($ch);
         curl_close($ch);
-        file_put_contents( $file, $data);
+        file_put_contents($file, $data);
     }
     return file($file);
 }
 
-$countries = download_and_open('http://dev.maxmind.com/static/csv/codes/maxmind/region.csv');
+$countries = downloadAndOpen('http://dev.maxmind.com/static/csv/codes/maxmind/region.csv');
 
 $array = array();
 foreach ($countries as $line) {
@@ -28,7 +28,8 @@ $array = array_map('array_flip', $array);
 
 date_default_timezone_set("UTC");
 $output = "<?php\n";
-$output .= sprintf("# Copyright %s MaxMind, Inc. All Rights Reserved\n", date('Y'));
-$output .= 'Global $GEOIP_REGION_NAME = ' . var_export($array, true);
+$output .= sprintf("// Copyright %s MaxMind, Inc. All Rights Reserved\n", date('Y'));
+$output .= "global \$GEOIP_REGION_NAME;\n";
+$output .= "\$GEOIP_REGION_NAME = " . var_export($array, true) . ";\n";
 
-file_put_contents( __DIR__ . '/../src/geoipregionvars.php', $output);
+file_put_contents(__DIR__ . '/../src/geoipregionvars.php', $output);
