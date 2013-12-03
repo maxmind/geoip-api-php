@@ -1,0 +1,21 @@
+language: php
+
+php:
+  - 5.3
+  - 5.4
+  - 5.5
+
+before_install:
+  - composer self-update
+  - composer install --dev -n --prefer-source
+  - phpenv rehash
+
+script:
+  - phpunit -c phpunit.xml.dist
+
+notifications:
+  email:
+    recipients:
+      - dev@maxmind.com
+    on_success: change
+    on_failure: always

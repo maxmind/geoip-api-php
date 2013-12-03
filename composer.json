@@ -15,7 +15,8 @@
     "autoload": {
         "files": [
         "src/geoip.inc",
-        "src/geoipcity.inc"
+        "src/geoipcity.inc",
+        "src/timezone.php"
         ]
     },
     "conflict": {
