@@ -9,8 +9,16 @@
 
     <filter>
         <whitelist>
-            <directory>./src</directory>
+            <directory suffix=".inc">./src</directory>
+            <directory suffix=".php">./src</directory>
         </whitelist>
+        <blacklist>
+            <directory>./build</directory>
+            <directory>./composer</directory>
+            <directory>./tests</directory>
+            <directory>./travis</directory>
+            <directory>./vendor</directory>
+        </blacklist>
     </filter>
 
     <logging>
