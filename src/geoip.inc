@@ -1860,16 +1860,6 @@ function geoip_region_by_addr($gi, $addr)
     return _get_region($gi, $ipnum);
 }
 
-function getdnsattributes($l, $ip)
-{
-    $r = new Net_DNS_Resolver();
-    $r->nameservers = array("ws1.maxmind.com");
-    $p = $r->search($l . "." . $ip . ".s.maxmind.com", "TXT", "IN");
-    $str = is_object($p->answer[0]) ? $p->answer[0]->string() : '';
-    $str = substr($str, 1, -1);
-    return $str;
-}
-
 function _safe_substr($string, $start, $length)
 {
     // workaround php's broken substr, strpos, etc handling with

@@ -1,5 +1,9 @@
 # Change Log #
 
+## 1.15 (2014-??-??)
+
+* Removed broken distributed queries code.
+
 ## 1.14 (2013-11-05)
 
 * Fix lookup issues with some domain databases ( Boris Zentner )
