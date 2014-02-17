@@ -29,7 +29,7 @@ while ($str = <FILE>) {
   if ($region ne "") {
     print "  case " . qq(") . $region . qq(") . ":\n  ";
   }
-  print qq(    \$timezone = ") . $timezone . qq(") . ";\n";
+  print qq(    \$timezone = ) . $timezone  . ";\n";
   if ($region ne "") {
     print "      break;\n";
   } else {
