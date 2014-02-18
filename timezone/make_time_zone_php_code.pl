@@ -38,11 +38,11 @@ for my $line (@timezones) {
         }
     }
     if ( $region ne q{} ) {
-        print '            case "' . $region . q(") . ":\n    ";
+        print '                case "' . $region . q(") . ":\n        ";
     }
     print '            $timezone = "' . $timezone . q(") . ";\n";
     if ( $region ne q{} ) {
-        print "                break;\n";
+        print "                    break;\n";
     }
     else {
         print "            break;\n";
