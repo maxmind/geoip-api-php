@@ -17,7 +17,7 @@ function downloadAndOpen($url)
     return file($file);
 }
 
-$countries = downloadAndOpen('http://dev.maxmind.com/static/csv/codes/maxmind/region.csv');
+$countries = downloadAndOpen('http://www.maxmind.com/download/geoip/misc/region_codes.csv');
 
 $array = array();
 foreach ($countries as $line) {
