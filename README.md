@@ -8,39 +8,39 @@ our [GeoLite page](http://dev.maxmind.com/geoip/geolite).
 
 ## Installing with Composer ##
 
-### Define Your Dependencies ###
+
+## Install via Composer ##
 
 We recommend installing this package with [Composer](http://getcomposer.org/).
-To do this, add ```geoip/geoip``` to your ```composer.json``` file.
 
-```json
-{
-    "require": {
-        "geoip/geoip": "~1.14"
-    }
-}
+### Downloading Composer ###
+
+To download Composer, run in the root directory of your project:
+
+```bash
+curl -sS https://getcomposer.org/installer | php
 ```
 
-### Install Composer ###
-
-Run in your project root:
-
-```
-curl -s http://getcomposer.org/installer | php
-```
+You should now have the file `composer.phar` in your project directory.
 
 ### Install Dependencies ###
 
 Run in your project root:
 
 ```
-php composer.phar install
+php composer.phar require geoip/geoip:~1.14
 ```
+
+You should now have the files `composer.json` and `composer.lock` as well as
+the directory `vendor` in your project directory. If you use a version control
+system, `composer.json` should be added to it.
 
 ### Require Autoloader ###
 
-You can autoload all dependencies by adding this to your code:
-```
+After installing the dependencies, you need to require the Composer autoloader
+from your code:
+
+```php
 require 'vendor/autoload.php';
 ```
 
