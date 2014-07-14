@@ -6,9 +6,6 @@ This module has no external dependencies. You only need a MaxMind GeoIP
 database. To download a free GeoIP Standard Country database, please see
 our [GeoLite page](http://dev.maxmind.com/geoip/geolite).
 
-## Installing with Composer ##
-
-
 ## Install via Composer ##
 
 We recommend installing this package with [Composer](http://getcomposer.org/).
