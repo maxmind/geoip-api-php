@@ -1,10 +1,16 @@
-# MaxMind GeoIP PHP API #
+# MaxMind GeoIP Legacy PHP API #
+
+## Important Note ##
+
+This API is for the GeoIP Legacy format (dat). To read the MaxMind DB format
+(mmdb) used by GeoIP2, please see
+[our GeoIP2 PHP API](https://github.com/maxmind/GeoIP2-php).
 
 ## Requirements ##
 
 This module has no external dependencies. You only need a MaxMind GeoIP
-database. To download a free GeoIP Standard Country database, please see
-our [GeoLite page](http://dev.maxmind.com/geoip/geolite).
+database. To download a free GeoLite Legacy Country database, please see
+our [GeoLite Legacy page](http://dev.maxmind.com/geoip/legacy/geolite).
 
 ## Install via Composer ##
 
@@ -82,7 +88,7 @@ For help with this API or our databases, please see [our support page]
 
 ## Copyright and License ##
 
-This software is Copyright (c) 2013 by MaxMind, Inc.
+This software is Copyright (c) 2014 by MaxMind, Inc.
 
 This is free software, licensed under the GNU Lesser General Public License
 version 2.1 or later.
