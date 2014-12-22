@@ -3,7 +3,7 @@
  * Get time zone
  * @param string $country
  * @param string $region
- * @return string If timezone is not found, return empty string
+ * @return string If the timezone is not found, returns an empty string
  */
 function get_time_zone($country, $region)
 {
