@@ -3,6 +3,9 @@
 ## 1.15 (2014-??-??)
 
 * Removed broken distributed queries code.
+* Previously if a time zone was not found, an undefined variable error would
+  be outputted. `get_time_zone` now returns `null` if there is no matching
+  time zone. (Fixed by justgoodman. GitHub #30.)
 
 ## 1.14 (2013-11-05)
 

@@ -6,17 +6,28 @@ use warnings;
 use HTTP::Tiny;
 use Text::CSV_XS;
 
-my $old_country;
-my $old_region;
+my $old_country = q{};
+my $old_region = q{};
 
 my $response = HTTP::Tiny->new->get(
     'http://dev.maxmind.com/static/csv/codes/time_zone.csv');
 
 die "Failed to download CSV!\n" unless $response->{success};
 
-print "<?php\n";
-print "function get_time_zone(\$country, \$region)\n{\n";
-print "    switch (\$country) {\n";
+print <<'EOF';
+<?php
+
+/**
+ * Get time zone
+ * @param string $country
+ * @param string $region
+ * @return string If the timezone is not found, returns NULL
+ */
+function get_time_zone($country, $region)
+{
+    $timezone = null;
+    switch ($country) {
+EOF
 
 my $csv = Text::CSV_XS->new ({ binary => 1});
 
