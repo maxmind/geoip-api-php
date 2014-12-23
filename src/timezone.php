@@ -1,6 +1,13 @@
 <?php
+/**
+ * Get time zone
+ * @param string $country
+ * @param string $region
+ * @return string If the timezone is not found, returns NULL
+ */
 function get_time_zone($country, $region)
 {
+    $timezone = null;
     switch ($country) {
         case "AD":
             $timezone = "Europe/Andorra";
