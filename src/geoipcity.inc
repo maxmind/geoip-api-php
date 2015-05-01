@@ -112,7 +112,7 @@ function _common_get_record($gi, $seek_country)
         $record->postal_code = substr($record_buf, $record_buf_pos, $str_length);
     }
     $record_buf_pos += $str_length + 1;
-    $str_length = 0;
+
     // Get latitude and longitude
     $latitude = 0;
     $longitude = 0;
