@@ -1,11 +1,18 @@
 # Change Log #
 
-## 1.15 (2014-??-??)
+## 1.15 (2015-05-01)
 
+* Calls to `die()` where replaced with calls to `trigger_error()`. This
+  allows these (rare) errors to be gracefully handled by an error handler.
+  Pull request by Dirk Weise. GitHub #28.
 * Removed broken distributed queries code.
 * Previously if a time zone was not found, an undefined variable error would
   be outputted. `get_time_zone` now returns `null` if there is no matching
   time zone. (Fixed by justgoodman. GitHub #30.)
+* `$GEOIP_REGION_NAME` is now prefixed with `global` to make it autoloaded by
+  Composer. Pull request by Laurent Goussard. GitHub #15.
+* The script from updating the timezone data was improved to work with the
+  new CSV format. Pull request by Shadman Kolahzary. GitHub #19.
 
 ## 1.14 (2013-11-05)
 
