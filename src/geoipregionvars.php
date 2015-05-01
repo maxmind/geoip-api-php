@@ -1,5 +1,5 @@
 <?php
-// Copyright 2014 MaxMind, Inc. All Rights Reserved
+// Copyright 2015 MaxMind, Inc. All Rights Reserved
 global $GEOIP_REGION_NAME;
 $GEOIP_REGION_NAME = array (
   'AD' => 
@@ -2113,6 +2113,7 @@ $GEOIP_REGION_NAME = array (
     17 => 'Stung Treng',
     18 => 'Svay Rieng',
     19 => 'Takeo',
+    23 => 'Ratanakiri',
     25 => 'Banteay Meanchey',
     28 => 'Preah Seihanu',
     30 => 'Pailin',
@@ -2514,7 +2515,7 @@ $GEOIP_REGION_NAME = array (
     35 => 'Gradsko',
     36 => 'Ilinden',
     37 => 'Izvor',
-    38 => 'Jegunovce',
+    'D5' => 'Jegunovce',
     39 => 'Kamenjane',
     40 => 'Karbinci',
     41 => 'Karpos',
@@ -3812,6 +3813,7 @@ $GEOIP_REGION_NAME = array (
     'P3' => 'Smarjesk Toplice',
     'P4' => 'Sredisce ob Dravi',
     'P5' => 'Straza',
+    'P7' => 'Sveti Jurij v Slovenskih Goricah',
   ),
   'SK' => 
   array (
@@ -4433,6 +4435,7 @@ $GEOIP_REGION_NAME = array (
     11 => 'Sirdaryo',
     12 => 'Surkhondaryo',
     14 => 'Toshkent',
+    15 => 'Jizzax',
   ),
   'VC' => 
   array (
