@@ -1,5 +1,7 @@
 language: php
 
+sudo: false
+
 php:
   - 5.3
   - 5.4
@@ -15,7 +17,7 @@ before_install:
   - mkdir -p build/logs
 
 script:
-  - phpunit -c phpunit.xml.dist
+  - ./vendor/bin/phpunit -c phpunit.xml.dist
 
 after_script:
   - php vendor/bin/coveralls
