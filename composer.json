@@ -1,7 +1,7 @@
 {
     "name": "geoip/geoip",
     "description": "MaxMind GeoIP PHP API",
-    "keywords": [ "geoip", "geolocation", "maxmind" ],
+    "keywords": ["geoip", "geolocation", "maxmind"],
     "homepage": "http://dev.maxmind.com/geoip/legacy/downloadable",
     "type": "library",
     "license": "LGPL 2.1+",
@@ -24,6 +24,6 @@
     },
     "require-dev": {
         "phpunit/phpunit": "3.7.*",
-        "satooshi/php-coveralls": "dev-master"
+        "satooshi/php-coveralls": "1.0.*"
     }
 }
