@@ -1635,7 +1635,7 @@ function geoip_country_code_by_addr($gi, $addr)
 {
     if ($gi->databaseType == GEOIP_CITY_EDITION_REV1) {
         $record = geoip_record_by_addr($gi, $addr);
-        if ($record !== false) {
+        if ($record) {
             return $record->country_code;
         }
     } else {
