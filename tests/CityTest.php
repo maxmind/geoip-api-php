@@ -30,5 +30,10 @@ class CityTest extends \PHPUnit_Framework_TestCase
             'America/Los_Angeles',
             get_time_zone($record->country_code, $record->region)
         );
+
+        $this->assertEquals(
+            'US',
+            geoip_country_code_by_addr($gi, "64.17.254.216")
+        );
     }
 }
