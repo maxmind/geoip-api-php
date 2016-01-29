@@ -1,5 +1,11 @@
 # Change Log #
 
+## 1.16 (2016-01-29)
+
+* Fixed issue that could cause a notice about using a property on a non-object
+  when calling `geoip_record_by_addr()` on a City database. Reported by
+  Justinas Rakašis. GitHub #34.
+
 ## 1.15 (2015-05-01)
 
 * Calls to `die()` where replaced with calls to `trigger_error()`. This
@@ -126,7 +132,7 @@
 
 * Changed license from GPL to LGPL so code can be included in PEAR
 * added global definitions to prevent undefined variables error when including
-  from function (C�dric Dufour)
+  from function (Cédric Dufour)
 * Updated country names
 * Added support for GeoIP City, version 1 with DMA and Area codes
 

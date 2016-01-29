@@ -31,7 +31,7 @@ You should now have the file `composer.phar` in your project directory.
 Run in your project root:
 
 ```
-php composer.phar require geoip/geoip:~1.14
+php composer.phar require geoip/geoip:~1.16
 ```
 
 You should now have the files `composer.json` and `composer.lock` as well as
@@ -88,7 +88,7 @@ For help with this API or our databases, please see [our support page]
 
 ## Copyright and License ##
 
-This software is Copyright (c) 2014 by MaxMind, Inc.
+This software is Copyright (c) 2016 by MaxMind, Inc.
 
 This is free software, licensed under the GNU Lesser General Public License
 version 2.1 or later.
