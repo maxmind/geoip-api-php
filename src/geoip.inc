@@ -1397,12 +1397,12 @@ function _setup_segments($gi)
     $gi->databaseType = GEOIP_COUNTRY_EDITION;
     $gi->record_length = STANDARD_RECORD_LENGTH;
     if ($gi->flags & GEOIP_SHARED_MEMORY) {
-        $offset = @shmop_size($gi->shmid) - 3;
+        $offset = shmop_size($gi->shmid) - 3;
         for ($i = 0; $i < STRUCTURE_INFO_MAX_SIZE; $i++) {
-            $delim = @shmop_read($gi->shmid, $offset, 3);
+            $delim = shmop_read($gi->shmid, $offset, 3);
             $offset += 3;
             if ($delim == (chr(255) . chr(255) . chr(255))) {
-                $gi->databaseType = ord(@shmop_read($gi->shmid, $offset, 1));
+                $gi->databaseType = ord(shmop_read($gi->shmid, $offset, 1));
                 if ($gi->databaseType >= 106) {
                     $gi->databaseType -= 105;
                 }
@@ -1432,7 +1432,7 @@ function _setup_segments($gi)
                     || ($gi->databaseType == GEOIP_ASNUM_EDITION_V6)
                 ) {
                     $gi->databaseSegments = 0;
-                    $buf = @shmop_read($gi->shmid, $offset, SEGMENT_RECORD_LENGTH);
+                    $buf = shmop_read($gi->shmid, $offset, SEGMENT_RECORD_LENGTH);
                     for ($j = 0; $j < SEGMENT_RECORD_LENGTH; $j++) {
                         $gi->databaseSegments += (ord($buf[$j]) << ($j * 8));
                     }
@@ -1494,6 +1494,7 @@ function _setup_segments($gi)
                     || ($gi->databaseType == GEOIP_ASNUM_EDITION_V6)
                 ) {
                     $gi->databaseSegments = 0;
+
                     $buf = fread($gi->filehandle, SEGMENT_RECORD_LENGTH);
                     for ($j = 0; $j < SEGMENT_RECORD_LENGTH; $j++) {
                         $gi->databaseSegments += (ord($buf[$j]) << ($j * 8));
@@ -1525,12 +1526,20 @@ function _setup_segments($gi)
     return $gi;
 }
 
+# This should be only used for variable-length records where
+# $start + $maxLength may be greater than the shared mem size
+function _sharedMemRead($gi, $start, $maxLength)
+{
+    $readLength = min(shmop_size($gi->shmid) - $start, $maxLength);
+    return shmop_read($gi->shmid, $start, $readLength);
+}
+
 function geoip_open($filename, $flags)
 {
     $gi = new GeoIP;
     $gi->flags = $flags;
     if ($gi->flags & GEOIP_SHARED_MEMORY) {
-        $gi->shmid = @shmop_open(GEOIP_SHM_KEY, "a", 0, 0);
+        $gi->shmid = shmop_open(GEOIP_SHM_KEY, "a", 0, 0);
     } else {
         $gi->filehandle = fopen($filename, "rb") or trigger_error("GeoIP API: Can not open $filename\n", E_USER_ERROR);
         if ($gi->flags & GEOIP_MEMORY_CACHE) {
@@ -1686,8 +1695,7 @@ function _geoip_seek_country_v6($gi, $ipnum)
                 2 * $gi->record_length
             );
         } elseif ($gi->flags & GEOIP_SHARED_MEMORY) {
-            $buf = @shmop_read(
-                $gi->shmid,
+            $buf = _sharedMemRead($gi,
                 2 * $gi->record_length * $offset,
                 2 * $gi->record_length
             );
@@ -1733,8 +1741,8 @@ function _geoip_seek_country($gi, $ipnum)
                 2 * $gi->record_length
             );
         } elseif ($gi->flags & GEOIP_SHARED_MEMORY) {
-            $buf = @shmop_read(
-                $gi->shmid,
+            $buf = _sharedMemRead(
+                $gi,
                 2 * $gi->record_length * $offset,
                 2 * $gi->record_length
             );
@@ -1769,7 +1777,7 @@ function _common_get_org($gi, $seek_org)
 {
     $record_pointer = $seek_org + (2 * $gi->record_length - 1) * $gi->databaseSegments;
     if ($gi->flags & GEOIP_SHARED_MEMORY) {
-        $org_buf = @shmop_read($gi->shmid, $record_pointer, MAX_ORG_RECORD_LENGTH);
+        $org_buf = _sharedMemRead($gi, $record_pointer, MAX_ORG_RECORD_LENGTH);
     } else {
         fseek($gi->filehandle, $record_pointer, SEEK_SET);
         $org_buf = fread($gi->filehandle, MAX_ORG_RECORD_LENGTH);
