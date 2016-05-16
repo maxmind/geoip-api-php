@@ -1,5 +1,12 @@
 # Change Log #
 
+## 1.17 (2016-05-16)
+
+* Previously data records at the end of the database were incorrectly returned
+  as `null` values when using shared memory. This was due to attempting to
+  read beyond the end of the database. This bug only affected users using
+  `GEOIP_SHARED_MEMORY`.
+
 ## 1.16 (2016-01-29)
 
 * Fixed issue that could cause a notice about using a property on a non-object

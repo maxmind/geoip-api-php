@@ -65,7 +65,7 @@ function _common_get_record($gi, $seek_country)
     if ($gi->flags & GEOIP_MEMORY_CACHE) {
         $record_buf = substr($gi->memory_buffer, $record_pointer, FULL_RECORD_LENGTH);
     } elseif ($gi->flags & GEOIP_SHARED_MEMORY) {
-        $record_buf = @shmop_read($gi->shmid, $record_pointer, FULL_RECORD_LENGTH);
+        $record_buf = _sharedMemRead($gi, $record_pointer, FULL_RECORD_LENGTH);
     } else {
         fseek($gi->filehandle, $record_pointer, SEEK_SET);
         $record_buf = fread($gi->filehandle, FULL_RECORD_LENGTH);

@@ -36,4 +36,14 @@ class CityTest extends \PHPUnit_Framework_TestCase
             geoip_country_code_by_addr($gi, "64.17.254.216")
         );
     }
+
+    public function testCityWithSharedMemory()
+    {
+        geoip_load_shared_mem("tests/data/GeoIPCity.dat");
+
+        $gi = geoip_open("tests/data/GeoIPCity.dat", GEOIP_SHARED_MEMORY);
+        $record = geoip_record_by_addr($gi, "222.230.136.0");
+
+        $this->assertEquals('Setagaya', $record->city);
+    }
 }
