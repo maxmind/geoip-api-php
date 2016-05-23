@@ -88,6 +88,13 @@ configure time.  See (http://us2.php.net/manual/en/ref.shmop.php).
 In addition, you should call `geoip_load_shared_mem` before calling
 `geoip_open`.  See `sample_city.php` for an example of shared memory caching.
 
+## Requirements  ##
+
+This code is tested on PHP 5.3 and greater. Older versions of PHP may work.
+
+This API also works and is tested with HHVM. The shared-memory mode does not
+currently work on HHVM as HHVM does not support PHP's shared memory functions.
+
 ## Support ##
 
 For help with this API or our databases, please see [our support page]
