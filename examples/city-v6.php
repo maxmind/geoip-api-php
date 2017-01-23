@@ -8,25 +8,25 @@
 // Note that you must download the New Format of GeoIP City (GEO-133).
 // The old format (GEO-132) will not work.
 
-include("../src/geoipcity.inc");
-include("../src/geoipregionvars.php");
+include '../src/geoipcity.inc';
+include '../src/geoipregionvars.php';
 
 // uncomment for Shared Memory support
 // geoip_load_shared_mem("/usr/local/share/GeoIP/GeoIPCity.dat");
 // $gi = geoip_open("/usr/local/share/GeoIP/GeoIPCity.dat",GEOIP_SHARED_MEMORY);
 
-$gi = geoip_open("/usr/local/share/GeoIP/GeoLiteCityv6.dat", GEOIP_STANDARD);
+$gi = geoip_open('/usr/local/share/GeoIP/GeoLiteCityv6.dat', GEOIP_STANDARD);
 
-$record = geoip_record_by_addr_v6($gi, "::24.24.24.24");
-print $record->country_code . " " . $record->country_code3 . " " . $record->country_name . "\n";
-print $record->region . " " . $GEOIP_REGION_NAME[$record->country_code][$record->region] . "\n";
-print $record->city . "\n";
-print $record->postal_code . "\n";
-print $record->latitude . "\n";
-print $record->longitude . "\n";
-print $record->metro_code . "\n";
-print $record->area_code . "\n";
-print $record->continent_code . "\n";
+$record = geoip_record_by_addr_v6($gi, '::24.24.24.24');
+echo $record->country_code.' '.$record->country_code3.' '.$record->country_name."\n";
+echo $record->region.' '.$GEOIP_REGION_NAME[$record->country_code][$record->region]."\n";
+echo $record->city."\n";
+echo $record->postal_code."\n";
+echo $record->latitude."\n";
+echo $record->longitude."\n";
+echo $record->metro_code."\n";
+echo $record->area_code."\n";
+echo $record->continent_code."\n";
 
 geoip_close($gi);
 

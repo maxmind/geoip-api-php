@@ -4,7 +4,7 @@ class RegionTest extends \PHPUnit_Framework_TestCase
 {
     public function testRegion()
     {
-        $gi = geoip_open("tests/data/GeoIPRegion.dat", GEOIP_STANDARD);
+        $gi = geoip_open('tests/data/GeoIPRegion.dat', GEOIP_STANDARD);
 
         list($countryCode, $region) = geoip_region_by_addr(
             $gi,

@@ -2,10 +2,9 @@
 
 class CountryTest extends \PHPUnit_Framework_TestCase
 {
-
     public function testCountry()
     {
-        $gi = geoip_open("tests/data/GeoIP.dat", GEOIP_STANDARD);
+        $gi = geoip_open('tests/data/GeoIP.dat', GEOIP_STANDARD);
 
         $this->assertEquals(
             'US',
@@ -19,7 +18,7 @@ class CountryTest extends \PHPUnit_Framework_TestCase
 
     public function testV6()
     {
-        $gi = geoip_open("tests/data/GeoIPv6.dat", GEOIP_STANDARD);
+        $gi = geoip_open('tests/data/GeoIPv6.dat', GEOIP_STANDARD);
 
         $this->assertEquals(
             'JP',
