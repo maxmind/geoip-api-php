@@ -28,5 +28,3 @@ echo geoip_country_code_by_name_v6($gi, "ipv6.google.com") . "\t" .
     geoip_country_name_by_name_v6($gi, "ipv6.google.com") . "\n";
 
 geoip_close($gi);
-
-?>

@@ -10,5 +10,3 @@ $netspeed = geoip_name_by_addr($gi, "24.24.24.24");
 print $netspeed . "\n";
 
 geoip_close($gi);
-
-?>

@@ -29,5 +29,3 @@ print $record->area_code . "\n";
 print $record->continent_code . "\n";
 
 geoip_close($gi);
-
-?>

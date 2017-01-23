@@ -16,5 +16,3 @@ echo geoip_country_code_by_addr($gi, "80.24.24.24") . "\t" .
     geoip_country_name_by_addr($gi, "80.24.24.24") . "\n";
 
 geoip_close($gi);
-
-?>
