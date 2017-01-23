@@ -13,5 +13,3 @@ $asn = geoip_name_by_addr_v6($giasn, $ip);
 echo "$ip has asn ".$asn."\n";
 
 geoip_close($giasn);
-
-?>

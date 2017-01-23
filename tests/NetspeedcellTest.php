@@ -6,10 +6,7 @@ class NetspeedcellTest extends \PHPUnit_Framework_TestCase
     {
         $gi = geoip_open('tests/data/GeoIPNetSpeedCell.dat', GEOIP_STANDARD);
 
-        $this->assertEquals(
-            'Dialup',
-            geoip_org_by_addr($gi, '2.125.160.1')
-        );
+        $this->assertEquals('Dialup', geoip_org_by_addr($gi, '2.125.160.1'));
     }
 
     public function testNetspeedcellWithSharedMemory()
@@ -22,9 +19,6 @@ class NetspeedcellTest extends \PHPUnit_Framework_TestCase
 
         $gi = geoip_open('tests/data/GeoIPNetSpeedCell.dat', GEOIP_SHARED_MEMORY);
 
-        $this->assertEquals(
-            'Dialup',
-            geoip_name_by_addr($gi, '2.125.160.1')
-        );
+        $this->assertEquals('Dialup', geoip_name_by_addr($gi, '2.125.160.1'));
     }
 }
