@@ -1,0 +1,5 @@
+preset: symfony
+
+finder:
+  exclude:
+    - "src/geoipregionvars.php"
