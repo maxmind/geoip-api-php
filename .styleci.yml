@@ -1,4 +1,4 @@
-preset: symfony
+preset: psr2
 
 finder:
   not-name:
