@@ -6,7 +6,7 @@
 include("../src/geoip.inc");
 
 // Uncomment if querying against GeoIP/Lite City.
-// include("geoipcity.inc");
+// include("../src/geoipcity.inc");
 
 $gi = geoip_open("/usr/local/share/GeoIP/GeoIPv6.dat", GEOIP_STANDARD);
 
