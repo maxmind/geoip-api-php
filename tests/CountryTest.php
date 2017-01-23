@@ -2,7 +2,6 @@
 
 class CountryTest extends \PHPUnit_Framework_TestCase
 {
-
     public function testCountry()
     {
         $gi = geoip_open("tests/data/GeoIP.dat", GEOIP_STANDARD);
