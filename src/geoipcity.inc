@@ -20,7 +20,7 @@
  */
 
 
-define("FULL_RECORD_LENGTH", 50);
+define('FULL_RECORD_LENGTH', 50);
 
 require_once 'geoip.inc';
 require_once 'geoipregionvars.php';
@@ -128,7 +128,7 @@ function _common_get_record($gi, $seek_country)
     $record->longitude = ($longitude / 10000) - 180;
     if (GEOIP_CITY_EDITION_REV1 == $gi->databaseType) {
         $metroarea_combo = 0;
-        if ($record->country_code == "US") {
+        if ($record->country_code == 'US') {
             for ($j = 0; $j < 3; ++$j) {
                 $char = ord(substr($record_buf, $record_buf_pos++, 1));
                 $metroarea_combo += ($char << ($j * 8));

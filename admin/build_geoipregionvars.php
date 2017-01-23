@@ -14,6 +14,7 @@ function downloadAndOpen($url)
         curl_close($ch);
         file_put_contents($file, $data);
     }
+
     return file($file);
 }
 
@@ -22,14 +23,14 @@ $countries = downloadAndOpen('http://www.maxmind.com/download/geoip/misc/region_
 $array = array();
 foreach ($countries as $line) {
     $datas = explode(',', $line);
-    $array[$datas[0]][trim(preg_replace('/"/im', '', $datas[2]))] = sprintf("%s", $datas[1]);
+    $array[$datas[0]][trim(preg_replace('/"/im', '', $datas[2]))] = sprintf('%s', $datas[1]);
 }
 $array = array_map('array_flip', $array);
 
-date_default_timezone_set("UTC");
+date_default_timezone_set('UTC');
 $output = "<?php\n";
 $output .= sprintf("// Copyright %s MaxMind, Inc. All Rights Reserved\n", date('Y'));
 $output .= "global \$GEOIP_REGION_NAME;\n";
-$output .= "\$GEOIP_REGION_NAME = " . var_export($array, true) . ";\n";
+$output .= '$GEOIP_REGION_NAME = '.var_export($array, true).";\n";
 
-file_put_contents(__DIR__ . '/../src/geoipregionvars.php', $output);
+file_put_contents(__DIR__.'/../src/geoipregionvars.php', $output);
