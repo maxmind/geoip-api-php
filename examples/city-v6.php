@@ -17,7 +17,7 @@ include("../src/geoipregionvars.php");
 
 $gi = geoip_open("/usr/local/share/GeoIP/GeoLiteCityv6.dat", GEOIP_STANDARD);
 
-$record = geoip_record_by_addr_v6($gi, "::24.24.24.24");
+$record = GeoIP_record_by_addr_v6($gi, "::24.24.24.24");
 print $record->country_code . " " . $record->country_code3 . " " . $record->country_name . "\n";
 print $record->region . " " . $GEOIP_REGION_NAME[$record->country_code][$record->region] . "\n";
 print $record->city . "\n";
@@ -29,5 +29,3 @@ print $record->area_code . "\n";
 print $record->continent_code . "\n";
 
 geoip_close($gi);
-
-?>

@@ -1643,7 +1643,7 @@ function geoip_country_code_by_addr_v6($gi, $addr)
 function geoip_country_code_by_addr($gi, $addr)
 {
     if ($gi->databaseType == GEOIP_CITY_EDITION_REV1) {
-        $record = geoip_record_by_addr($gi, $addr);
+        $record = GeoIP_record_by_addr($gi, $addr);
         if ($record) {
             return $record->country_code;
         }
@@ -1668,7 +1668,7 @@ function geoip_country_name_by_addr_v6($gi, $addr)
 function geoip_country_name_by_addr($gi, $addr)
 {
     if ($gi->databaseType == GEOIP_CITY_EDITION_REV1) {
-        $record = geoip_record_by_addr($gi, $addr);
+        $record = GeoIP_record_by_addr($gi, $addr);
         return $record->country_name;
     } else {
         $country_id = geoip_country_id_by_addr($gi, $addr);

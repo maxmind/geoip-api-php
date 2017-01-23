@@ -2,7 +2,6 @@
 
 class DomainTest extends \PHPUnit_Framework_TestCase
 {
-
     public function testDomain()
     {
         $gi = geoip_open("tests/data/GeoIPDomain.dat", GEOIP_STANDARD);

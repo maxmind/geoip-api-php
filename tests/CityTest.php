@@ -2,14 +2,13 @@
 
 class CityTest extends \PHPUnit_Framework_TestCase
 {
-
     public function testCity()
     {
         global $GEOIP_REGION_NAME;
 
         $gi = geoip_open("tests/data/GeoIPCity.dat", GEOIP_STANDARD);
 
-        $record = geoip_record_by_addr($gi, "64.17.254.216");
+        $record = GeoIP_record_by_addr($gi, "64.17.254.216");
 
         $this->assertEquals(310, $record->area_code);
         $this->assertEquals('El Segundo', $record->city);
@@ -46,7 +45,7 @@ class CityTest extends \PHPUnit_Framework_TestCase
         geoip_load_shared_mem("tests/data/GeoIPCity.dat");
 
         $gi = geoip_open("tests/data/GeoIPCity.dat", GEOIP_SHARED_MEMORY);
-        $record = geoip_record_by_addr($gi, "222.230.136.0");
+        $record = GeoIP_record_by_addr($gi, "222.230.136.0");
 
         $this->assertEquals('Setagaya', $record->city);
     }
