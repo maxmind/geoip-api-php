@@ -2,7 +2,6 @@
 
 class CityTest extends \PHPUnit_Framework_TestCase
 {
-
     public function testCity()
     {
         global $GEOIP_REGION_NAME;
