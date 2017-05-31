@@ -38,6 +38,16 @@ You should now have the files `composer.json` and `composer.lock` as well as
 the directory `vendor` in your project directory. If you use a version control
 system, `composer.json` should be added to it.
 
+### Install GeoIP database ###
+
+Run:
+
+```
+wget -N http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz
+gunzip GeoIP.dat.gz
+mv GeoIP.dat /usr/local/share/GeoIP/
+```
+
 ### Require Autoloader ###
 
 After installing the dependencies, you need to require the Composer autoloader
