@@ -8,16 +8,22 @@ php:
   - '5.6'
   - '7.0'
   - '7.1'
+  - '7.2'
   - hhvm
 before_install:
   - composer self-update
   - composer install --dev -n --prefer-source
   - phpenv rehash
   - mkdir -p build/logs
+  - "if [[ $TRAVIS_PHP_VERSION == '7.2' ]]; then sudo apt install -y nodejs; npm install -g snyk; fi"
+install:
+  - "if [[ $TRAVIS_PHP_VERSION == '7.2' ]]; then snyk test --org=maxmind; fi"
 script:
   - ./vendor/bin/phpunit -c phpunit.xml.dist
 after_script:
   - php vendor/bin/coveralls
+after_success:
+  - "if [[ $TRAVIS_BRANCH == 'master' && $TRAVIS_PULL_REQUEST == 'false' && $TRAVIS_PHP_VERSION == '7.2' ]]; then snyk monitor --org=maxmind --project-name=maxmind/geoip-api-php; fi"
 notifications:
   email:
     on_failure: always
@@ -27,3 +33,6 @@ notifications:
   slack:
     rooms:
       secure: "YD9FzE5R5vdRdeBgDa+j5oUNTy6mfZWJP1VVPgSGHLHSMerbsatUcRbmO3rf0A9in7MA+EnAjAl2RCIrJAPgyh1V449x4kK0oykLNiwk13PC3D5gJODmfiQlokHn2FlRwY52DG2NsYg7WWkMbNUjfcLVi8pLm4mc9vPUf7asg+4=\n"
+env:
+  global:
+    secure: "ihgw7G6OzZGDleXkwTfW6x50ksVRwAqNsK3n9ZWBcAinmU6gtKbqxTX0WSlQUDTA4BllDC1xkxR3IZseqGd/otRyaJVxnIAe+0u0KrYKpY+HppxDX2uqER9QUqNwN6u5SNYbJRNMib7r14r14DiS/l9DLECcipOZRD3stiVIras="
