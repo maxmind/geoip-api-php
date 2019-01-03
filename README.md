@@ -9,8 +9,7 @@ This API is for the GeoIP Legacy format (dat). To read the MaxMind DB format
 ## Requirements ##
 
 This module has no external dependencies. You only need a MaxMind GeoIP
-database. To download a free GeoLite Legacy Country database, please see
-our [GeoLite Legacy page](http://dev.maxmind.com/geoip/legacy/geolite).
+database.
 
 ## Install via Composer ##
 
