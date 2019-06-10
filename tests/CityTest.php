@@ -38,10 +38,6 @@ class CityTest extends \PHPUnit_Framework_TestCase
 
     public function testCityWithSharedMemory()
     {
-        // HHVM doesn't support shared memory
-        if (defined('HHVM_VERSION')) {
-            $this->markTestSkipped();
-        }
         geoip_load_shared_mem("tests/data/GeoIPCity.dat");
 
         $gi = geoip_open("tests/data/GeoIPCity.dat", GEOIP_SHARED_MEMORY);

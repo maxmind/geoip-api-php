@@ -91,9 +91,6 @@ In addition, you should call `geoip_load_shared_mem` before calling
 
 This code is tested on PHP 5.4 and greater. Older versions of PHP may work.
 
-This API also works and is tested with HHVM. The shared-memory mode does not
-currently work on HHVM as HHVM does not support PHP's shared memory functions.
-
 ## Support ##
 
 For help with this API or our databases, please see [our support page]
