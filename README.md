@@ -93,8 +93,7 @@ This code is tested on PHP 5.4 and greater. Older versions of PHP may work.
 
 ## Support ##
 
-For help with this API or our databases, please see [our support page]
-(http://www.maxmind.com/en/support).
+For help with this API or our databases, please see [our support page](http://www.maxmind.com/en/support).
 
 ## Copyright and License ##
 
