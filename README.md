@@ -1,10 +1,17 @@
 # MaxMind GeoIP Legacy PHP API #
 
-## Important Note ##
+## End of Life ##
 
-This API is for the GeoIP Legacy format (dat). To read the MaxMind DB format
-(mmdb) used by GeoIP2, please see
-[our GeoIP2 PHP API](https://github.com/maxmind/GeoIP2-php).
+MaxMind will be retiring the GeoIP Legacy databases at the end of May
+2022. Until then, this library will only receive critical security and bug
+fixes. Support for this library will end completely with the last release of
+the legacy GeoIP databases.
+
+We recommend that you upgrade to our GeoIP2 databases. You can read these
+from PHP with [our GeoIP2 PHP API](https://github.com/maxmind/GeoIP2-php).
+
+See [our blog post](https://blog.maxmind.com/2020/06/01/retirement-of-geoip-legacy-downloadable-databases-in-may-2022/)
+for more information.
 
 ## Requirements ##
 
